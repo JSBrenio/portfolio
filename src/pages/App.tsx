@@ -1,12 +1,11 @@
 import '../styles/App.css'
+import Home from './Home'
 
 function App() {
 
   return (
     <>
-      <p>
-        Jeremiah Brenio
-      </p>
+      <Home />
     </>
   )
 }

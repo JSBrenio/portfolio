@@ -1,0 +1,19 @@
+/* Theme Variables */
+:root,
+.ocean {
+  --primary: 33, 56, 133;        /* #213885 */
+  --secondary: 8, 24, 73;        /* #081849 */
+  --accent: 95, 52, 117;         /* #5F3475 */
+  --highlight: 137, 49, 114;     /* #893172 */
+  --neutral: 204, 202, 204;      /* #CCCACC */
+  --background: 236, 223, 210;   /* #ECDFD2 */
+}
+
+.fire {
+  --primary: 246, 28, 36;        /* #F61C24 */
+  --secondary: 65, 210, 239;     /* #41D2EF */
+  --accent: 29, 33, 128;         /* #1D2180 */
+  --highlight: 255, 107, 53;     /* #FF6B35 */
+  --neutral: 42, 45, 52;         /* #2A2D34 */
+  --background: 3, 2, 12;        /* #03020C */
+}
