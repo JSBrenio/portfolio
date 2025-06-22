@@ -26,14 +26,13 @@ const TechStack = ({
   };
 
   const layoutClasses = {
-    row: 'flex flex-wrap items-center',
-    grid: 'grid grid-cols-auto-fit'
+    row: '',
+    grid: 'grid'
   };
 
   if (technologies.length === 0) {
     return null;
   }
-
   return (
     <div className={`tech-stack ${layoutClasses[layout]} ${spacingClasses[spacing]} ${className}`}>
       {technologies.map((tech, index) => (
@@ -41,11 +40,11 @@ const TechStack = ({
           <TechIcon 
             tech={tech} 
             size={size}
-            className="hover:scale-110 transition-transform"
+            className="hover-scale"
             variant='dark'
           />
           {showLabels && (
-            <span className="text-xs text-gray-600 mt-1 block text-center capitalize">
+            <span style={{ color: 'rgb(var(--text-light))' }}>
               {tech}
             </span>
           )}

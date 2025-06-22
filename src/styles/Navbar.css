@@ -1,0 +1,300 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(var(--navbar-bg), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--neutral), 0.2);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgb(var(--text));
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: rgb(var(--accent));
+  background-color: rgba(var(--accent), 0.1);
+  transform: translateY(-1px);
+}
+
+.light .nav-link:hover {
+  background-color: rgba(var(--teal), 0.1);
+  color: rgb(var(--teal));
+}
+
+.dark .nav-link:hover {
+  background-color: rgba(var(--violet), 0.1);
+  color: rgb(var(--violet));
+}
+
+.cyberpunk .nav-link:hover {
+  background-color: rgba(var(--secondary), 0.1);
+  color: rgb(var(--secondary));
+  box-shadow: var(--glow-secondary);
+}
+
+.witcher .nav-link:hover {
+  background-color: rgba(var(--amber), 0.1);
+  color: rgb(var(--amber));
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(var(--accent));
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Theme Toggles */
+.theme-toggles {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(var(--neutral), 0.3);
+  border-radius: 8px;
+  background-color: rgba(var(--background), 0.8);
+  color: rgb(var(--text));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.theme-toggle:hover {
+  border-color: rgb(var(--accent));
+  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1));
+  color: rgb(var(--accent));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(var(--accent), 0.15);
+}
+
+.theme-toggle.active {
+  border-color: rgb(var(--accent));
+  background: linear-gradient(135deg, rgba(var(--accent), 0.2), rgba(var(--highlight), 0.15));
+  color: rgb(var(--accent));
+  box-shadow: 0 4px 12px rgba(var(--accent), 0.25);
+}
+
+.light .theme-toggle:hover {
+  border-color: rgb(var(--teal));
+  background: linear-gradient(135deg, rgba(var(--teal), 0.1), rgba(var(--emerald), 0.1));
+  color: rgb(var(--teal));
+}
+
+.dark .theme-toggle:hover {
+  border-color: rgb(var(--violet));
+  background: linear-gradient(135deg, rgba(var(--violet), 0.1), rgba(var(--rose), 0.1));
+  color: rgb(var(--violet));
+}
+
+.cyberpunk .theme-toggle:hover {
+  border-color: rgb(var(--secondary));
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.1));
+  color: rgb(var(--secondary));
+  box-shadow: var(--glow-secondary);
+}
+
+.witcher .theme-toggle:hover {
+  border-color: rgb(var(--amber));
+  background: linear-gradient(135deg, rgba(var(--amber), 0.1), rgba(var(--highlight), 0.1));
+  color: rgb(var(--amber));
+}
+
+.theme-toggle-label {
+  font-size: 0.875rem;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(var(--text));
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(var(--background), 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(var(--neutral), 0.2);
+  padding: 1rem;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-nav-link {
+  color: rgb(var(--text));
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
+}
+
+.mobile-theme-toggles {
+  border-top: 1px solid rgba(var(--neutral), 0.2);
+  padding-top: 1rem;
+}
+
+.mobile-theme-label {
+  display: block;
+  color: rgb(var(--text));
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mobile-theme-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mobile-theme-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(var(--neutral), 0.3);
+  border-radius: 6px;
+  background-color: rgba(var(--background), 0.8);
+  color: rgb(var(--text));
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.mobile-theme-toggle:hover {
+  border-color: rgb(var(--accent));
+  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
+}
+
+.mobile-theme-toggle.active {
+  border-color: rgb(var(--accent));
+  background-color: rgba(var(--accent), 0.15);
+  color: rgb(var(--accent));
+}
+
+/* Cyberpunk-specific glow effects for navbar */
+.cyberpunk .theme-toggle.active {
+  box-shadow: var(--glow-accent);
+}
+
+.cyberpunk .nav-link:hover {
+  text-shadow: var(--glow-accent);
+}
+
+.cyberpunk .navbar-brand h2 {
+  text-shadow: var(--glow-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .theme-toggles {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .theme-toggle-label {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
+  
+  .mobile-theme-buttons {
+    flex-direction: column;
+  }
+  
+  .mobile-theme-toggle {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: 60px;
+}

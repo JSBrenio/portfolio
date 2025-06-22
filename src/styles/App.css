@@ -1,12 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+/* Theme-specific background patterns */
+.light #root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(var(--teal), 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(var(--emerald), 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(var(--sky), 0.03) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.dark #root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(var(--violet), 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(var(--rose), 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 40% 90%, rgba(var(--emerald), 0.04) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cyberpunk #root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(var(--primary), 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(var(--secondary), 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(var(--accent), 0.04) 0%, transparent 30%);
+  z-index: -1;
+  pointer-events: none;
+  animation: cyberpunkPulse 8s ease-in-out infinite alternate;
+}
+
+.witcher #root::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 60%, rgba(var(--amber), 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(var(--highlight), 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 20% 20%, rgba(var(--primary), 0.03) 0%, transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes cyberpunkPulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
 }
 
 .logo {

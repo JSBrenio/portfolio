@@ -1,19 +1,169 @@
 /* Theme Variables */
 :root,
-.ocean {
-  --primary: 33, 56, 133;        /* #213885 */
-  --secondary: 8, 24, 73;        /* #081849 */
-  --accent: 95, 52, 117;         /* #5F3475 */
-  --highlight: 137, 49, 114;     /* #893172 */
-  --neutral: 204, 202, 204;      /* #CCCACC */
-  --background: 236, 223, 210;   /* #ECDFD2 */
+.light {
+  --primary: 59, 130, 246;       /* #3B82F6 - Blue */
+  --secondary: 99, 102, 241;     /* #6366F1 - Indigo */
+  --accent: 168, 85, 247;        /* #A855F7 - Purple */
+  --highlight: 34, 197, 94;      /* #22C55E - Green */
+  --neutral: 107, 114, 128;      /* #6B7280 - Gray */  
+  --background: 255, 255, 255;   /* #FFFFFF - White */
+  --text: 17, 24, 39;            /* #111827 - Dark Gray */
+  --text-light: 75, 85, 99;      /* #4B5563 - Medium Gray */
+  
+  /* Navbar-specific background */
+  --navbar-bg: 249, 250, 251;    /* #F9FAFB - Light Gray (slightly darker than white) */
 }
 
-.fire {
-  --primary: 246, 28, 36;        /* #F61C24 */
-  --secondary: 65, 210, 239;     /* #41D2EF */
-  --accent: 29, 33, 128;         /* #1D2180 */
-  --highlight: 255, 107, 53;     /* #FF6B35 */
-  --neutral: 42, 45, 52;         /* #2A2D34 */
-  --background: 3, 2, 12;        /* #03020C */
+.dark {
+  --primary: 59, 130, 246;       /* #3B82F6 - Blue */
+  --secondary: 99, 102, 241;     /* #6366F1 - Indigo */
+  --accent: 168, 85, 247;        /* #A855F7 - Purple */
+  --highlight: 34, 197, 94;      /* #22C55E - Green */
+  --neutral: 107, 114, 128;      /* #6B7280 - Gray */  
+  --background: 17, 24, 39;      /* #111827 - Dark */
+  --text: 243, 244, 246;         /* #F3F4F6 - Light Gray */
+  --text-light: 156, 163, 175;   /* #9CA3AF - Medium Gray */
+  
+  /* Navbar-specific background */
+  --navbar-bg: 31, 41, 55;       /* #1F2937 - Darker gray than background */
 }
+
+.cyberpunk {
+  /* Authentic Cyberpunk 2077 color palette */
+  --primary: 252, 238, 9;        /* #FCEE09 - Bright Yellow */
+  --secondary: 0, 240, 255;      /* #00F0FF - Cyan Blue */
+  --accent: 255, 0, 60;          /* #FF003C - Hot Pink */
+  --highlight: 0, 255, 128;      /* #00FF80 - Electric Green */
+  --neutral: 128, 128, 128;      /* #808080 - Steel Gray */  
+  --background: 5, 10, 14;       /* #050A0E - Deep Dark */
+  --text: 250, 250, 250;         /* #FAFAFA - Light Gray */
+  --text-light: 160, 160, 160;   /* #A0A0A0 - Medium Gray */
+  
+  /* Navbar-specific background */
+  --navbar-bg: 15, 25, 35;       /* #0F1923 - Lighter than background for contrast */
+  
+  /* Cyberpunk-specific glow effects */
+  --glow-primary: 0 0 10px rgba(252, 238, 9, 0.5);
+  --glow-secondary: 0 0 10px rgba(0, 240, 255, 0.5);
+  --glow-accent: 0 0 10px rgba(255, 0, 60, 0.5);
+  --glow-highlight: 0 0 10px rgba(0, 255, 128, 0.5);
+}
+
+.witcher {
+  /* Authentic Witcher 3 color palette */
+  --primary: 181, 12, 15;        /* #B50C0F - Deep Red */
+  --secondary: 78, 99, 108;      /* #4E636C - Steel Blue */
+  --accent: 139, 69, 19;         /* #8B4513 - Saddle Brown */
+  --highlight: 160, 82, 45;      /* #A0522D - Sienna */
+  --neutral: 39, 39, 39;         /* #272727 - Dark Gray */  
+  --background: 234, 234, 234;   /* #EAEAEA - Light Gray */
+  --text: 49, 10, 11;            /* #310A0B - Dark Brown */
+  --text-light: 78, 99, 108;     /* #4E636C - Steel Blue (for secondary text) */
+  
+  /* Navbar-specific background */
+  --navbar-bg: 220, 220, 220;    /* #DCDCDC - Darker gray than background */
+}
+
+/* Base styles using CSS variables */
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--text));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cyberpunk-specific body styling */
+body.cyberpunk {
+  background: linear-gradient(135deg, 
+    rgba(5, 10, 14, 1) 0%, 
+    rgba(15, 20, 25, 1) 50%, 
+    rgba(5, 10, 14, 1) 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Utility classes for theme colors */
+.text-primary { color: rgb(var(--primary)); }
+.text-secondary { color: rgb(var(--secondary)); }
+.text-accent { color: rgb(var(--accent)); }
+.text-highlight { color: rgb(var(--highlight)); }
+.text-neutral { color: rgb(var(--neutral)); }
+.text-light { color: rgb(var(--text-light)); }
+
+.bg-primary { background-color: rgb(var(--primary)); }
+.bg-secondary { background-color: rgb(var(--secondary)); }
+.bg-accent { background-color: rgb(var(--accent)); }
+.bg-highlight { background-color: rgb(var(--highlight)); }
+.bg-neutral { background-color: rgb(var(--neutral)); }
+.bg-background { background-color: rgb(var(--background)); }
+.bg-navbar { background-color: rgb(var(--navbar-bg)); }
+
+.border-primary { border-color: rgb(var(--primary)); }
+.border-secondary { border-color: rgb(var(--secondary)); }
+.border-accent { border-color: rgb(var(--accent)); }
+.border-highlight { border-color: rgb(var(--highlight)); }
+
+/* Hover effects */
+.hover-primary:hover { color: rgb(var(--primary)); }
+.hover-secondary:hover { color: rgb(var(--secondary)); }
+.hover-accent:hover { color: rgb(var(--accent)); }
+.hover-highlight:hover { color: rgb(var(--highlight)); }
+
+.hover-bg-primary:hover { background-color: rgb(var(--primary)); }
+.hover-bg-secondary:hover { background-color: rgb(var(--secondary)); }
+.hover-bg-accent:hover { background-color: rgb(var(--accent)); }
+.hover-bg-highlight:hover { background-color: rgb(var(--highlight)); }
+
+/* Cyberpunk-specific glow effects */
+.cyberpunk .glow-primary {
+  box-shadow: var(--glow-primary);
+  text-shadow: var(--glow-primary);
+}
+
+.cyberpunk .glow-secondary {
+  box-shadow: var(--glow-secondary);
+  text-shadow: var(--glow-secondary);
+}
+
+.cyberpunk .glow-accent {
+  box-shadow: var(--glow-accent);
+  text-shadow: var(--glow-accent);
+}
+
+.cyberpunk .glow-highlight {
+  box-shadow: var(--glow-highlight);
+  text-shadow: var(--glow-highlight);
+}
+
+/* Gradient backgrounds for more colorful elements */
+.gradient-primary-secondary {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
+}
+
+.gradient-accent-highlight {
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--highlight)));
+}
+
+/* Animated gradient backgrounds */
+.animated-gradient {
+  background: linear-gradient(-45deg, 
+    rgb(var(--primary)), 
+    rgb(var(--secondary)), 
+    rgb(var(--accent)), 
+    rgb(var(--highlight))
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Color-specific shadows and highlights */
+.shadow-primary { box-shadow: 0 4px 12px rgba(var(--primary), 0.25); }
+.shadow-secondary { box-shadow: 0 4px 12px rgba(var(--secondary), 0.25); }
+.shadow-accent { box-shadow: 0 4px 12px rgba(var(--accent), 0.25); }
+.shadow-highlight { box-shadow: 0 4px 12px rgba(var(--highlight), 0.25); }
+.shadow-navbar { box-shadow: 0 4px 12px rgba(var(--navbar-bg), 0.25); }

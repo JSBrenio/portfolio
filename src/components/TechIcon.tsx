@@ -13,8 +13,14 @@ const TechIcon = ({ tech, size = 64, className = "", variant = 'light' }: TechIc
   
   return (
     <div 
-    className={`inline-flex items-center justify-center ${className}`}
-    style={{ width: size, height: size }}
+    className={className}
+    style={{ 
+      width: size, 
+      height: size,
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}
     title={tech}
     >      
       <StackIcon 
