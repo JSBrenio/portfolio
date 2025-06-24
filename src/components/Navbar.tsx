@@ -17,7 +17,8 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">        {/* Logo/Brand */}
+      <div className="navbar-container">
+        {/* Logo/Brand */}
         <div className="navbar-brand">
           <h2 style={{ 
             color: 'rgb(var(--primary))', 
@@ -27,13 +28,15 @@ const Navbar = () => {
           }}>
             JB
           </h2>
-        </div>{/* Desktop Navigation Links */}
+        </div>
+        {/* Desktop Navigation Links */}
         <div className="navbar-links">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/about" className="nav-link">About</Link>
           <Link to="/projects" className="nav-link">Projects</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
-        </div>        {/* Theme Toggles */}
+        </div>        
+        {/* Theme Toggles */}
         <div className="theme-toggles">
           {themes.map((themeOption) => {
             const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
@@ -79,7 +82,8 @@ const Navbar = () => {
           
           <div className="mobile-theme-toggles">
             <span className="mobile-theme-label">Theme:</span>
-            <div className="mobile-theme-buttons">              {themes.map((themeOption) => {
+            <div className="mobile-theme-buttons">
+              {themes.map((themeOption) => {
                 const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
                 return (
                   <button

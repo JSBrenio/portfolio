@@ -1,0 +1,71 @@
+/* Markdown content styling */
+.markdown-content {
+  line-height: 1.6;
+}
+
+.markdown-content p {
+  color: rgb(var(--text));
+  margin-bottom: 1rem;
+}
+
+.markdown-content strong {
+  color: rgb(var(--highlight));
+  font-weight: 700;
+}
+
+.markdown-content em {
+  color: rgb(var(--accent));
+  font-style: italic;
+}
+
+.markdown-content code {
+  background-color: rgba(var(--secondary), 0.2);
+  color: rgb(var(--secondary));
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: 'Courier New', Consolas, monospace;
+}
+
+.markdown-content h1 {
+  color: rgb(var(--primary));
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.markdown-content h2 {
+  color: rgb(var(--secondary));
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content h3 {
+  color: rgb(var(--highlight));
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content a {
+  color: rgb(var(--accent));
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.markdown-content a:hover {
+  color: rgb(var(--highlight));
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  color: rgb(var(--text));
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  color: rgb(var(--text-light));
+  margin-bottom: 0.25rem;
+}

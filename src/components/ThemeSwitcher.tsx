@@ -1,10 +1,11 @@
 import { useTheme } from '../hooks/useTheme';
-import { Sun, Moon, Zap } from 'lucide-react';
+import { Sun, Moon, Zap, Sword } from 'lucide-react';
 import '../styles/ThemeSwitcher.css';
 
 const themeIcons = {
   light: Sun,
   dark: Moon,
+  witcher: Sword,
   cyberpunk: Zap,
 };
 
@@ -16,7 +17,7 @@ const ThemeSwitcher = () => {
       <label className="theme-label">Theme:</label>
       <div className="theme-options">
         {themes.map((themeOption) => {
-          const IconComponent = themeIcons[themeOption.name];
+          const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
           return (
             <button
               key={themeOption.name}
