@@ -13,25 +13,22 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .contact-title.light {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
+  color: rgb(var(--primary));
 }
 
 .contact-title.dark {
-  background: linear-gradient(135deg, rgb(var(--secondary)), rgb(var(--accent)));
+  color: rgb(var(--secondary));
 }
 
 .contact-title.cyberpunk {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
+  color: rgb(var(--primary));
 }
 
 .contact-title.witcher {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
+  color: rgb(var(--primary));
 }
 
 .contact-subtitle {
