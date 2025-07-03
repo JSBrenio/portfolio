@@ -69,3 +69,166 @@
   color: rgb(var(--text-light));
   margin-bottom: 0.25rem;
 }
+
+/* Project detail specific markdown styling */
+.project-detail-markdown {
+  font-size: 0.95rem;
+}
+
+.project-detail-markdown h1 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+  border-bottom: 2px solid rgba(var(--primary), 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.project-detail-markdown h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.project-detail-markdown h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 3px;
+  height: 1rem;
+  background: linear-gradient(to bottom, rgb(var(--secondary)), rgb(var(--highlight)));
+  border-radius: 2px;
+}
+
+.project-detail-markdown h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.project-detail-markdown h3::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: rgb(var(--accent));
+  font-size: 0.8rem;
+}
+
+.project-detail-markdown p:first-child {
+  margin-top: 0;
+}
+
+.project-detail-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.project-detail-markdown ul li {
+  position: relative;
+}
+
+.project-detail-markdown ul li::before {
+  content: "▸";
+  color: rgb(var(--highlight));
+  position: absolute;
+  left: -1rem;
+}
+
+.project-detail-markdown blockquote {
+  border-left: 4px solid rgb(var(--highlight));
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background-color: rgba(var(--neutral), 0.1);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.project-detail-markdown pre {
+  background-color: rgba(var(--neutral), 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(var(--neutral), 0.3);
+}
+
+.project-detail-markdown code {
+  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+}
+
+.project-detail-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.project-detail-markdown th,
+.project-detail-markdown td {
+  border: 1px solid rgba(var(--neutral), 0.3);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.project-detail-markdown th {
+  background-color: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
+  font-weight: 600;
+}
+
+/* Image styling for markdown content */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.markdown-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive image containers */
+.markdown-content p img {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Image with caption styling */
+.markdown-content figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.markdown-content figure img {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content figcaption {
+  font-size: 0.875rem;
+  color: rgb(var(--text-light));
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Theme-aware image borders */
+.project-detail-markdown img {
+  border: 2px solid rgba(var(--neutral), 0.2);
+}
+
+/* Cyberpunk theme image effects */
+.markdown-content.cyberpunk img {
+  box-shadow: 0 0 20px rgba(var(--primary), 0.3);
+  border: 1px solid rgba(var(--primary), 0.5);
+}
+
+/* Witcher theme image effects */
+.markdown-content.witcher img {
+  box-shadow: 0 4px 12px rgba(var(--amber), 0.2);
+  border: 1px solid rgba(var(--amber), 0.3);
+}

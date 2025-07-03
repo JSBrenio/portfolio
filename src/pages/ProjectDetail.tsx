@@ -3,6 +3,8 @@ import { ArrowLeft, ExternalLink, Github, Calendar, Code2, Zap } from 'lucide-re
 import { useTheme } from '../hooks/useTheme';
 import { getThemeAwareProjects } from '../data/projects';
 import TechIcon from '../components/TechIcon';
+import MarkdownContent from '../components/MarkdownContent';
+import '../styles/ProjectDetail.css';
 
 const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -104,45 +106,27 @@ const ProjectDetail = () => {
   };
 
   const features = getProjectFeatures();
-
   return (
-    <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8" style={{
-      backgroundColor: 'rgb(var(--background))',
-      backgroundImage: theme === 'cyberpunk' ? 
-        'radial-gradient(circle at 20% 50%, rgba(var(--primary), 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(var(--secondary), 0.05) 0%, transparent 50%)' :
-        theme === 'witcher' ?
-        'radial-gradient(circle at 30% 80%, rgba(var(--highlight), 0.03) 0%, transparent 60%)' :
-        undefined
-    }}>
-      <div className="max-w-6xl mx-auto">
+    <div className={`project-detail-container ${theme}`}>
+      <div className="project-detail-wrapper">
         {/* Header */}
-        <div className="mb-8">
+        <div className="project-detail-header">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 text-sm font-medium mb-6 transition-colors hover:opacity-80"
-            style={{ color: 'rgb(var(--primary))' }}
+            className="back-link"
           >
             <ArrowLeft className="w-4 h-4" />
             {getThemeText('backToProjects')}
           </Link>
 
-          <div className="flex flex-col md:flex-row md:items-start gap-8">
+          <div className="header-content">
             {/* Project Image */}
             <div className="flex-shrink-0">
-              <div 
-                className={`relative rounded-lg overflow-hidden ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}
-                style={{
-                  width: '100%',
-                  maxWidth: '500px',
-                  aspectRatio: '16/10',
-                  backgroundColor: 'rgba(var(--neutral), 0.1)',
-                  border: '1px solid rgba(var(--neutral), 0.2)'
-                }}
-              >
+              <div className={`project-image-container ${theme}`}>
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full object-cover"
+                  className="project-image"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = `https://via.placeholder.com/500x312/666666/ffffff?text=${encodeURIComponent(project.name)}`;
@@ -152,34 +136,15 @@ const ProjectDetail = () => {
             </div>
 
             {/* Project Info */}
-            <div className="flex-1 min-w-0">
-              <div className="mb-4">              <h1 
-                className="text-3xl md:text-4xl font-bold mb-2"
-                style={{ 
-                  background: theme === 'cyberpunk' 
-                    ? 'linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)))'
-                    : theme === 'witcher'
-                    ? 'linear-gradient(135deg, rgb(var(--primary)), rgb(var(--amber)))'
-                    : theme === 'dark'
-                    ? 'linear-gradient(135deg, rgb(var(--violet)), rgb(var(--emerald)))'
-                    : 'linear-gradient(135deg, rgb(var(--primary)), rgb(var(--teal)))',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
-                }}
-              >
+            <div className="project-info">
+              <div className="project-title-section">
+                <h1 className={`project-title ${theme}`}>
                   {project.name}
                 </h1>
                 {project.featured && (
-                  <div 
-                    className="inline-block px-3 py-1 rounded-full text-sm font-semibold"
-                    style={{
-                      backgroundColor: 'rgba(var(--highlight), 0.9)',
-                      color: 'rgb(var(--background))'
-                    }}
-                  >
-                    {getThemeIcon()}
-                    <span className="ml-2">
+                  <div className="featured-badge">
+                    <span className="icon">{getThemeIcon()}</span>
+                    <span>
                       {theme === 'cyberpunk' ? 'FEATURED SYSTEM' : 
                        theme === 'witcher' ? 'LEGENDARY QUEST' : 
                        'Featured Project'}
@@ -188,57 +153,30 @@ const ProjectDetail = () => {
                 )}
               </div>
 
-              <p 
-                className="text-lg mb-6 leading-relaxed"
-                style={{ color: 'rgb(var(--text-light))' }}
-              >
+              <p className="project-description">
                 {project.description}
               </p>
 
               {/* Project Links */}
               {(project.liveUrl || project.githubUrl) && (
-                <div className="flex flex-wrap gap-4">                  {project.liveUrl && (
+                <div className="project-links">
+                  {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105 shadow-orange"
-                      style={{
-                        background: theme === 'cyberpunk' 
-                          ? 'linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)))'
-                          : theme === 'witcher'
-                          ? 'linear-gradient(135deg, rgb(var(--primary)), rgb(var(--amber)))'
-                          : 'linear-gradient(135deg, rgb(var(--primary)), rgb(var(--teal)))',
-                        color: 'rgb(var(--background))',
-                        boxShadow: theme === 'cyberpunk' ? 'var(--glow-primary)' : undefined
-                      }}
+                      className={`project-link live-link ${theme}`}
                     >
                       <ExternalLink className="w-4 h-4" />
                       {getThemeText('viewLive')}
                     </a>
-                  )}                  {project.githubUrl && (
+                  )}
+                  {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium border transition-all hover:scale-105 shadow-violet"
-                      style={{
-                        borderColor: theme === 'cyberpunk' 
-                          ? 'rgba(var(--accent), 0.4)'
-                          : theme === 'witcher'
-                          ? 'rgba(var(--amber), 0.4)'
-                          : 'rgba(var(--violet), 0.3)',
-                        background: theme === 'cyberpunk' 
-                          ? 'linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1))'
-                          : theme === 'witcher'
-                          ? 'linear-gradient(135deg, rgba(var(--amber), 0.1), rgba(var(--highlight), 0.1))'
-                          : 'linear-gradient(135deg, rgba(var(--violet), 0.1), rgba(var(--emerald), 0.1))',
-                        color: theme === 'cyberpunk' 
-                          ? 'rgb(var(--accent))'
-                          : theme === 'witcher'
-                          ? 'rgb(var(--amber))'
-                          : 'rgb(var(--violet))'
-                      }}
+                      className={`project-link github-link ${theme}`}
                     >
                       <Github className="w-4 h-4" />
                       {getThemeText('viewCode')}
@@ -248,63 +186,41 @@ const ProjectDetail = () => {
               )}
             </div>
           </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        </div>        <div className="main-grid">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="main-content">
             {/* Overview */}
-            <section>
-              <h2 
-                className="text-2xl font-bold mb-4"
-                style={{ color: 'rgb(var(--primary))' }}
-              >
+            <section className="section">
+              <h2 className="section-title">
                 {getThemeText('overview')}
               </h2>
-              <div 
-                className="p-6 rounded-lg"
-                style={{
-                  backgroundColor: 'rgba(var(--background), 0.8)',
-                  border: '1px solid rgba(var(--neutral), 0.2)'
-                }}
-              >
-                <p 
-                  className="text-base leading-relaxed"
-                  style={{ color: 'rgb(var(--text))' }}
-                >
-                  {project.description} This project demonstrates modern web development practices, 
-                  responsive design principles, and clean, maintainable code architecture. 
-                  The implementation focuses on user experience, performance optimization, 
-                  and scalable development patterns.
-                </p>
+              <div className="section-content">
+                {project.detailedDescription ? (
+                  <MarkdownContent 
+                    content={project.detailedDescription} 
+                    className="project-detail-markdown"
+                  />
+                ) : (
+                  <p className="fallback-content">
+                    {project.description} This project demonstrates modern web development practices, 
+                    responsive design principles, and clean, maintainable code architecture. 
+                    The implementation focuses on user experience, performance optimization, 
+                    and scalable development patterns.
+                  </p>
+                )}
               </div>
             </section>
 
             {/* Key Features */}
-            <section>
-              <h2 
-                className="text-2xl font-bold mb-4"
-                style={{ color: 'rgb(var(--primary))' }}
-              >
+            <section className="section">
+              <h2 className="section-title">
                 {getThemeText('features')}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="features-grid">
                 {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="p-4 rounded-lg flex items-center gap-3"
-                    style={{
-                      backgroundColor: 'rgba(var(--background), 0.8)',
-                      border: '1px solid rgba(var(--neutral), 0.2)'
-                    }}
-                  >
-                    <div 
-                      className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: 'rgb(var(--highlight))' }}
-                    />
-                    <span style={{ color: 'rgb(var(--text))' }}>
-                      {feature}
-                    </span>
+                  <div key={index} className="feature-item">
+                    <div className="feature-bullet" />
+                    <span className="feature-text">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -312,40 +228,22 @@ const ProjectDetail = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-8">
+          <div className="sidebar">
             {/* Technologies */}
-            <section>
-              <h3 
-                className="text-xl font-bold mb-4"
-                style={{ color: 'rgb(var(--primary))' }}
-              >
+            <section className="section">
+              <h3 className="section-title-small">
                 {getThemeText('technologies')}
               </h3>
-              <div 
-                className="p-6 rounded-lg"
-                style={{
-                  backgroundColor: 'rgba(var(--background), 0.8)',
-                  border: '1px solid rgba(var(--neutral), 0.2)'
-                }}
-              >
-                <div className="grid grid-cols-2 gap-4">
+              <div className="section-content">
+                <div className="tech-grid">
                   {project.techStack.map((tech) => (
-                    <div
-                      key={tech}
-                      className="flex flex-col items-center gap-2 p-3 rounded-lg transition-colors hover:bg-opacity-80"
-                      style={{ backgroundColor: 'rgba(var(--neutral), 0.1)' }}
-                    >
+                    <div key={tech} className="tech-item">
                       <TechIcon
                         tech={tech.toLowerCase()}
                         size={32}
                         variant={getThemeVariant()}
                       />
-                      <span 
-                        className="text-sm text-center font-medium"
-                        style={{ color: 'rgb(var(--text))' }}
-                      >
-                        {tech}
-                      </span>
+                      <span className="tech-name">{tech}</span>
                     </div>
                   ))}
                 </div>
@@ -353,61 +251,30 @@ const ProjectDetail = () => {
             </section>
 
             {/* Project Stats */}
-            <section>
-              <h3 
-                className="text-xl font-bold mb-4"
-                style={{ color: 'rgb(var(--primary))' }}
-              >
+            <section className="section">
+              <h3 className="section-title-small">
                 Project Info
               </h3>
-              <div 
-                className="p-6 rounded-lg space-y-4"
-                style={{
-                  backgroundColor: 'rgba(var(--background), 0.8)',
-                  border: '1px solid rgba(var(--neutral), 0.2)'
-                }}
-              >
-                <div>
-                  <span 
-                    className="text-sm font-medium block mb-1"
-                    style={{ color: 'rgb(var(--text-light))' }}
-                  >
-                    Status
-                  </span>
-                  <span 
-                    className="text-sm font-semibold"
-                    style={{ color: 'rgb(var(--highlight))' }}
-                  >
-                    {project.liveUrl ? 'Live & Deployed' : 'In Development'}
-                  </span>
-                </div>
-                <div>
-                  <span 
-                    className="text-sm font-medium block mb-1"
-                    style={{ color: 'rgb(var(--text-light))' }}
-                  >
-                    Type
-                  </span>
-                  <span 
-                    className="text-sm"
-                    style={{ color: 'rgb(var(--text))' }}
-                  >
-                    {project.techStack.includes('Node.js') ? 'Full Stack' : 'Frontend'}
-                  </span>
-                </div>
-                <div>
-                  <span 
-                    className="text-sm font-medium block mb-1"
-                    style={{ color: 'rgb(var(--text-light))' }}
-                  >
-                    Technologies
-                  </span>
-                  <span 
-                    className="text-sm"
-                    style={{ color: 'rgb(var(--text))' }}
-                  >
-                    {project.techStack.length} Technologies
-                  </span>
+              <div className="section-content">
+                <div className="project-stats">
+                  <div className="stat-item">
+                    <span className="stat-label">Status</span>
+                    <span className="stat-value highlight">
+                      {project.liveUrl ? 'Live & Deployed' : 'In Development'}
+                    </span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-label">Type</span>
+                    <span className="stat-value">
+                      {project.techStack.includes('Node.js') ? 'Full Stack' : 'Frontend'}
+                    </span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-label">Technologies</span>
+                    <span className="stat-value">
+                      {project.techStack.length} Technologies
+                    </span>
+                  </div>
                 </div>
               </div>
             </section>

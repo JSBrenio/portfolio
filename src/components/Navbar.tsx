@@ -17,15 +17,9 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
-        {/* Logo/Brand */}
+      <div className="navbar-container">        {/* Logo/Brand */}
         <div className="navbar-brand">
-          <h2 style={{ 
-            color: 'rgb(var(--primary))', 
-            margin: 0,
-            fontSize: '1.5rem',
-            fontWeight: 'bold'
-          }}>
+          <h2 className="navbar-brand-text">
             JB
           </h2>
         </div>

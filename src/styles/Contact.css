@@ -103,6 +103,10 @@
   margin-bottom: 0.25rem;
 }
 
+.contact-info-title.social-links-title {
+  margin-bottom: 1rem;
+}
+
 .contact-info-description {
   color: rgb(var(--text-light));
   font-size: 0.875rem;

@@ -1,0 +1,71 @@
+/* TechIcon.css */
+
+.tech-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  padding: 0.25rem;
+  border: none; /* Remove any default borders */
+  outline: none; /* Remove any focus outlines */
+  box-shadow: none; /* Remove any default shadows */
+}
+
+/* Ensure SVG icons don't have borders */
+.tech-icon-container svg,
+.tech-icon-container img {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.tech-icon-container:hover {
+  background-color: rgba(var(--accent), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--accent), 0.2);
+}
+
+.tech-icon-container.small {
+  width: 20px;
+  height: 20px;
+  padding: 0.125rem;
+}
+
+.tech-icon-container.medium {
+  width: 32px;
+  height: 32px;
+  padding: 0.25rem;
+}
+
+.tech-icon-container.large {
+  width: 40px;
+  height: 40px;
+  padding: 0.25rem;
+}
+
+.tech-icon-container.extra-large {
+  width: 64px;
+  height: 64px;
+  padding: 0.375rem;
+}
+
+/* Theme-specific hover effects */
+.cyberpunk .tech-icon-container:hover {
+  background-color: rgba(var(--secondary), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--secondary), 0.3);
+}
+
+.witcher .tech-icon-container:hover {
+  background-color: rgba(var(--amber), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--amber), 0.2);
+}
+
+.light .tech-icon-container:hover {
+  background-color: rgba(var(--teal), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--teal), 0.2);
+}
+
+.dark .tech-icon-container:hover {
+  background-color: rgba(var(--violet), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--violet), 0.2);
+}

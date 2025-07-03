@@ -1,76 +1,45 @@
 import type { Project } from '../components/ProjectCard';
 
+// Import markdown descriptions as raw text
+import portfolioMd from './project-descriptions/portfolio-website.md?raw';
+import ecommerceMd from './project-descriptions/ecommerce-platform.md?raw';
+import dataVizMd from './project-descriptions/data-visualization.md?raw';
+
+
 export const sampleProjects: Project[] = [
   {
     id: 'portfolio-website',
     name: 'Portfolio Website',
     description: 'A modern, responsive portfolio website built with React and TypeScript. Features multiple themes including a cyberpunk theme with glow effects and a medieval witcher theme.',
-    techStack: ['React', 'TypeScript', 'CSS3', 'Vite'],
+    detailedDescription: portfolioMd,
+    techStack: ['React', 'typescript', 'css3', 'vitejs', 'html5', 'nodejs'],
     image: '/api/placeholder/400/250',
     liveUrl: 'https://jeremiah-brenio.dev',
     githubUrl: 'https://github.com/jeremiah-brenio/portfolio',
     featured: true
   },
   {
-    id: 'task-manager',
-    name: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, team collaboration features, and progress tracking. Built with React and Firebase.',
-    techStack: ['React', 'Firebase', 'JavaScript', 'CSS3'],
-    image: '/api/placeholder/400/250',
-    liveUrl: 'https://taskmanager-demo.netlify.app',
-    githubUrl: 'https://github.com/jeremiah-brenio/task-manager',
-    featured: false
-  },
-  {
     id: 'ecommerce-platform',
     name: 'E-commerce Platform',
     description: 'Full-stack e-commerce solution with payment processing, inventory management, user authentication, and admin dashboard.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
+    detailedDescription: ecommerceMd,
+    techStack: ['react', 'nodejs', 'mongodb', 'express'],
     image: '/api/placeholder/400/250',
     liveUrl: 'https://ecommerce-platform-demo.herokuapp.com',
     githubUrl: 'https://github.com/jeremiah-brenio/ecommerce-platform',
     featured: true
   },
   {
-    id: 'weather-dashboard',
-    name: 'Weather Dashboard',
-    description: 'Interactive weather dashboard with location-based forecasts, historical data visualization, and weather alerts.',
-    techStack: ['Vue.js', 'JavaScript', 'CSS3', 'API'],
-    image: '/api/placeholder/400/250',
-    liveUrl: 'https://weather-dashboard-vue.netlify.app',
-    githubUrl: 'https://github.com/jeremiah-brenio/weather-dashboard',
-    featured: false
-  },
-  {
-    id: 'chat-application',
-    name: 'Real-time Chat App',
-    description: 'Modern chat application with real-time messaging, file sharing, emoji support, and multiple chat rooms.',
-    techStack: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-    image: '/api/placeholder/400/250',
-    liveUrl: 'https://chat-app-realtime.herokuapp.com',
-    githubUrl: 'https://github.com/jeremiah-brenio/chat-application',
-    featured: false
-  },  
-  {
     id: 'data-visualization',
     name: 'Data Visualization Tool',
     description: 'Interactive data visualization tool for analyzing complex datasets with charts, graphs, and customizable dashboards.',
-    techStack: ['D3.js', 'React', 'Python', 'Flask'],
+    detailedDescription: dataVizMd,
+    techStack: ['d3js', 'react', 'python', 'flask'],
     image: '/api/placeholder/400/250',
     liveUrl: 'https://data-viz-tool.herokuapp.com',
     githubUrl: 'https://github.com/jeremiah-brenio/data-visualization',
     featured: true
   },
-  {
-    id: 'full-stack-social-platform',
-    name: 'Social Media Platform',
-    description: 'Comprehensive social media platform with user profiles, post creation, commenting, real-time notifications, messaging, and advanced content moderation.',
-    techStack: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Socket.io', 'AWS', 'Docker', 'Jest'],
-    image: '/api/placeholder/400/250',
-    liveUrl: 'https://social-platform-demo.vercel.app',
-    githubUrl: 'https://github.com/jeremiah-brenio/social-platform',
-    featured: true
-  }
 ];
 
 // Theme-aware project data

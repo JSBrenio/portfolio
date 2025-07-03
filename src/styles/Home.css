@@ -43,10 +43,38 @@
 
 .home-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   justify-items: center;
   margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+/* For larger screens, ensure max 3 columns */
+@media (min-width: 1400px) {
+  .home-projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .home-projects-grid {
+    gap: 1rem;
+  }
 }
 
 .home-view-all-button {

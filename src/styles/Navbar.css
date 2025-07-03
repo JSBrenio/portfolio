@@ -26,6 +26,13 @@
   align-items: center;
 }
 
+.navbar-brand-text {
+  color: rgb(var(--primary));
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .navbar-links {
   display: flex;
   gap: 2rem;

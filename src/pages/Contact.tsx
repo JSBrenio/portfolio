@@ -85,11 +85,9 @@ const Contact = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Social Links */}
+          </div>          {/* Social Links */}
           <div className="contact-info-card">
-            <h3 className="contact-info-title" style={{marginBottom: '1rem'}}>
+            <h3 className="contact-info-title social-links-title">
               {theme === 'cyberpunk' ? 'Network Links' : theme === 'witcher' ? 'Guild Connections' : 'Social Links'}
             </h3>
             <div className="contact-social-links">
