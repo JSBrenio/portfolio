@@ -228,7 +228,6 @@
 }
 
 /* Witcher theme image effects */
-.markdown-content.witcher img {
-  box-shadow: 0 4px 12px rgba(var(--amber), 0.2);
-  border: 1px solid rgba(var(--amber), 0.3);
+.markdown-content.witcher img {  box-shadow: 0 4px 12px rgba(var(--accent), 0.2);
+  border: 1px solid rgba(var(--accent), 0.3);
 }

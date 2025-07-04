@@ -55,17 +55,14 @@
   box-shadow: 0 2px 8px rgba(var(--secondary), 0.3);
 }
 
-.witcher .tech-icon-container:hover {
-  background-color: rgba(var(--amber), 0.1);
-  box-shadow: 0 2px 8px rgba(var(--amber), 0.2);
+.witcher .tech-icon-container:hover {  background-color: rgba(var(--secondary), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--secondary), 0.2);
 }
 
-.light .tech-icon-container:hover {
-  background-color: rgba(var(--teal), 0.1);
-  box-shadow: 0 2px 8px rgba(var(--teal), 0.2);
+.light .tech-icon-container:hover {  background-color: rgba(var(--primary), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--primary), 0.2);
 }
 
-.dark .tech-icon-container:hover {
-  background-color: rgba(var(--violet), 0.1);
-  box-shadow: 0 2px 8px rgba(var(--violet), 0.2);
+.dark .tech-icon-container:hover {  background-color: rgba(var(--accent), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--accent), 0.2);
 }

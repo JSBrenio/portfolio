@@ -13,7 +13,7 @@ export const sampleProjects: Project[] = [
     description: 'A modern, responsive portfolio website built with React and TypeScript. Features multiple themes including a cyberpunk theme with glow effects and a medieval witcher theme.',
     detailedDescription: portfolioMd,
     techStack: ['React', 'typescript', 'css3', 'vitejs', 'html5', 'nodejs'],
-    image: '/api/placeholder/400/250',
+    image: '/public/blue_nobg.png',
     liveUrl: 'https://jeremiah-brenio.dev',
     githubUrl: 'https://github.com/jeremiah-brenio/portfolio',
     featured: true
@@ -24,7 +24,7 @@ export const sampleProjects: Project[] = [
     description: 'Full-stack e-commerce solution with payment processing, inventory management, user authentication, and admin dashboard.',
     detailedDescription: ecommerceMd,
     techStack: ['react', 'nodejs', 'mongodb', 'express'],
-    image: '/api/placeholder/400/250',
+    image: '/public/blue_nobg.png',
     liveUrl: 'https://ecommerce-platform-demo.herokuapp.com',
     githubUrl: 'https://github.com/jeremiah-brenio/ecommerce-platform',
     featured: true
@@ -35,7 +35,7 @@ export const sampleProjects: Project[] = [
     description: 'Interactive data visualization tool for analyzing complex datasets with charts, graphs, and customizable dashboards.',
     detailedDescription: dataVizMd,
     techStack: ['d3js', 'react', 'python', 'flask'],
-    image: '/api/placeholder/400/250',
+    image: '/public/blue_nobg.png',
     liveUrl: 'https://data-viz-tool.herokuapp.com',
     githubUrl: 'https://github.com/jeremiah-brenio/data-visualization',
     featured: true

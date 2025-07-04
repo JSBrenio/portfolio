@@ -101,15 +101,15 @@
 }
 
 .project-card-featured-badge.witcher {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--amber)));
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
 }
 
 .project-card-featured-badge.dark {
-  background: linear-gradient(135deg, rgb(var(--violet)), rgb(var(--emerald)));
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--highlight)));
 }
 
 .project-card-featured-badge.light {
-  background: linear-gradient(135deg, rgb(var(--highlight)), rgb(var(--teal)));
+  background: linear-gradient(135deg, rgb(var(--highlight)), rgb(var(--primary)));
 }
 
 /* Image container */

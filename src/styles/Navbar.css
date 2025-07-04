@@ -55,14 +55,12 @@
   transform: translateY(-1px);
 }
 
-.light .nav-link:hover {
-  background-color: rgba(var(--teal), 0.1);
-  color: rgb(var(--teal));
+.light .nav-link:hover {  background-color: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
 }
 
-.dark .nav-link:hover {
-  background-color: rgba(var(--violet), 0.1);
-  color: rgb(var(--violet));
+.dark .nav-link:hover {  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
 }
 
 .cyberpunk .nav-link:hover {
@@ -71,9 +69,8 @@
   box-shadow: var(--glow-secondary);
 }
 
-.witcher .nav-link:hover {
-  background-color: rgba(var(--amber), 0.1);
-  color: rgb(var(--amber));
+.witcher .nav-link:hover {  background-color: rgba(var(--secondary), 0.1);
+  color: rgb(var(--secondary));
 }
 
 .nav-link::after {
@@ -128,16 +125,14 @@
   box-shadow: 0 4px 12px rgba(var(--accent), 0.25);
 }
 
-.light .theme-toggle:hover {
-  border-color: rgb(var(--teal));
-  background: linear-gradient(135deg, rgba(var(--teal), 0.1), rgba(var(--emerald), 0.1));
-  color: rgb(var(--teal));
+.light .theme-toggle:hover {  border-color: rgb(var(--primary));
+  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--highlight), 0.1));
+  color: rgb(var(--primary));
 }
 
-.dark .theme-toggle:hover {
-  border-color: rgb(var(--violet));
-  background: linear-gradient(135deg, rgba(var(--violet), 0.1), rgba(var(--rose), 0.1));
-  color: rgb(var(--violet));
+.dark .theme-toggle:hover {  border-color: rgb(var(--accent));
+  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--accent), 0.1));
+  color: rgb(var(--accent));
 }
 
 .cyberpunk .theme-toggle:hover {
@@ -147,10 +142,9 @@
   box-shadow: var(--glow-secondary);
 }
 
-.witcher .theme-toggle:hover {
-  border-color: rgb(var(--amber));
-  background: linear-gradient(135deg, rgba(var(--amber), 0.1), rgba(var(--highlight), 0.1));
-  color: rgb(var(--amber));
+.witcher .theme-toggle:hover {  border-color: rgb(var(--secondary));
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--highlight), 0.1));
+  color: rgb(var(--secondary));
 }
 
 .theme-toggle-label {
