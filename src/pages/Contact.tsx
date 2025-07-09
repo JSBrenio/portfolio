@@ -1,41 +1,61 @@
-import { useTheme } from '../hooks/useTheme';
-import { getTextContent } from '../data/textContent';
-import MarkdownContent from '../components/MarkdownContent';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from 'lucide-react';
-import { useState } from 'react';
-import '../styles/Contact.css';
+import { useTheme } from "../hooks/useTheme";
+import { getContactContent } from "../data/text";
+import MarkdownContent from "../components/MarkdownContent";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Send,
+} from "lucide-react";
+import { useState } from "react";
+import "../styles/Contact.css";
 
 const Contact = () => {
   const { theme } = useTheme();
-  const textContent = getTextContent(theme);
+  const contactContent = getContactContent(theme);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
-  
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert(theme === 'cyberpunk' ? 'Neural link established!' : theme === 'witcher' ? 'Message sent by raven!' : 'Message sent!');
+    console.log("Form submitted:", formData);
+    alert(
+      theme === "cyberpunk"
+        ? "Neural link established!"
+        : theme === "witcher"
+          ? "Message sent by raven!"
+          : "Message sent!",
+    );
   };
-  
+
   return (
     <div className="contact-container">
       <div className="contact-header">
-        <h1 className={`contact-title ${theme} ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}>
-          {textContent.pages.contact.title}
-        </h1>        <MarkdownContent 
-          content={textContent.pages.contact.subtitle}
+        {" "}
+        <h1
+          className={`contact-title ${theme} ${theme === "cyberpunk" ? "glow-primary" : ""}`}
+        >
+          {contactContent.title}
+        </h1>{" "}
+        <MarkdownContent
+          content={contactContent.subtitle}
           className="contact-subtitle"
         />
       </div>
@@ -43,70 +63,97 @@ const Contact = () => {
       <div className="contact-content">
         {/* Contact Information */}
         <div className="contact-info">
-          <div className={`contact-info-card ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}>
+          <div
+            className={`contact-info-card ${theme === "cyberpunk" ? "glow-primary" : ""}`}
+          >
             <div className="contact-info-item">
               <div className="contact-info-icon">
                 <Mail size={24} />
               </div>
               <div className="contact-info-text">
                 <h3 className="contact-info-title">
-                  {theme === 'cyberpunk' ? 'Neural Mail' : theme === 'witcher' ? 'Raven Post' : 'Email'}
+                  {theme === "cyberpunk"
+                    ? "Neural Mail"
+                    : theme === "witcher"
+                      ? "Raven Post"
+                      : "Email"}
                 </h3>
-                <p className="contact-info-description">jeremiah.brenio@example.com</p>
+                <p className="contact-info-description">
+                  jeremiah.brenio@example.com
+                </p>
               </div>
             </div>
           </div>
-
-          <div className={`contact-info-card ${theme === 'cyberpunk' ? 'glow-secondary' : ''}`}>
+          <div
+            className={`contact-info-card ${theme === "cyberpunk" ? "glow-secondary" : ""}`}
+          >
             <div className="contact-info-item">
               <div className="contact-info-icon secondary">
                 <Phone size={24} />
               </div>
               <div className="contact-info-text">
                 <h3 className="contact-info-title">
-                  {theme === 'cyberpunk' ? 'Holo Call' : theme === 'witcher' ? 'Megascope' : 'Phone'}
+                  {theme === "cyberpunk"
+                    ? "Holo Call"
+                    : theme === "witcher"
+                      ? "Megascope"
+                      : "Phone"}
                 </h3>
                 <p className="contact-info-description">+1 (555) 123-4567</p>
               </div>
             </div>
           </div>
-
-          <div className={`contact-info-card ${theme === 'cyberpunk' ? 'glow-accent' : ''}`}>
+          <div
+            className={`contact-info-card ${theme === "cyberpunk" ? "glow-accent" : ""}`}
+          >
             <div className="contact-info-item">
               <div className="contact-info-icon accent">
                 <MapPin size={24} />
               </div>
               <div className="contact-info-text">
                 <h3 className="contact-info-title">
-                  {theme === 'cyberpunk' ? 'Coordinates' : theme === 'witcher' ? 'Location' : 'Location'}
+                  {theme === "cyberpunk"
+                    ? "Coordinates"
+                    : theme === "witcher"
+                      ? "Location"
+                      : "Location"}
                 </h3>
                 <p className="contact-info-description">
-                  {theme === 'cyberpunk' ? 'Night City, Sector 7' : theme === 'witcher' ? 'Oxenfurt, Redania' : 'San Francisco, CA'}
+                  {theme === "cyberpunk"
+                    ? "Night City, Sector 7"
+                    : theme === "witcher"
+                      ? "Oxenfurt, Redania"
+                      : "San Francisco, CA"}
                 </p>
               </div>
             </div>
-          </div>          {/* Social Links */}
+          </div>{" "}
+          {/* Social Links */}
           <div className="contact-info-card">
             <h3 className="contact-info-title social-links-title">
-              {theme === 'cyberpunk' ? 'Network Links' : theme === 'witcher' ? 'Guild Connections' : 'Social Links'}
+              {theme === "cyberpunk"
+                ? "Network Links"
+                : theme === "witcher"
+                  ? "Guild Connections"
+                  : "Social Links"}
             </h3>
             <div className="contact-social-links">
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="contact-social-link accent"
                 onClick={(e) => e.preventDefault()}
               >
                 <Github size={20} />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="contact-social-link secondary"
                 onClick={(e) => e.preventDefault()}
               >
                 <Linkedin size={20} />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="contact-social-link highlight"
                 onClick={(e) => e.preventDefault()}
               >
@@ -117,14 +164,23 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div className={`contact-form ${theme === 'cyberpunk' ? 'glow-highlight' : ''}`}>
+        <div
+          className={`contact-form ${theme === "cyberpunk" ? "glow-highlight" : ""}`}
+        >
           <h2 className="contact-form-title">
-            {theme === 'cyberpunk' ? 'Initiate Contact Protocol' : theme === 'witcher' ? 'Send Message' : 'Send Message'}
+            {theme === "cyberpunk"
+              ? "Initiate Contact Protocol"
+              : theme === "witcher"
+                ? "Send Message"
+                : "Send Message"}
           </h2>
-          
-          <form onSubmit={handleSubmit}>            <div className="contact-form-group">
+
+          <form onSubmit={handleSubmit}>
+            {" "}
+            <div className="contact-form-group">
+              {" "}
               <label className="contact-form-label" htmlFor="name">
-                {textContent.pages.contact.form.name}
+                {contactContent.form.name}
               </label>
               <input
                 type="text"
@@ -136,10 +192,9 @@ const Contact = () => {
                 required
               />
             </div>
-
             <div className="contact-form-group">
               <label className="contact-form-label" htmlFor="email">
-                {textContent.pages.contact.form.email}
+                {contactContent.form.email}
               </label>
               <input
                 type="email"
@@ -151,10 +206,9 @@ const Contact = () => {
                 required
               />
             </div>
-
             <div className="contact-form-group">
               <label className="contact-form-label" htmlFor="message">
-                {textContent.pages.contact.form.message}
+                {contactContent.form.message}
               </label>
               <textarea
                 id="message"
@@ -165,10 +219,9 @@ const Contact = () => {
                 required
               />
             </div>
-
             <button type="submit" className="contact-form-button">
               <Send size={18} />
-              {textContent.pages.contact.form.submit}
+              {contactContent.form.submit}
             </button>
           </form>
         </div>

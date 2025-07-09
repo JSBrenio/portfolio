@@ -186,7 +186,8 @@ const ProjectDetail = () => {
               )}
             </div>
           </div>
-        </div>        <div className="main-grid">
+        </div>        
+        <div className="main-grid">
           {/* Main Content */}
           <div className="main-content">
             {/* Overview */}

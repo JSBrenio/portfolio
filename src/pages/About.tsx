@@ -1,12 +1,12 @@
 import { Mail, Github, Linkedin } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { getTextContent } from '../data/textContent';
+import { getAboutContent } from '../data/text';
 import MarkdownContent from '../components/MarkdownContent';
 import '../styles/About.css';
 
 const About = () => {
   const { theme } = useTheme();
-  const textContent = getTextContent(theme);
+  const aboutContent = getAboutContent(theme);
 
   // Function to get different colors for skill tags
   const getSkillTagClass = (index: number) => {
@@ -16,32 +16,34 @@ const About = () => {
 
   return (
     <div className="about-container">
-      {/* Page header */}
+      {/* Page header */}      
       <div className="about-header">        
         <h1 className={`about-title ${theme}`}>
-          {textContent.pages.about.title}
-        </h1>        <p className="about-subtitle">
-          {textContent.pages.about.subtitle}
+          {aboutContent.title}
+        </h1>        
+        <p className="about-subtitle">
+          {aboutContent.subtitle}
         </p>
       </div>
 
       {/* Content sections using theme colors */}
       <div className="about-grid">
-        <div className={`about-card primary ${theme}`}>            <h2 className="about-card-title primary">
-            {textContent.pages.about.sections.background.title}
+        <div className={`about-card primary ${theme}`}>            
+          <h2 className="about-card-title primary">
+            {aboutContent.sections.background.title}
           </h2>
           <MarkdownContent 
-            content={textContent.pages.about.sections.background.content}
+            content={aboutContent.sections.background.content}
             className="about-card-text"
           />
         </div>
 
         <div className={`about-card secondary ${theme}`}>          
           <h2 className="about-card-title secondary">
-            {textContent.pages.about.sections.skills.title}
+            {aboutContent.sections.skills.title}
           </h2>
           <div className="about-skills-container">
-            {textContent.pages.about.sections.skills.skillsList.map((skill, index) => (
+            {aboutContent.sections.skills.skillsList.map((skill, index) => (
               <span key={skill} className={`about-skill-tag ${getSkillTagClass(index)}`}>
                 {skill}
               </span>
@@ -53,7 +55,7 @@ const About = () => {
       {/* Contact section */}
       <div className={`about-contact-section about-card highlight ${theme}`}>        
         <h2 className="about-card-title highlight">
-          {textContent.pages.about.sections.contact.title}
+          {aboutContent.sections.contact.title}
         </h2>
         <div className="about-contact-buttons">
           {[

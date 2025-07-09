@@ -1,24 +1,24 @@
 import { useTheme } from '../hooks/useTheme';
 import ProjectCard from '../components/ProjectCard';
 import { getThemeAwareProjects } from '../data/projects';
-import { getTextContent } from '../data/textContent';
+import { getProjectsContent } from '../data/text';
 import '../styles/Projects.css';
 
 const Projects = () => {
   const { theme } = useTheme();
-  const textContent = getTextContent(theme);
+  const projectsContent = getProjectsContent(theme);
   const projects = getThemeAwareProjects(theme);
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
 
   return (
-    <div className="projects-container">
+    <div className="projects-container">      
       <div className="projects-header">
         <h1 className={`projects-title ${theme} ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}>
-          {textContent.pages.projects.title}
+          {projectsContent.title}
         </h1>
         <p className="projects-subtitle">
-          {textContent.pages.projects.subtitle}
+          {projectsContent.subtitle}
         </p>
       </div>
 
@@ -26,7 +26,7 @@ const Projects = () => {
       {featuredProjects.length > 0 && (
         <div className="projects-section">
           <h2 className={`projects-section-title ${theme} ${theme === 'cyberpunk' ? 'glow-secondary' : ''}`}>
-            {textContent.pages.projects.sections.featured}
+            {projectsContent.sections.featured}
           </h2>          
           <div className="projects-grid">
             {featuredProjects.map((project) => (
@@ -45,7 +45,7 @@ const Projects = () => {
       {otherProjects.length > 0 && (
         <div className="projects-section">
           <h2 className={`projects-section-title ${theme} ${theme === 'cyberpunk' ? 'glow-accent' : ''}`}>
-            {textContent.pages.projects.sections.other}
+            {projectsContent.sections.other}
           </h2>          
           <div className="projects-grid">
             {otherProjects.map((project) => (
