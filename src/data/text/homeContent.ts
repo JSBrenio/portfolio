@@ -22,7 +22,7 @@ export interface HomeContent {
 export const getHomeContent = (theme: Theme): HomeContent => {
   const baseContent: HomeContent = {
     title: "Jeremiah Brenio",
-    subtitle: "Welcome to my portfolio! I'm a passionate full-stack developer who loves creating beautiful, functional web applications.",
+    subtitle: "Welcome to my **portfolio**! I'm a *passionate* full-stack developer who loves creating beautiful, `functional web applications`.",
     skills: {
       frontend: {
         title: "Frontend Development",
@@ -42,7 +42,7 @@ export const getHomeContent = (theme: Theme): HomeContent => {
   // Theme-specific overrides
   if (theme === 'cyberpunk') {
     return {
-      title: "Jeremiah Brenio",
+      title: "Miren Brenzo",
       subtitle: "Welcome to my **neural interface**, choom. I'm a *netrunner* specializing in cutting-edge web technologies and `digital architecture`.",
       skills: {
         frontend: {
@@ -63,7 +63,7 @@ export const getHomeContent = (theme: Theme): HomeContent => {
 
   if (theme === 'witcher') {
     return {
-      title: "Jeremiah Brenio",
+      title: "Erymir Braen",
       subtitle: "Greetings, traveler. I'm a **code-weaver** from the *Northern Kingdoms*, crafting `digital enchantments` and web sorcery.",
       skills: {
         frontend: {
