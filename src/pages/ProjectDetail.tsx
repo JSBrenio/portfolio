@@ -1,9 +1,10 @@
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, Calendar, Code2, Zap } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { getThemeAwareProjects } from '../data/projects';
 import TechIcon from '../components/TechIcon';
 import MarkdownContent from '../components/MarkdownContent';
+import ProjectNotFound from './ProjectNotFound';
 import '../styles/ProjectDetail.css';
 
 const ProjectDetail = () => {
@@ -14,7 +15,7 @@ const ProjectDetail = () => {
   const project = projects.find(p => p.id === projectId);
 
   if (!project) {
-    return <Navigate to="/projects" replace />;
+    return <ProjectNotFound />;
   }
 
   const getThemeVariant = () => {

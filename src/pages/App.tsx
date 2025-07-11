@@ -5,6 +5,7 @@ import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
 import ProjectDetail from './ProjectDetail';
+import NotFound from './NotFound';
 import Navbar from '../components/Navbar';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </Router>
