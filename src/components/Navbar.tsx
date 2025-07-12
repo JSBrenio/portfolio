@@ -17,16 +17,18 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">        {/* Logo/Brand */}
+      <div className="navbar-container">        
+        {/* Logo/Brand */}
         <div className="navbar-brand">
           <h2 className="navbar-brand-text">
-            JB
+            JSBrenio
           </h2>
         </div>
         {/* Desktop Navigation Links */}
         <div className="navbar-links">
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/about" className="nav-link">About</Link>
+          <Link to="/resume" className="nav-link">Resume</Link>
           <Link to="/projects" className="nav-link">Projects</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
         </div>        
@@ -65,6 +67,9 @@ const Navbar = () => {
             </Link>
             <Link to="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
               About
+            </Link>
+            <Link to="/resume" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+              Resume
             </Link>
             <Link to="/projects" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
               Projects

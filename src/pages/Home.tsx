@@ -19,14 +19,14 @@ function Home() {
           {homeContent.title}
         </h1>        
           <MarkdownContent 
-          content={homeContent.subtitle}
+          content={homeContent.statement}
           className="home-subtitle"
         />
       </div>
 
       {/* Skills Highlight Section */}
       <div className="home-section">
-        <div className="home-skills-grid">          
+        {/* <div className="home-skills-grid">          
           <div className="home-skill-card secondary">
             <Code size={32} className="home-skill-icon secondary" />
             <h3 className="home-skill-title secondary">
@@ -56,7 +56,7 @@ function Home() {
               {homeContent.skills.design.description}
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
