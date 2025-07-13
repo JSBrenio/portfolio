@@ -12,7 +12,7 @@ export const getHomeContent = (theme: Theme): HomeContent => {
     title: "Hello, There!",
     name: "Jeremiah Brenio",
     niche: "Software Developer",
-    statement: "Welcome to my **portfolio**! I'm a *passionate* full-stack developer who loves creating beautiful, `functional web applications`.",
+    statement: "Welcome to my **portfolio**! I am a *passionate* **software developer** who loves learning and creating anything `software`.",
   };
 
   // Theme-specific overrides
@@ -21,7 +21,7 @@ export const getHomeContent = (theme: Theme): HomeContent => {
       title: "Sup, Choom!",
       name: "Jeremiah Brenio",
       niche: "Netrunner",
-      statement: "Welcome to my **neural interface**, choom. I'm a *netrunner* specializing in cutting-edge web technologies and `digital architecture`.",
+      statement: "Welcome to my **neural interface**, nova. I'm a *netrunner* specializing in cutting-edge technologies and `digital architecture`.",
     };
   }
 
@@ -30,7 +30,7 @@ export const getHomeContent = (theme: Theme): HomeContent => {
       title: "Greetings, Traveler!",
       name: "Jeremiah Brenio",
       niche: "Codermancer",
-      statement: "Greetings, traveler. I'm a **code-weaver** from the *Northern Kingdoms*, crafting `digital enchantments` and web sorcery.",
+      statement: "Welcome to my bestiary, dh'oine. I'm a **codermancer** from *Toussaint*, crafting `digital enchantments`.",
     };
   }
 
