@@ -2,7 +2,7 @@
 .home-container {
   min-height: calc(100vh - 60px);
   padding: 2rem;
-  background-color: rgb(var(--background));
+  /* background-color: rgb(var(--background)); */
   color: rgb(var(--text));
   display: flex;
   flex-direction: column;

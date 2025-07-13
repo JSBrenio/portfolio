@@ -1,6 +1,6 @@
 import { useTheme } from '../hooks/useTheme';
 import { Sun, Moon, Zap, Sword, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/Navbar.css';
 
@@ -13,7 +13,23 @@ const themeIcons = {
 
 const Navbar = () => {
   const { theme, setTheme, themes } = useTheme();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const isActive = (path: string) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
+  };
+
+  // Calculate active states once
+  const activeStates = {
+    home: isActive('/'),
+    about: isActive('/about'),
+    projects: isActive('/projects'),
+    resume: isActive('/resume'),
+    contact: isActive('/contact'),
+  };
 
   return (
     <nav className="navbar">
@@ -26,11 +42,11 @@ const Navbar = () => {
         </div>
         {/* Desktop Navigation Links */}
         <div className="navbar-links">
-          <Link to="/" className="nav-link">Home</Link>
-          <Link to="/about" className="nav-link">About</Link>
-          <Link to="/resume" className="nav-link">Resume</Link>
-          <Link to="/projects" className="nav-link">Projects</Link>
-          <Link to="/contact" className="nav-link">Contact</Link>
+          <Link to="/" className={`nav-link ${activeStates.home ? 'active' : ''}`}>Home</Link>
+          <Link to="/about" className={`nav-link ${activeStates.about ? 'active' : ''}`}>About</Link>
+          <Link to="/projects" className={`nav-link ${activeStates.projects ? 'active' : ''}`}>Projects</Link>
+          <Link to="/resume" className={`nav-link ${activeStates.resume ? 'active' : ''}`}>Resume</Link>
+          <Link to="/contact" className={`nav-link ${activeStates.contact ? 'active' : ''}`}>Contact</Link>
         </div>        
         {/* Theme Toggles */}
         <div className="theme-toggles">
@@ -60,21 +76,22 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (        <div className="mobile-menu">
+      {isMenuOpen && (        
+        <div className="mobile-menu">
           <div className="mobile-nav-links">
-            <Link to="/" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/" className={`mobile-nav-link ${activeStates.home ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
-            <Link to="/about" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/about" className={`mobile-nav-link ${activeStates.about ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
               About
             </Link>
-            <Link to="/resume" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
-              Resume
-            </Link>
-            <Link to="/projects" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/projects" className={`mobile-nav-link ${activeStates.projects ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
               Projects
             </Link>
-            <Link to="/contact" className="mobile-nav-link" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/resume" className={`mobile-nav-link ${activeStates.resume ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
+              Resume
+            </Link>
+            <Link to="/contact" className={`mobile-nav-link ${activeStates.contact ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}>
               Contact
             </Link>
           </div>

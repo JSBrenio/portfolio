@@ -55,6 +55,17 @@
   transform: translateY(-1px);
 }
 
+.nav-link.active {
+  color: rgb(var(--primary));
+  background-color: rgba(var(--primary), 0.15);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background-color: rgb(var(--primary));
+}
+
 .light .nav-link:hover {  background-color: rgba(var(--primary), 0.1);
   color: rgb(var(--primary));
 }
@@ -71,6 +82,12 @@
 
 .witcher .nav-link:hover {  background-color: rgba(var(--secondary), 0.1);
   color: rgb(var(--secondary));
+}
+
+/* Active state */
+.nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
 }
 
 .nav-link::after {
@@ -193,6 +210,39 @@
 .mobile-nav-link:hover {
   background-color: rgba(var(--accent), 0.1);
   color: rgb(var(--accent));
+}
+
+.mobile-nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+  font-weight: 600;
+  border-left: 3px solid rgb(var(--primary));
+}
+
+/* Mobile active state theme variations */
+.light .mobile-nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+  border-left-color: rgb(var(--primary));
+}
+
+.dark .mobile-nav-link.active {
+  background-color: rgba(var(--accent), 0.15);
+  color: rgb(var(--accent));
+  border-left-color: rgb(var(--accent));
+}
+
+.cyberpunk .mobile-nav-link.active {
+  background-color: rgba(var(--secondary), 0.15);
+  color: rgb(var(--secondary));
+  border-left-color: rgb(var(--secondary));
+  box-shadow: var(--glow-secondary);
+}
+
+.witcher .mobile-nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+  border-left-color: rgb(var(--primary));
 }
 
 .mobile-theme-toggles {

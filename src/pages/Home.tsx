@@ -56,12 +56,7 @@ function Home() {
           <nav className="home-navigation">
             <Link to="/about" className="nav-card">
               <User className="nav-icon" />
-              <span className="nav-text">About Me</span>
-            </Link>
-            
-            <Link to="/resume" className="nav-card">
-              <FileText className="nav-icon" />
-              <span className="nav-text">Resume</span>
+              <span className="nav-text">About</span>
             </Link>
             
             <Link to="/projects" className="nav-card">
@@ -69,6 +64,11 @@ function Home() {
               <span className="nav-text">Projects</span>
             </Link>
             
+            <Link to="/resume" className="nav-card">
+              <FileText className="nav-icon" />
+              <span className="nav-text">Resume</span>
+            </Link>
+
             <Link to="/contact" className="nav-card">
               <Mail className="nav-icon" />
               <span className="nav-text">Contact</span>
