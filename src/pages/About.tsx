@@ -21,9 +21,10 @@ const About = () => {
         <h1 className={`about-title ${theme}`}>
           {aboutContent.title}
         </h1>        
-        <p className="about-subtitle">
-          {aboutContent.subtitle}
-        </p>
+        <MarkdownContent
+          content={aboutContent.subtitle}
+          className="about-subtitle"
+        />
       </div>
 
       {/* Content sections using theme colors */}
