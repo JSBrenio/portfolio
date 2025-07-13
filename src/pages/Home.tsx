@@ -1,4 +1,5 @@
-import { User, Code, Palette, Zap } from 'lucide-react';
+import { User, FileText, Mail, FolderOpen } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 import { getHomeContent } from '../data/text';
 import MarkdownContent from '../components/MarkdownContent';
@@ -10,53 +11,70 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Hero Section */}
-      <div className="home-hero">        
-        <h1 
-          className={`home-title ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}
-        >
-          <User size={32} className="home-user-icon" />
+      {/* Title Section */}
+      <header className="home-header">
+        <h1 className={`home-title ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}>
           {homeContent.title}
-        </h1>        
-          <MarkdownContent 
-          content={homeContent.statement}
-          className="home-subtitle"
-        />
-      </div>
+        </h1>
+      </header>
 
-      {/* Skills Highlight Section */}
-      <div className="home-section">
-        {/* <div className="home-skills-grid">          
-          <div className="home-skill-card secondary">
-            <Code size={32} className="home-skill-icon secondary" />
-            <h3 className="home-skill-title secondary">
-              {homeContent.skills.frontend.title}
-            </h3>
-            <p className="home-skill-description">
-              {homeContent.skills.frontend.description}
-            </p>
+      {/* Main Content Section */}
+      <div className="home-main">
+        {/* Profile Picture */}
+        <div className="home-profile">
+          <div className="profile-image-container">
+            <img 
+              src="/blue_nobg.png" 
+              alt="Profile" 
+              className="profile-image"
+            />
+            <p className="profile-niche">{homeContent.niche}</p>
+            <div className="profile-border"></div>
+          </div>
+        </div>
+
+        {/* Content Side */}
+        <div className="home-content">
+          <div className="home-info">
+            <div className="home-name-section">
+              <h2 className="home-name">
+                {homeContent.name}
+              </h2>
+            </div>
+            
+            <div className="home-divider"></div>
+            
+            <div className="home-statement-section">
+              <MarkdownContent 
+                content={homeContent.statement}
+                className="home-statement"
+              />
+            </div>
           </div>
 
-          <div className="home-skill-card highlight">
-            <Zap size={32} className="home-skill-icon highlight" />
-            <h3 className="home-skill-title highlight">
-              {homeContent.skills.performance.title}
-            </h3>
-            <p className="home-skill-description">
-              {homeContent.skills.performance.description}
-            </p>
-          </div>
-
-          <div className="home-skill-card accent">
-            <Palette size={32} className="home-skill-icon accent" />
-            <h3 className="home-skill-title accent">
-              {homeContent.skills.design.title}
-            </h3>
-            <p className="home-skill-description">
-              {homeContent.skills.design.description}
-            </p>
-          </div>
-        </div> */}
+          {/* Navigation Links */}
+          <nav className="home-navigation">
+            <Link to="/about" className="nav-card">
+              <User className="nav-icon" />
+              <span className="nav-text">About Me</span>
+            </Link>
+            
+            <Link to="/resume" className="nav-card">
+              <FileText className="nav-icon" />
+              <span className="nav-text">Resume</span>
+            </Link>
+            
+            <Link to="/projects" className="nav-card">
+              <FolderOpen className="nav-icon" />
+              <span className="nav-text">Projects</span>
+            </Link>
+            
+            <Link to="/contact" className="nav-card">
+              <Mail className="nav-icon" />
+              <span className="nav-text">Contact</span>
+            </Link>
+          </nav>
+        </div>
       </div>
     </div>
   );
