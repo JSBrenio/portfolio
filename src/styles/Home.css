@@ -8,6 +8,7 @@
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .home-header {
@@ -31,7 +32,7 @@
 .home-main {
   display: grid;
   grid-template-columns: 300px 1fr;
-  gap: 2.5rem;
+  gap: 5rem;
   align-items: center;
   flex: 0.25;
 }
@@ -45,8 +46,9 @@
 
 .profile-image-container {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 5rem;
 }
 
 .profile-image {
@@ -67,8 +69,8 @@
   position: absolute;
   top: -8px;
   left: -8px;
-  right: -8px;
-  bottom: -8px;
+  right: -16px;
+  bottom: -16px;
   border-radius: 50%;
   border: 2px solid rgba(var(--primary), 0.3);
   animation: pulse 2s infinite;
@@ -86,8 +88,23 @@
 }
 
 .profile-niche {
-  color: rgb(var(--text-light));
+  color: rgb(var(--secondary));
   text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, rgba(var(--primary), 0.08), rgba(var(--secondary), 0.08));
+  border-radius: 16px;
+  padding: 0.5rem 1.5rem;
+  margin: 1.25rem auto 0;
+  box-shadow: 0 2px 12px rgba(var(--primary), 0.08);
+  transition: color 0.3s, box-shadow 0.3s;
+}
+
+.profile-niche:hover {
+  background: linear-gradient(90deg, rgba(var(--primary), 0.18), rgba(var(--secondary), 0.18));
+  color: rgb(var(--primary));
+  box-shadow: 0 4px 24px rgba(var(--secondary), 0.15);
 }
 
 /* Content Section */
@@ -99,13 +116,21 @@
 
 .home-info {
   display: grid;
-  grid-template-columns: 0.6fr auto 1fr;
+  grid-template-columns: 0.7fr auto 1fr;
   gap: 1.5rem;
   align-items: center;
 }
 
 .home-name-section {
-  text-align: left;
+  text-align: right;
+}
+
+.home-name {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgb(var(--secondary));
+  margin: 0;
+  line-height: 1.2;
 }
 
 .home-divider {
@@ -124,14 +149,6 @@
   text-align: left;
 }
 
-.home-name {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: rgb(var(--secondary));
-  margin: 0;
-  line-height: 1.2;
-}
-
 .home-statement {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -147,6 +164,7 @@
 .home-navigation {
   display: flex;
   flex-direction: column;
+  padding-left: 0.75rem;
   gap: 0.75rem;
   margin-top: 0.5rem;
 }
