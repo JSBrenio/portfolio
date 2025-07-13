@@ -8,6 +8,7 @@ import Contact from './Contact';
 import ProjectDetail from './ProjectDetail';
 import NotFound from './NotFound';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }

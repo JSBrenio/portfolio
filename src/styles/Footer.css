@@ -1,0 +1,79 @@
+/* Footer Styles */
+.footer {
+  margin-top: auto;
+  padding: 2rem 0 1rem 0;
+  border-top: 1px solid rgba(var(--neutral), 0.2);
+  color: rgb(var(--text-light));
+  transition: all 0.3s ease;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  color: rgb(var(--text));
+  transition: color 0.3s ease;
+}
+
+.footer-additional {
+  font-size: 0.75rem;
+  margin: 0;
+  opacity: 0.8;
+  font-style: italic;
+  color: rgb(var(--text-light));
+  transition: color 0.3s ease;
+}
+
+/* Cyberpunk theme styles */
+.cyberpunk .footer {
+  border-top-color: rgba(var(--accent), 0.5);
+}
+
+.cyberpunk .footer-copyright {
+  color: rgb(var(--primary));
+  text-shadow: 0 0 5px rgba(var(--primary), 0.3);
+}
+
+.cyberpunk .footer-additional {
+  color: rgb(var(--secondary));
+  text-shadow: 0 0 3px rgba(var(--secondary), 0.2);
+}
+
+/* Witcher theme styles */
+.witcher .footer {
+  border-top-color: rgba(var(--accent), 0.4);
+}
+
+.witcher .footer-copyright {
+  color: rgb(var(--primary));
+  font-weight: 600;
+}
+
+.witcher .footer-additional {
+  color: rgb(var(--secondary));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0 1rem 0;
+  }
+  
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+  
+  .footer-additional {
+    font-size: 0.7rem;
+  }
+}
