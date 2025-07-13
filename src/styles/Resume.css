@@ -1,7 +1,6 @@
 /* Resume Page Styles */
 .resume-page {
   padding: 2rem 1rem;
-  background-color: rgb(var(--background));
   color: rgb(var(--text));
 }
 

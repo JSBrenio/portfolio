@@ -36,9 +36,9 @@ const Navbar = () => {
       <div className="navbar-container">        
         {/* Logo/Brand */}
         <div className="navbar-brand">
-          <h2 className="navbar-brand-text">
-            JSBrenio
-          </h2>
+            <Link to="/" className="navbar-brand-text">
+            &lt;JSBrenio/&gt;
+            </Link>
         </div>
         {/* Desktop Navigation Links */}
         <div className="navbar-links">

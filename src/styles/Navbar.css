@@ -24,12 +24,32 @@
   display: flex;
   align-items: center;
 }
-
-.navbar-brand-text {
-  color: rgb(var(--primary));
+/* Ensure brand link doesn't inherit nav-link styles */
+.navbar-brand-text,
+.navbar-brand a,
+.navbar-brand a:hover,
+.navbar-brand a:active,
+.navbar-brand a:focus {
+  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--secondary)), rgb(var(--accent)), rgb(var(--primary)));
+  background-size: 300% 100%;
+  background-clip: text;
+  color: transparent;
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
+  animation: colorCycle 100s ease-in-out infinite;
+}
+
+@keyframes colorCycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .navbar-links {
