@@ -64,13 +64,6 @@
   --navbar-bg: 220, 220, 220;    /* #DCDCDC - Darker gray than background */
 }
 
-/* Base styles using CSS variables */
-body {
-  background-color: rgb(var(--background));
-  color: rgb(var(--text));
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 /* Cyberpunk-specific body styling */
 body.cyberpunk {
   background: linear-gradient(135deg, 

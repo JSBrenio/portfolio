@@ -1,19 +1,14 @@
 /* Home Page Styles */
 .home-container {
-  min-height: calc(100vh - 60px);
   padding: 2rem;
-  /* background-color: rgb(var(--background)); */
   color: rgb(var(--text));
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden; /* Prevent scrolling */
 }
 
 .home-header {
   text-align: center;
-  /* margin-bottom: 0.75rem; */
+  margin-bottom: 3.25rem;
 }
 
 .home-title {

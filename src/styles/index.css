@@ -1,5 +1,45 @@
 @import './globals.css';
 
+/* Base HTML/Body Styles */
+html {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: rgb(var(--background));
+  color: rgb(var(--text));
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* App root container layout */
+#root {
+  /* Layout & Sizing - Full width for navbar */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  
+  /* Flexible Layout - grows with content */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Main content should grow to fill available space and be constrained */
+main {
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* Typography */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +51,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Links */
 a {
   font-weight: 500;
   color: rgb(var(--accent));
@@ -21,17 +67,7 @@ a:hover {
   color: rgb(var(--highlight));
 }
 
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
+/* Buttons */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -44,9 +80,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   background-color: rgb(var(--highlight));
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
