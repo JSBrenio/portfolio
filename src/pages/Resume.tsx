@@ -13,7 +13,6 @@ const Resume = () => {
       <div className="resume-container">
         <header className="page-header">
           <h1 className="page-title glow-primary">Resume</h1>
-          <div className="resume-divider"></div>
         </header>
 
         <div className="resume-content">

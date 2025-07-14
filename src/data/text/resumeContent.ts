@@ -26,12 +26,12 @@ export const getResumeContent = (_theme: Theme): ResumeContent => {
       {
         institution: "University of Washington Tacoma",
         degree: "Bachelor of Science in Computer Science and Systems",
-        period: "2023 — 2025",
+        period: "September 2023 — June 2025",
       },
       {
         institution: "South Seattle Community College",
         degree: "Associate of Science",
-        period: "2021 — 2023",
+        period: "September 2021 — June 2023",
       }
     ],
     experience: [
