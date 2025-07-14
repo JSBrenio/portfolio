@@ -13,19 +13,19 @@ const Projects = () => {
 
   return (
     <div className="projects-container">      
-      <div className="projects-header">
-        <h1 className={`projects-title ${theme} ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}>
+      <header className="page-header">
+        <h1 className="page-title glow-primary">
           {projectsContent.title}
         </h1>
         <p className="projects-subtitle">
           {projectsContent.subtitle}
         </p>
-      </div>
+      </header>
 
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
         <div className="projects-section">
-          <h2 className={`projects-section-title ${theme} ${theme === 'cyberpunk' ? 'glow-secondary' : ''}`}>
+          <h2 className={`projects-section-title ${theme} glow-secondary`}>
             {projectsContent.sections.featured}
           </h2>          
           <div className="projects-grid">
@@ -44,7 +44,7 @@ const Projects = () => {
       {/* Other Projects */}
       {otherProjects.length > 0 && (
         <div className="projects-section">
-          <h2 className={`projects-section-title ${theme} ${theme === 'cyberpunk' ? 'glow-accent' : ''}`}>
+          <h2 className={`projects-section-title ${theme} glow-accent`}>
             {projectsContent.sections.other}
           </h2>          
           <div className="projects-grid">

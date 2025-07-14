@@ -12,6 +12,12 @@
   
   /* Navbar-specific background */
   --navbar-bg: 249, 250, 251;    /* #F9FAFB - Light Gray (slightly darker than white) */
+
+  /* Light theme glow effects - unified with cyberpunk */
+  --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
+  --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
+  --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
+  --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
 }
 
 .dark {
@@ -26,6 +32,12 @@
   
   /* Navbar-specific background */
   --navbar-bg: 31, 41, 55;       /* #1F2937 - Darker gray than background */
+  
+  /* Dark theme glow effects - unified with cyberpunk */
+  --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
+  --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
+  --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
+  --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
 }
 
 .cyberpunk {
@@ -42,11 +54,11 @@
   /* Navbar-specific background */
   --navbar-bg: 15, 25, 35;       /* #0F1923 - Lighter than background for contrast */
   
-  /* Cyberpunk-specific glow effects */
-  --glow-primary: 0 0 10px rgba(252, 238, 9, 0.5);
-  --glow-secondary: 0 0 10px rgba(0, 240, 255, 0.5);
-  --glow-accent: 0 0 10px rgba(255, 0, 60, 0.5);
-  --glow-highlight: 0 0 10px rgba(0, 255, 128, 0.5);
+  /* Cyberpunk theme glow effects - unified standard */
+  --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
+  --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
+  --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
+  --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
 }
 
 .witcher {
@@ -62,6 +74,16 @@
   
   /* Navbar-specific background */
   --navbar-bg: 220, 220, 220;    /* #DCDCDC - Darker gray than background */
+  
+  /* Witcher theme fonts */
+  --font-primary: 'thewitcher', 'Cinzel', Georgia, serif;
+  --font-heading: 'thewitcher', 'Cinzel', Georgia, serif;
+  
+  /* Witcher theme glow effects - unified with cyberpunk */
+  --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
+  --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
+  --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
+  --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
 }
 
 /* Cyberpunk-specific body styling */
@@ -106,25 +128,57 @@ body.cyberpunk {
 .hover-bg-accent:hover { background-color: rgb(var(--accent)); }
 .hover-bg-highlight:hover { background-color: rgb(var(--highlight)); }
 
-/* Cyberpunk-specific glow effects */
-.cyberpunk .glow-primary {
+/* Universal glow effects - work with all themes */
+.glow-primary {
   box-shadow: var(--glow-primary);
   text-shadow: var(--glow-primary);
 }
 
-.cyberpunk .glow-secondary {
+.glow-secondary {
   box-shadow: var(--glow-secondary);
   text-shadow: var(--glow-secondary);
 }
 
-.cyberpunk .glow-accent {
+.glow-accent {
   box-shadow: var(--glow-accent);
   text-shadow: var(--glow-accent);
 }
 
-.cyberpunk .glow-highlight {
+.glow-highlight {
   box-shadow: var(--glow-highlight);
   text-shadow: var(--glow-highlight);
+}
+
+/* Standardized Page Headers and Titles */
+.page-header {
+  text-align: center;
+  margin-bottom: 3.25rem;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(var(--primary));
+  margin: 0;
+  margin-top: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Responsive design for page titles */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 2rem;
+  }
 }
 
 /* Gradient backgrounds for more colorful elements */

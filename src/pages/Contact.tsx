@@ -47,24 +47,21 @@ const Contact = () => {
 
   return (
     <div className="contact-container">
-      <div className="contact-header">
-        {" "}
-        <h1
-          className={`contact-title ${theme} ${theme === "cyberpunk" ? "glow-primary" : ""}`}
-        >
+      <header className="page-header">
+        <h1 className="page-title glow-primary">
           {contactContent.title}
-        </h1>{" "}
+        </h1>
         <MarkdownContent
           content={contactContent.subtitle}
           className="contact-subtitle"
         />
-      </div>
+      </header>
 
       <div className="contact-content">
         {/* Contact Information */}
         <div className="contact-info">
           <div
-            className={`contact-info-card ${theme === "cyberpunk" ? "glow-primary" : ""}`}
+            className={`contact-info-card glow-primary`}
           >
             <div className="contact-info-item">
               <div className="contact-info-icon">
@@ -85,7 +82,7 @@ const Contact = () => {
             </div>
           </div>
           <div
-            className={`contact-info-card ${theme === "cyberpunk" ? "glow-secondary" : ""}`}
+            className={`contact-info-card glow-secondary`}
           >
             <div className="contact-info-item">
               <div className="contact-info-icon secondary">
@@ -104,7 +101,7 @@ const Contact = () => {
             </div>
           </div>
           <div
-            className={`contact-info-card ${theme === "cyberpunk" ? "glow-accent" : ""}`}
+            className={`contact-info-card glow-accent`}
           >
             <div className="contact-info-item">
               <div className="contact-info-icon accent">
@@ -165,7 +162,7 @@ const Contact = () => {
 
         {/* Contact Form */}
         <div
-          className={`contact-form ${theme === "cyberpunk" ? "glow-highlight" : ""}`}
+          className={`contact-form glow-highlight`}
         >
           <h2 className="contact-form-title">
             {theme === "cyberpunk"

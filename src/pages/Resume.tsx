@@ -11,8 +11,8 @@ const Resume = () => {
   return (
     <div className="resume-page">
       <div className="resume-container">
-        <header className="resume-header">
-          <h1 className="resume-title">Resume</h1>
+        <header className="page-header">
+          <h1 className="page-title glow-primary">Resume</h1>
           <div className="resume-divider"></div>
         </header>
 

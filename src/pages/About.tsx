@@ -17,15 +17,15 @@ const About = () => {
   return (
     <div className="about-container">
       {/* Page header */}      
-      <div className="about-header">        
-        <h1 className={`about-title ${theme}`}>
+      <header className="page-header">        
+        <h1 className="page-title glow-primary">
           {aboutContent.title}
         </h1>        
         <MarkdownContent
           content={aboutContent.subtitle}
           className="about-subtitle"
         />
-      </div>
+      </header>
 
       {/* Content sections using theme colors */}
       <div className="about-grid">

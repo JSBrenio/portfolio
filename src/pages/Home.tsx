@@ -12,8 +12,8 @@ function Home() {
   return (
     <div className="home-container">
       {/* Title Section */}
-      <header className="home-header">
-        <h1 className={`home-title ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}>
+      <header className="page-header">
+        <h1 className="page-title glow-primary">
           {homeContent.title}
         </h1>
       </header>

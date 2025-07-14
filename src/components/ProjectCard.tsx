@@ -35,7 +35,7 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`project-card ${size} ${className} ${theme === 'cyberpunk' ? 'glow-primary' : ''}`}
+      className={`project-card ${size} ${className} glow-primary`}
     >
       {/* Header with title */}
       <div className={`project-card-header ${size}`}>

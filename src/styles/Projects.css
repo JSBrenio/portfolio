@@ -3,50 +3,14 @@
   padding: 2rem;
 }
 
-.projects-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.projects-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.projects-title.light {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.projects-title.dark {
-  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--highlight)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.projects-title.cyberpunk {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.projects-title.witcher {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+/* Projects page uses standardized .page-header and .page-title from globals.css */
 
 .projects-subtitle {
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   color: rgb(var(--text-light));
+  margin-bottom: 2rem;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 1rem auto 2rem auto;
 }
 
 .projects-section {
