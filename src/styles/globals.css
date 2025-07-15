@@ -75,10 +75,6 @@
   /* Navbar-specific background */
   --navbar-bg: 220, 220, 220;    /* #DCDCDC - Darker gray than background */
   
-  /* Witcher theme fonts */
-  --font-primary: 'thewitcher', 'Cinzel', Georgia, serif;
-  --font-heading: 'thewitcher', 'Cinzel', Georgia, serif;
-  
   /* Witcher theme glow effects - unified with cyberpunk */
   --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
   --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
