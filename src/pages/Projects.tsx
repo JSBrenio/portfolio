@@ -1,13 +1,13 @@
 import { useTheme } from '../hooks/useTheme';
 import ProjectCard from '../components/ProjectCard';
-import { getThemeAwareProjects } from '../data/projects';
+import { realProjects } from '../data/projects';
 import { getProjectsContent } from '../data/text';
 import '../styles/Projects.css';
 
 const Projects = () => {
   const { theme } = useTheme();
   const projectsContent = getProjectsContent(theme);
-  const projects = getThemeAwareProjects(theme);
+  const projects = realProjects;
   const featuredProjects = projects.filter(project => project.featured);
   const otherProjects = projects.filter(project => !project.featured);
 
@@ -25,7 +25,7 @@ const Projects = () => {
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
         <div className="projects-section">
-          <h2 className={`projects-section-title ${theme} glow-secondary`}>
+          <h2 className={`projects-section-title featured glow-secondary`}>
             {projectsContent.sections.featured}
           </h2>          
           <div className="projects-grid">
@@ -33,7 +33,7 @@ const Projects = () => {
               <ProjectCard 
                 key={project.id} 
                 project={project} 
-                size="large"
+                size="medium"
                 className="shadow-orange"
               />
             ))}
@@ -44,7 +44,7 @@ const Projects = () => {
       {/* Other Projects */}
       {otherProjects.length > 0 && (
         <div className="projects-section">
-          <h2 className={`projects-section-title ${theme} glow-accent`}>
+          <h2 className={`projects-section-title other glow-highlight`}>
             {projectsContent.sections.other}
           </h2>          
           <div className="projects-grid">

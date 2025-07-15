@@ -37,50 +37,75 @@ const ProjectCard = ({
     <div
       className={`project-card ${size} ${className} glow-primary`}
     >
-      {/* Header with title */}
-      <div className={`project-card-header ${size}`}>
+      {/* Title Header - Spans full width */}
+      <div className={`project-card-title-header ${size}`}>
         <h3 className={`project-card-title ${size}`}>
           {project.name}
         </h3>
-        {project.featured && (
-          <div className={`project-card-featured-badge ${size} ${theme}`}>
-            {theme === 'cyberpunk' ? 'FEATURED' : theme === 'witcher' ? 'LEGENDARY' : 'Featured'}
-          </div>
-        )}
       </div>
 
-      {/* Clickable Image */}
-      <Link to={`/projects/${project.id}`}>
-        <div className={`project-card-image-container ${size}`}>
-          <img
-            src={project.image}
-            alt={project.name}
-            className="project-card-image"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = `https://via.placeholder.com/400x250/666666/ffffff?text=${encodeURIComponent(project.name)}`;
-            }}
-          />
-          <div className="project-card-overlay" />
-        </div>
-      </Link>
+      {/* Main Content Area - Image and Description */}
+      <div className="project-card-main-content">
+        {/* Clickable Image - Left side */}
+        <Link to={`/projects/${project.id}`}>
+          <div className={`project-card-image-container ${size}`}>
+            <img
+              src={project.image}
+              alt={project.name}
+              className="project-card-image"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = `https://via.placeholder.com/400x250/666666/ffffff?text=${encodeURIComponent(project.name)}`;
+              }}
+            />
+            <div className="project-card-overlay" />
+          </div>
+        </Link>
 
-      {/* Content */}
-      <div className={`project-card-content ${size}`}>
-        <p className={`project-card-description ${size}`}>
-          {project.description}
-        </p>        {/* Tech Stack using TechStack component with carousel */}
-        <div className="project-card-tech-container">
-          <TechStack
-            technologies={project.techStack}
-            size={size === 'small' ? 20 : size === 'medium' ? 24 : 28}
-            spacing="md"
-            layout="row"
-            showLabels={true}
-            variant={getThemeVariant()}
-            className="project-card-tech-stack"
-          />
+        {/* Content - Right side */}
+        <div className={`project-card-content ${size}`}>
+          {/* Description */}
+          <p className={`project-card-description ${size}`}>
+            {project.description}
+          </p>
+
+          {/* Action Links */}
+          <div className="project-card-actions">
+            {project.liveUrl && (
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="project-card-link primary"
+              >
+                View Live
+              </a>
+            )}
+            {project.githubUrl && (
+              <a 
+                href={project.githubUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="project-card-link secondary"
+              >
+                View Code
+              </a>
+            )}
+          </div>
         </div>
+      </div>
+
+      {/* Tech Stack Footer - Spans full width */}
+      <div className="project-card-tech-footer">
+        <TechStack
+          technologies={project.techStack}
+          size={size === 'small' ? 18 : size === 'medium' ? 20 : 22}
+          spacing="sm"
+          layout="row"
+          showLabels={true}
+          variant={getThemeVariant()}
+          className="project-card-tech-stack"
+        />
       </div>
     </div>
   );

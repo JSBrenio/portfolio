@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Github, Calendar, Code2, Zap } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
-import { getThemeAwareProjects } from '../data/projects';
+import { realProjects } from '../data/projects';
 import TechIcon from '../components/TechIcon';
 import MarkdownContent from '../components/MarkdownContent';
 import ProjectNotFound from './ProjectNotFound';
@@ -11,7 +11,7 @@ const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const { theme } = useTheme();
   
-  const projects = getThemeAwareProjects(theme);
+  const projects = realProjects;
   const project = projects.find(p => p.id === projectId);
 
   if (!project) {

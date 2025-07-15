@@ -1,113 +1,109 @@
 import type { Project } from '../components/ProjectCard';
 
 // Import markdown descriptions as raw text
-import portfolioMd from './project-descriptions/portfolio-website.md?raw';
-import ecommerceMd from './project-descriptions/ecommerce-platform.md?raw';
-import dataVizMd from './project-descriptions/data-visualization.md?raw';
+import pathfindingMd from './project-descriptions/path-finding-visualizer.md?raw';
+import lotusQueryMd from './project-descriptions/lotus-query.md?raw';
+import courseFrontendMd from './project-descriptions/course-management-frontend.md?raw';
+import courseBackendMd from './project-descriptions/course-management-backend.md?raw';
+import jCompilerMd from './project-descriptions/j-minus-minus-compiler.md?raw';
+import jbashMd from './project-descriptions/jbash.md?raw';
+import talelessMd from './project-descriptions/taleless.md?raw';
+import areYouSureMd from './project-descriptions/are-you-sure.md?raw';
+import chatgptHomeMd from './project-descriptions/chatgpt-at-home.md?raw';
 
-
-export const sampleProjects: Project[] = [
+export const realProjects: Project[] = [
+  // Featured Projects
   {
-    id: 'portfolio-website',
-    name: 'Portfolio Website',
-    description: 'A modern, responsive portfolio website built with React and TypeScript. Features multiple themes including a cyberpunk theme with glow effects and a medieval witcher theme.',
-    detailedDescription: portfolioMd,
-    techStack: ['React', 'typescript', 'css3', 'vitejs', 'html5', 'nodejs'],
+    id: 'path-finding-visualizer',
+    name: 'Path Finding Visualizer',
+    description: 'Interactive visualization of pathfinding algorithms including A*, Dijkstra\'s, and BFS with real-time animation and performance metrics.',
+    detailedDescription: pathfindingMd,
+    techStack: ['javascript', 'html5', 'css3', 'algorithms'],
     image: '/public/blue_nobg.png',
-    liveUrl: 'https://jeremiah-brenio.dev',
-    githubUrl: 'https://github.com/jeremiah-brenio/portfolio',
+    liveUrl: 'https://jsbrenio.github.io/Path-Finding-Visualizer/',
+    githubUrl: 'https://github.com/JSBrenio/Path-Finding-Visualizer',
     featured: true
   },
   {
-    id: 'ecommerce-platform',
-    name: 'E-commerce Platform',
-    description: 'Full-stack e-commerce solution with payment processing, inventory management, user authentication, and admin dashboard.',
-    detailedDescription: ecommerceMd,
-    techStack: ['react', 'nodejs', 'mongodb', 'express'],
+    id: 'lotus-query',
+    name: 'Lotus Query',
+    description: 'Powerful SQL query builder and database management tool with visual interface, multi-database support, and collaboration features.',
+    detailedDescription: lotusQueryMd,
+    techStack: ['typescript', 'react', 'nodejs', 'postgresql', 'express'],
     image: '/public/blue_nobg.png',
-    liveUrl: 'https://ecommerce-platform-demo.herokuapp.com',
-    githubUrl: 'https://github.com/jeremiah-brenio/ecommerce-platform',
+    githubUrl: 'https://github.com/cnlwebber/Lotus-Query',
     featured: true
   },
   {
-    id: 'data-visualization',
-    name: 'Data Visualization Tool',
-    description: 'Interactive data visualization tool for analyzing complex datasets with charts, graphs, and customizable dashboards.',
-    detailedDescription: dataVizMd,
-    techStack: ['d3js', 'react', 'python', 'flask'],
+    id: 'course-management-frontend',
+    name: 'Course Management System - Frontend',
+    description: 'Comprehensive university course management frontend with student dashboards, enrollment system, and interactive scheduling.',
+    detailedDescription: courseFrontendMd,
+    techStack: ['react', 'typescript', 'css3', 'javascript'],
     image: '/public/blue_nobg.png',
-    liveUrl: 'https://data-viz-tool.herokuapp.com',
-    githubUrl: 'https://github.com/jeremiah-brenio/data-visualization',
+    githubUrl: 'https://github.com/NeonAfro/TCSS460_FrontEnd',
     featured: true
   },
+  {
+    id: 'course-management-backend',
+    name: 'Course Management System - Backend',
+    description: 'Robust backend API for university course management with authentication, enrollment engine, and academic records.',
+    detailedDescription: courseBackendMd,
+    techStack: ['java', 'spring', 'postgresql', 'hibernate', 'jwt'],
+    image: '/public/blue_nobg.png',
+    githubUrl: 'https://github.com/NeonAfro/TCSS460_BackEnd',
+    featured: true
+  },
+  {
+    id: 'j-minus-minus-compiler',
+    name: 'J-- Compiler',
+    description: 'Complete compiler implementation for J-- (Java subset) with lexical analysis, parsing, semantic analysis, and bytecode generation.',
+    detailedDescription: jCompilerMd,
+    techStack: ['java', 'compiler-design', 'jvm', 'algorithms'],
+    image: '/public/blue_nobg.png',
+    githubUrl: 'https://github.com/westerntoad/tcss421-jminusminus',
+    featured: true
+  },
+  
+  // Other Projects
+  {
+    id: 'jbash',
+    name: 'JBash Shell',
+    description: 'Custom Unix shell implementation in C with I/O redirection, pipes, background processing, and job control.',
+    detailedDescription: jbashMd,
+    techStack: ['c', 'unix', 'system-programming', 'bash'],
+    image: '/public/blue_nobg.png',
+    githubUrl: 'https://github.com/JSBrenio/JBash',
+    featured: false
+  },
+  {
+    id: 'taleless',
+    name: 'Taleless',
+    description: 'Interactive storytelling platform with multimedia support, branching narratives, and community features for creative writers.',
+    detailedDescription: talelessMd,
+    techStack: ['javascript', 'nodejs', 'mongodb', 'express', 'html5'],
+    image: '/public/blue_nobg.png',
+    githubUrl: 'https://github.com/JSBrenio/taleless',
+    featured: false
+  },
+  {
+    id: 'are-you-sure',
+    name: 'Are You Sure? - Safety Critical Systems',
+    description: 'Safety validation system with multi-level confirmations, error prevention, and audit logging for critical applications.',
+    detailedDescription: areYouSureMd,
+    techStack: ['java', 'javafx', 'testing', 'ui-ux'],
+    image: '/public/blue_nobg.png',
+    githubUrl: 'https://github.com/JSBrenio/TCSS452-AreYouSure',
+    featured: false
+  },
+  {
+    id: 'chatgpt-at-home',
+    name: 'ChatGPT at Home',
+    description: 'Self-hosted AI chat application with privacy-first design, multiple model support, and custom deployment options.',
+    detailedDescription: chatgptHomeMd,
+    techStack: ['python', 'ai', 'docker', 'apis', 'machine-learning'],
+    image: '/public/blue_nobg.png',
+    githubUrl: 'https://github.com/ChatGPTatHome/Project',
+    featured: false
+  }
 ];
-
-// Theme-aware project data
-export const getThemeAwareProjects = (theme: string): Project[] => {
-  if (theme === 'cyberpunk') {
-    return sampleProjects.map(project => ({
-      ...project,
-      name: getCyberpunkProjectName(project.name),
-      description: getCyberpunkDescription(project.description)
-    }));
-  }
-  
-  if (theme === 'witcher') {
-    return sampleProjects.map(project => ({
-      ...project,
-      name: getWitcherProjectName(project.name),
-      description: getWitcherDescription(project.description)
-    }));
-  }
-  
-  return sampleProjects;
-};
-
-const getCyberpunkProjectName = (originalName: string): string => {
-  const cyberpunkNames: { [key: string]: string } = {
-    'Portfolio Website': 'Neural Interface Portfolio',
-    'Task Management App': 'Corporate Task Matrix',
-    'E-commerce Platform': 'Digital Marketplace Terminal',
-    'Weather Dashboard': 'Atmospheric Data Interface',
-    'Real-time Chat App': 'Secure Comm Channel',
-    'Data Visualization Tool': 'Quantum Analytics Engine',
-    'Social Media Platform': 'Neural Network Hub'
-  };
-  
-  return cyberpunkNames[originalName] || originalName;
-};
-
-const getCyberpunkDescription = (originalDescription: string): string => {
-  return originalDescription
-    .replace(/website/gi, 'neural interface')
-    .replace(/application/gi, 'system')
-    .replace(/dashboard/gi, 'terminal')
-    .replace(/modern/gi, 'cutting-edge')
-    .replace(/collaborative/gi, 'multi-user neural')
-    .replace(/real-time/gi, 'quantum-speed')
-    .replace(/interactive/gi, 'neural-responsive');
-};
-
-const getWitcherProjectName = (originalName: string): string => {
-  const witcherNames: { [key: string]: string } = {
-    'Portfolio Website': 'Witcher\'s Chronicle',
-    'Task Management App': 'Quest Log Keeper',
-    'E-commerce Platform': 'Merchant\'s Exchange',
-    'Weather Dashboard': 'Weather Divination Tool',
-    'Real-time Chat App': 'Magical Correspondence',
-    'Data Visualization Tool': 'Scrying Crystal Interface'
-  };
-  
-  return witcherNames[originalName] || originalName;
-};
-
-const getWitcherDescription = (originalDescription: string): string => {
-  return originalDescription
-    .replace(/website/gi, 'chronicle')
-    .replace(/application/gi, 'enchanted tool')
-    .replace(/dashboard/gi, 'scrying interface')
-    .replace(/modern/gi, 'mystical')
-    .replace(/collaborative/gi, 'guild-based')
-    .replace(/real-time/gi, 'instantaneous magical')
-    .replace(/interactive/gi, 'enchanted');
-};
