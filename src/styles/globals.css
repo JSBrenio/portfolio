@@ -66,7 +66,8 @@
   --primary: 181, 12, 15;        /* #B50C0F - Deep Red */
   --secondary: 78, 99, 108;      /* #4E636C - Steel Blue */
   --accent: 139, 69, 19;         /* #8B4513 - Saddle Brown */
-  --highlight: 160, 82, 45;      /* #A0522D - Sienna */
+  /* --highlight: 160, 82, 45;       *//* #A0522D - Sienna */
+  --highlight: 85, 107, 47;      /* #556B2F  - Moss Green */
   --neutral: 39, 39, 39;         /* #272727 - Dark Gray */  
   --background: 234, 234, 234;   /* #EAEAEA - Light Gray */
   --text: 49, 10, 11;            /* #310A0B - Dark Brown */
