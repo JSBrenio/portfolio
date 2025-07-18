@@ -59,6 +59,14 @@
   padding: 1.25rem 1.5rem 1rem 1.5rem;
 }
 
+/* Title row layout */
+.project-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* Title styling */
 .project-card-title {
   font-weight: 700;
@@ -69,7 +77,17 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-align: center;
+  flex: 1;
+}
+
+/* Date styling */
+.project-card-date {
+  font-size: 1rem;
+  color: rgb(var(--accent));
+  opacity: 0.8;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .project-card-title.small {

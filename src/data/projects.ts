@@ -13,16 +13,29 @@ import chatgptHomeMd from './project-descriptions/chatgpt-at-home.md?raw';
 
 export const realProjects: Project[] = [
   // Featured Projects
+    {
+    id: 'portfolio',
+    name: 'Portfolio',
+    description: 'The portfolio you\'re looking at right now!',
+    detailedDescription: pathfindingMd,
+    techStack: ['js', 'html5', 'css3', 'react'],
+    image: '/blue_nobg.png',
+    liveUrl: 'jsbrenio.com',
+    githubUrl: 'https://github.com/JSBrenio/Path-Finding-Visualizer',
+    featured: true,
+    date: '2025-05'
+  },
   {
     id: 'path-finding-visualizer',
     name: 'Path Finding Visualizer',
     description: 'Interactive visualization of pathfinding algorithms including A*, Dijkstra\'s, and BFS with real-time animation and performance metrics.',
     detailedDescription: pathfindingMd,
-    techStack: ['javascript', 'html5', 'css3', 'algorithms'],
+    techStack: ['js', 'html5', 'css3', 'algorithms'],
     image: '/blue_nobg.png',
     liveUrl: 'https://jsbrenio.github.io/Path-Finding-Visualizer/',
     githubUrl: 'https://github.com/JSBrenio/Path-Finding-Visualizer',
-    featured: true
+    featured: true,
+    date: '2024-07'
   },
   {
     id: 'lotus-query',
@@ -32,17 +45,19 @@ export const realProjects: Project[] = [
     techStack: ['typescript', 'react', 'nodejs', 'postgresql', 'express'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/cnlwebber/Lotus-Query',
-    featured: true
+    featured: true,
+    date: '2024-07'
   },
   {
     id: 'course-management-frontend',
     name: 'Course Management System - Frontend',
     description: 'Comprehensive university course management frontend with student dashboards, enrollment system, and interactive scheduling.',
     detailedDescription: courseFrontendMd,
-    techStack: ['react', 'typescript', 'css3', 'javascript'],
+    techStack: ['react', 'typescript', 'css3', 'js'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/NeonAfro/TCSS460_FrontEnd',
-    featured: true
+    featured: true,
+    date: '2024-11'
   },
   {
     id: 'course-management-backend',
@@ -52,7 +67,8 @@ export const realProjects: Project[] = [
     techStack: ['java', 'spring', 'postgresql', 'hibernate', 'jwt'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/NeonAfro/TCSS460_BackEnd',
-    featured: true
+    featured: true,
+    date: '2024-10'
   },
   {
     id: 'j-minus-minus-compiler',
@@ -62,7 +78,8 @@ export const realProjects: Project[] = [
     techStack: ['java', 'compiler-design', 'jvm', 'algorithms'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/westerntoad/tcss421-jminusminus',
-    featured: true
+    featured: true,
+    date: '2025-01'
   },
   
   // Other Projects
@@ -74,17 +91,19 @@ export const realProjects: Project[] = [
     techStack: ['c', 'unix', 'system-programming', 'bash'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/JSBrenio/JBash',
-    featured: false
+    featured: false,
+    date: '2025-01'
   },
   {
     id: 'taleless',
     name: 'Taleless',
     description: 'Interactive storytelling platform with multimedia support, branching narratives, and community features for creative writers.',
     detailedDescription: talelessMd,
-    techStack: ['javascript', 'nodejs', 'mongodb', 'express', 'html5'],
+    techStack: ['js', 'nodejs', 'mongodb', 'express', 'html5'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/JSBrenio/taleless',
-    featured: false
+    featured: false,
+    date: '2025-04'
   },
   {
     id: 'are-you-sure',
@@ -94,7 +113,8 @@ export const realProjects: Project[] = [
     techStack: ['java', 'javafx', 'testing', 'ui-ux'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/JSBrenio/TCSS452-AreYouSure',
-    featured: false
+    featured: false,
+    date: '2025-05'
   },
   {
     id: 'chatgpt-at-home',
@@ -104,6 +124,7 @@ export const realProjects: Project[] = [
     techStack: ['python', 'ai', 'docker', 'apis', 'machine-learning'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/ChatGPTatHome/Project',
-    featured: false
+    featured: false,
+    date: '2024-04'
   }
 ];

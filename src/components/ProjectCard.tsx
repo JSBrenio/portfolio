@@ -13,6 +13,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  date: string; // Format: "YYYY-MM" (e.g., "2024-03")
 }
 
 interface ProjectCardProps {
@@ -28,6 +29,16 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   const { theme } = useTheme();
 
+  // Format the date from YYYY-MM to "Month Year"
+  const formatDate = (dateString: string): string => {
+    const [year, month] = dateString.split('-');
+    const date = new Date(parseInt(year), parseInt(month) - 1);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long' 
+    });
+  };
+
   const getThemeVariant = () => {
     if (theme === 'dark' || theme === 'cyberpunk') return 'dark';
     return 'light';
@@ -39,9 +50,14 @@ const ProjectCard = ({
     >
       {/* Title Header - Spans full width */}
       <div className={`project-card-title-header ${size}`}>
-        <h3 className={`project-card-title ${size}`}>
-          {project.name}
-        </h3>
+        <div className="project-card-title-row">
+          <h3 className={`project-card-title ${size}`}>
+            {project.name}
+          </h3>
+          <span className="project-card-date">
+            {formatDate(project.date)}
+          </span>
+        </div>
       </div>
 
       {/* Main Content Area - Image and Description */}

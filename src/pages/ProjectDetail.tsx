@@ -34,6 +34,16 @@ const ProjectDetail = () => {
     }
   };
 
+  // Format the date from YYYY-MM to "Month Year"
+  const formatDate = (dateString: string): string => {
+    const [year, month] = dateString.split('-');
+    const date = new Date(parseInt(year), parseInt(month) - 1);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long' 
+    });
+  };
+
   const getThemeText = (key: string) => {
     const texts = {
       overview: {
@@ -142,6 +152,10 @@ const ProjectDetail = () => {
                 <h1 className={`project-title ${theme}`}>
                   {project.name}
                 </h1>
+                <div className="project-date">
+                  <Calendar className="w-4 h-4" />
+                  <span>{formatDate(project.date)}</span>
+                </div>
                 {project.featured && (
                   <div className="featured-badge">
                     <span className="icon">{getThemeIcon()}</span>

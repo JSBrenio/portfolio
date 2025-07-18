@@ -8,8 +8,14 @@ const Projects = () => {
   const { theme } = useTheme();
   const projectsContent = getProjectsContent(theme);
   const projects = realProjects;
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  
+  // Sort projects by date (newest first)
+  const sortedProjects = [...projects].sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+  
+  const featuredProjects = sortedProjects.filter(project => project.featured);
+  const otherProjects = sortedProjects.filter(project => !project.featured);
 
   return (
     <div className="projects-container">      
