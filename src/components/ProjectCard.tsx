@@ -84,30 +84,6 @@ const ProjectCard = ({
           <p className={`project-card-description ${size}`}>
             {project.description}
           </p>
-
-          {/* Action Links */}
-          <div className="project-card-actions">
-            {project.liveUrl && (
-              <a 
-                href={project.liveUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="project-card-link primary"
-              >
-                View Live
-              </a>
-            )}
-            {project.githubUrl && (
-              <a 
-                href={project.githubUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="project-card-link secondary"
-              >
-                View Code
-              </a>
-            )}
-          </div>
         </div>
       </div>
 

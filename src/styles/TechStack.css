@@ -61,23 +61,27 @@
 /* Carousel functionality - no buttons needed */
 
 /* Tech items */
-.tech-item {
+.tech-stack .tech-item {
   display: flex;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.2s ease;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+  background-color: rgba(var(--neutral), 0.1);
 }
 
-.tech-item.carousel-item {
+.tech-stack .tech-item.carousel-item {
   flex-shrink: 0;
   min-width: fit-content;
 }
 
-.tech-item:hover {
+.tech-stack .tech-item:hover {
   transform: translateY(-2px);
 }
 
-.tech-item span {
+.tech-stack .tech-item span {
   font-size: 0.75rem;
   color: rgb(var(--text-light));
   margin-top: 0.25rem;
@@ -86,7 +90,7 @@
   text-transform: capitalize;
 }
 
-.tech-item-label {
+.tech-stack .tech-item-label {
   font-size: 0.75rem;
   color: rgb(var(--text-light));
   margin-top: 0.25rem;
@@ -96,14 +100,14 @@
   transition: color 0.2s ease;
 }
 
-.tech-item:hover .tech-item-label {
+.tech-stack .tech-item:hover .tech-item-label {
   color: rgb(var(--text));
 }
 
 /* Hover animations */
 .hover-scale {
   transition: transform 0.2s ease-in-out;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .hover-scale:hover {

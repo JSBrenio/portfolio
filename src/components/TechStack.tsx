@@ -1,5 +1,5 @@
 import TechIcon from './TechIcon';
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import '../styles/TechStack.css';
 
 interface TechStackProps {
@@ -22,17 +22,14 @@ const TechStack = ({
   className = ""
 }: TechStackProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   
   // Map tech names to display names
   const getDisplayName = (tech: string) => {
     const displayNames: { [key: string]: string } = {
       'reactjs': 'React',
       'react': 'React',
-      'typescript': 'TypeScript',
-      'javascript': 'JavaScript',
+      'ts': 'TypeScript',
+      'js': 'JavaScript',
       'nodejs': 'Node.js',
       'node.js': 'Node.js',
       'css3': 'CSS3',
@@ -67,20 +64,19 @@ const TechStack = ({
     
     const scrollContainer = scrollRef.current;
     let animationId: number;
-    let scrollPosition = 0;
     
     const animate = () => {
-      if (scrollContainer && !isDragging) {
-        scrollPosition += 0.5; // Slow continuous scroll
+      if (scrollContainer) {
+        const currentScroll = scrollContainer.scrollLeft;
+        const singleSetWidth = scrollContainer.scrollWidth / 3; // Third because content is tripled
         
-        // Create seamless infinite scroll by duplicating content virtually
-        const maxScroll = scrollContainer.scrollWidth / 2; // Half because we'll duplicate
+        // Auto-scroll continuously
+        scrollContainer.scrollLeft = currentScroll + 0.5;
         
-        if (scrollPosition >= maxScroll) {
-          scrollPosition = 0;
+        // Seamless reset when we've scrolled through one complete set
+        if (scrollContainer.scrollLeft >= singleSetWidth) {
+          scrollContainer.scrollLeft = scrollContainer.scrollLeft - singleSetWidth;
         }
-        
-        scrollContainer.scrollLeft = scrollPosition;
       }
       animationId = requestAnimationFrame(animate);
     };
@@ -92,49 +88,21 @@ const TechStack = ({
         cancelAnimationFrame(animationId);
       }
     };
-  }, [showCarousel, isDragging]);
-
-  // Mouse drag handlers
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
+  }, [showCarousel]);
 
   if (technologies.length === 0) {
     return null;
   }  if (showCarousel) {
-    // Duplicate technologies for seamless infinite scroll
-    const duplicatedTechnologies = [...technologies, ...technologies];
+    // Triple the technologies for better seamless infinite scroll
+    const duplicatedTechnologies = [...technologies, ...technologies, ...technologies];
     
     return (
       <div className={`tech-stack-carousel ${className}`}>
         <div 
           ref={scrollRef}
           className={`tech-stack-scroll ${spacingClasses[spacing]}`}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseLeave}
-          style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
-        >          {duplicatedTechnologies.map((tech, index) => (
+        >
+          {duplicatedTechnologies.map((tech, index) => (
             <div key={`${tech}-${index}`} className="tech-item carousel-item">
               <TechIcon 
                 tech={tech} 

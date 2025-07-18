@@ -24,19 +24,19 @@
 .project-card.small {
   width: 100%;
   max-width: 420px;
-  height: 240px;
+  height: 280px;
 }
 
 .project-card.medium {
   width: 100%;
   max-width: 450px;
-  height: 260px;
+  height: 300px;
 }
 
 .project-card.large {
   width: 100%;
   max-width: 480px;
-  height: 280px;
+  height: 320px;
 }
 
 /* Title Header - Full width at top */
@@ -185,9 +185,7 @@
 /* Description styling */
 .project-card-description {
   color: rgb(var(--text));
-  line-height: 1.4;
-  margin: 0 0 0.75rem 0;
-  flex: 1;
+  margin: 0;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -319,7 +317,7 @@
 .project-card-description {
   color: rgb(var(--text-light));
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  /* margin-bottom: 1.5rem; */
   flex-grow: 1;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -344,56 +342,12 @@
   line-clamp: 4;
 }
 
-/* Action buttons/links area */
-.project-card-actions {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: auto;
-  flex-shrink: 0;
-}
-
-.project-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.75rem;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-  white-space: nowrap;
-}
-
-.project-card-link.primary {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-  color: rgb(var(--background));
-}
-
-.project-card-link.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(var(--primary), 0.3);
-}
-
-.project-card-link.secondary {
-  background: transparent;
-  color: rgb(var(--primary));
-  border-color: rgba(var(--primary), 0.3);
-}
-
-.project-card-link.secondary:hover {
-  background: rgba(var(--primary), 0.1);
-  border-color: rgb(var(--primary));
-}
-
 /* Tech Stack Footer - Full width at bottom */
 .project-card-tech-footer {
   padding: 0.75rem 1.25rem 1rem 1.25rem;
   background: linear-gradient(135deg, rgba(var(--primary), 0.03), rgba(var(--secondary), 0.03));
   border-top: 1px solid rgba(var(--primary), 0.1);
   flex-shrink: 0;
-  overflow: hidden;
 }
 
 .project-card-tech-stack {
@@ -401,8 +355,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.25rem;
-  max-height: 45px;
-  overflow: hidden;
 }
 
 /* Make sure tech icons are smaller in cards */
@@ -448,15 +400,5 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-  }
-
-  .project-card-actions {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .project-card-link {
-    text-align: center;
-    justify-content: center;
   }
 }

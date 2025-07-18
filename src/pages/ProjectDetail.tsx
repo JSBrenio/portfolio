@@ -253,13 +253,13 @@ const ProjectDetail = () => {
               <div className="section-content">
                 <div className="tech-grid">
                   {project.techStack.map((tech) => (
-                    <div key={tech} className="tech-item">
+                    <div key={tech} className="project-detail-tech-item">
                       <TechIcon
                         tech={tech.toLowerCase()}
                         size={32}
                         variant={getThemeVariant()}
                       />
-                      <span className="tech-name">{tech}</span>
+                      <span className="project-detail-tech-name">{tech}</span>
                     </div>
                   ))}
                 </div>
