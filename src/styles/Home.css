@@ -1,17 +1,14 @@
 /* Home Page Styles */
 .home-container {
-  padding: 2rem;
-  color: rgb(var(--text));
-  display: flex;
-  flex-direction: column;
+  padding: clamp(1rem, 3vw, 2rem);
 }
 
 /* Home page uses standardized .page-header and .page-title from globals.css */
 
 .home-main {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 5rem;
+  grid-template-columns: clamp(200px, 30vw, 300px) 1fr;
+  gap: clamp(2rem, 8vw, 5rem);
   align-items: center;
   flex: 0.25;
 }
@@ -25,8 +22,8 @@
 
 .profile-image-container {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: clamp(180px, 25vw, 300px);
+  height: clamp(180px, 25vw, 300px);
   margin-bottom: 5rem;
 }
 
@@ -67,7 +64,7 @@
 }
 
 .profile-niche {
-  color: rgb(var(--secondary));
+  color: rgb(var(--accent));
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
@@ -75,7 +72,6 @@
   background: linear-gradient(90deg, rgba(var(--primary), 0.08), rgba(var(--secondary), 0.08));
   border-radius: 16px;
   padding: 0.5rem 1.5rem;
-  margin: 1.25rem auto 0;
   box-shadow: 0 2px 12px rgba(var(--primary), 0.08);
   transition: color 0.3s, box-shadow 0.3s;
 }
@@ -96,7 +92,7 @@
 .home-info {
   display: grid;
   grid-template-columns: 0.7fr auto 1fr;
-  gap: 1.5rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
   align-items: center;
 }
 
@@ -105,7 +101,7 @@
 }
 
 .home-name {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 600;
   color: rgb(var(--secondary));
   margin: 0;
@@ -129,7 +125,7 @@
 }
 
 .home-statement {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.6;
   color: rgb(var(--text-light));
   margin: 0;
@@ -152,7 +148,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.5rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2.5vw, 1.5rem);
   background-color: rgba(var(--text), 0.05);
   border: 2px solid rgba(var(--primary), 0.2);
   border-radius: 12px;
@@ -177,7 +173,7 @@
 }
 
 .nav-text {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: 500;
   color: rgb(var(--text));
 }
@@ -214,11 +210,11 @@
   color: rgb(var(--secondary));
 }
 
-/* Responsive Design */
+/* Responsive Layout Adjustments */
 @media (max-width: 968px) {
   .home-main {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
     text-align: center;
   }
 
@@ -234,7 +230,7 @@
   }
 
   .home-divider {
-    width: 80px;
+    width: 100%;
     height: 2px;
     background: linear-gradient(90deg, 
       transparent 0%, 
@@ -245,67 +241,11 @@
     margin: 0 auto;
   }
 
-  .profile-image-container {
-    width: 200px;
-    height: 200px;
-  }
-
-  .home-name {
-    font-size: 2rem;
-  }
-
   .home-navigation {
-    max-width: 400px;
-    margin: 1rem auto 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .home-container {
-    padding: 1rem;
-  }
-
-  .home-header {
-    margin-bottom: 2rem;
-  }
-
-  .profile-image-container {
-    width: 180px;
-    height: 180px;
-  }
-
-  .home-name {
-    font-size: 1.8rem;
-  }
-
-  .home-statement {
-    font-size: 1.1rem;
-  }
-
-  .nav-card {
-    padding: 0.875rem 1.25rem;
-  }
-
-  .nav-text {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-name {
-    font-size: 1.5rem;
-  }
-
-  .home-statement {
-    font-size: 1rem;
-  }
-
-  .profile-image-container {
-    width: 150px;
-    height: 150px;
-  }
-
-  .nav-card {
-    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
   }
 }

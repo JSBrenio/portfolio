@@ -109,14 +109,3 @@
 .hover-scale:hover {
   transform: scale(1.1);
 }
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .tech-stack-carousel {
-    max-width: 100%;
-  }
-  
-  .tech-stack-scroll {
-    padding: 0.25rem 0;
-  }
-}

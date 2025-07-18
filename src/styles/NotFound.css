@@ -41,7 +41,7 @@
 }
 
 .error-code {
-  font-size: 6rem;
+  font-size: clamp(4rem, 8vw, 6rem);
   font-weight: 900;
   color: rgba(var(--primary), 0.3);
   line-height: 1;
@@ -50,7 +50,7 @@
 }
 
 .error-code.project-error {
-  font-size: 4rem;
+  font-size: clamp(3rem, 6vw, 4rem);
   font-weight: 800;
 }
 
@@ -65,7 +65,7 @@
 }
 
 .cyberpunk .error-code.project-error {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   letter-spacing: 3px;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .witcher .error-code.project-error {
-  font-size: 5rem;
+  font-size: clamp(3.5rem, 7vw, 5rem);
 }
 
 .error-text {
@@ -86,7 +86,7 @@
 }
 
 .error-title {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
   color: rgb(var(--primary));
   margin-bottom: 0.5rem;
@@ -106,7 +106,7 @@
 }
 
 .error-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: 500;
   color: rgb(var(--secondary));
   margin-bottom: 1rem;
@@ -127,7 +127,7 @@
 }
 
 .error-description {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   color: rgb(var(--text));
   line-height: 1.6;
   margin-bottom: 0;
@@ -274,8 +274,8 @@
   6% { opacity: 0.8; }
 }
 
-/* Responsive design */
-@media (min-width: 768px) {
+/* Responsive design - Mobile adjustments only */
+@media (max-width: 768px) {
   .error-actions {
     flex-direction: row;
     justify-content: center;
@@ -287,24 +287,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .not-found-container {
-    padding: 1rem;
-  }
-  
-  .error-code {
-    font-size: 4rem;
-  }
-  
-  .error-title {
-    font-size: 2rem;
-  }
-  
-  .error-subtitle {
-    font-size: 1.125rem;
-  }
-  
-  .action-button {
-    min-width: 100%;
-  }
+.not-found-container {
+  padding: clamp(1rem, 3vw, 2rem);
 }

@@ -41,7 +41,7 @@
 
 /* Title Header - Full width at top */
 .project-card-title-header {
-  padding: 1rem 1.25rem 0.75rem 1.25rem;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem) clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.25rem);
   background: linear-gradient(135deg, rgba(var(--primary), 0.05), rgba(var(--secondary), 0.05));
   border-bottom: 1px solid rgba(var(--primary), 0.1);
   flex-shrink: 0;
@@ -405,7 +405,7 @@
   font-size: 0.7rem;
 }
 
-/* Responsive design */
+/* Responsive design - Mobile layout adjustments only */
 @media (max-width: 768px) {
   .project-card {
     flex-direction: column;
@@ -431,12 +431,6 @@
     height: auto;
     max-width: 100%;
   }
-  
-  .project-card-content.large,
-  .project-card-content.medium,
-  .project-card-content.small {
-    padding: 1.25rem;
-  }
 
   .project-card-actions {
     flex-direction: column;
@@ -446,32 +440,5 @@
   .project-card-link {
     text-align: center;
     justify-content: center;
-  }
-  
-  .project-card-actions {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .project-card-link {
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-card-content.large,
-  .project-card-content.medium,
-  .project-card-content.small {
-    padding: 1rem;
-  }
-  
-  .project-card-image-container {
-    height: 160px;
-  }
-  
-  .project-card-title.large,
-  .project-card-title.medium {
-    font-size: 1.125rem;
   }
 }

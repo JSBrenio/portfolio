@@ -1,7 +1,7 @@
 /* Footer Styles */
 .footer {
   margin-top: auto;
-  padding: 2rem 0 1rem 0;
+  padding: clamp(1.5rem, 3vw, 2rem) 0 1rem 0;
   border-top: 1px solid rgba(var(--neutral), 0.2);
   color: rgb(var(--text-light));
   transition: all 0.3s ease;
@@ -18,7 +18,7 @@
 }
 
 .footer-copyright {
-  font-size: 0.875rem;
+  font-size: clamp(0.8rem, 1.5vw, 0.875rem);
   margin: 0 0 0.5rem 0;
   font-weight: 500;
   color: rgb(var(--text));
@@ -26,7 +26,7 @@
 }
 
 .footer-additional {
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
   margin: 0;
   opacity: 0.8;
   font-style: italic;
@@ -61,19 +61,4 @@
 
 .witcher .footer-additional {
   color: rgb(var(--secondary));
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .footer {
-    padding: 1.5rem 0 1rem 0;
-  }
-  
-  .footer-copyright {
-    font-size: 0.8rem;
-  }
-  
-  .footer-additional {
-    font-size: 0.7rem;
-  }
 }

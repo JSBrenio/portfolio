@@ -4,13 +4,13 @@
   background-color: rgb(var(--background));
   color: rgb(var(--text));
   font-family: var(--font-primary);
-  padding: 2rem 0;
+  padding: clamp(1.5rem, 3vw, 2rem) 0;
 }
 
 .test-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 }
 
 .test-subtitle {
@@ -29,7 +29,7 @@
 /* Section Styling */
 .test-section {
   margin: 3rem 0;
-  padding: 2rem;
+  padding: clamp(1rem, 2vw, 2rem);
   background-color: rgba(var(--text), 0.02);
   border-radius: 12px;
   border: 1px solid rgba(var(--primary), 0.1);
@@ -418,21 +418,8 @@
   font-family: monospace;
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile adjustments only */
 @media (max-width: 768px) {
-  .test-container {
-    padding: 0 1rem;
-  }
-
-  .test-section {
-    padding: 1rem;
-  }
-
-  .color-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-
   .bg-combinations {
     grid-template-columns: 1fr;
   }
