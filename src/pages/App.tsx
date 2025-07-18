@@ -10,10 +10,12 @@ import NotFound from './NotFound';
 import TestPage from './TestPage'; // TODO: Remove before production build
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>
