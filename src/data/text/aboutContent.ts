@@ -23,7 +23,7 @@ export interface AboutContent {
   };
 }
 
-export const getAboutContent = (theme: Theme): AboutContent => {
+export const getAboutContent = (theme: Theme, useThemedContent = true): AboutContent => {
   const baseContent: AboutContent = {
     title: "About Me",
     subtitle: "This page demonstrates how themes persist across different routes. Notice how all colors automatically match your selected theme!",
@@ -166,6 +166,11 @@ export const getAboutContent = (theme: Theme): AboutContent => {
       }
     }
   };
+
+  // If themed content is disabled, return base content regardless of theme
+  if (!useThemedContent) {
+    return baseContent;
+  }
 
   // Theme-specific overrides
   if (theme === 'cyberpunk') {

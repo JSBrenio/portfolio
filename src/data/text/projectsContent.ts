@@ -9,7 +9,7 @@ export interface ProjectsContent {
   };
 }
 
-export const getProjectsContent = (theme: Theme): ProjectsContent => {
+export const getProjectsContent = (theme: Theme, useThemedContent = true): ProjectsContent => {
   const baseContent: ProjectsContent = {
     title: "My Projects",
     subtitle: "A showcase of my development work and technical projects. Each project demonstrates different skills and technologies.",
@@ -18,6 +18,11 @@ export const getProjectsContent = (theme: Theme): ProjectsContent => {
       other: "Other Projects"
     }
   };
+
+  // If themed content is disabled, return base content regardless of theme
+  if (!useThemedContent) {
+    return baseContent;
+  }
 
   // Theme-specific overrides
   if (theme === 'cyberpunk') {

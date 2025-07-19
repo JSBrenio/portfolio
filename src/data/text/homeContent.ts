@@ -7,13 +7,18 @@ export interface HomeContent {
   statement: string;
 }
 
-export const getHomeContent = (theme: Theme): HomeContent => {
+export const getHomeContent = (theme: Theme, useThemedContent = true): HomeContent => {
   const baseContent: HomeContent = {
     title: "Hello, There!",
     name: "Jeremiah Brenio",
     niche: "Software Developer",
     statement: "Welcome to my **portfolio**! I am a *passionate* **software developer** who loves learning and creating anything `software`.",
   };
+
+  // If themed content is disabled, always return base content
+  if (!useThemedContent) {
+    return baseContent;
+  }
 
   // Theme-specific overrides
   if (theme === 'cyberpunk') {

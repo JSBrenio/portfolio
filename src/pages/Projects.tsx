@@ -5,8 +5,8 @@ import { getProjectsContent } from '../data/text';
 import '../styles/Projects.css';
 
 const Projects = () => {
-  const { theme } = useTheme();
-  const projectsContent = getProjectsContent(theme);
+  const { theme, useThemedContent } = useTheme();
+  const projectsContent = getProjectsContent(theme, useThemedContent);
   const projects = realProjects;
   
   // Sort projects by date (newest first)

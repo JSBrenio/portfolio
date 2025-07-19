@@ -20,7 +20,7 @@ export interface ResumeContent {
   experience: ExperienceItem[];
 }
 
-export const getResumeContent = (_theme: Theme): ResumeContent => {
+export const getResumeContent = (_theme: Theme, _useThemedContent = true): ResumeContent => {
   const baseContent: ResumeContent = {
     education: [
       {
@@ -68,5 +68,6 @@ export const getResumeContent = (_theme: Theme): ResumeContent => {
   };
 
   // Theme-specific overrides could be added here if needed
+  // useThemedContent parameter included for consistency with other content functions
   return baseContent;
 };

@@ -6,8 +6,8 @@ import MarkdownContent from '../components/MarkdownContent';
 import '../styles/Home.css';
 
 function Home() {
-  const { theme } = useTheme();
-  const homeContent = getHomeContent(theme);
+  const { theme, useThemedContent } = useTheme();
+  const homeContent = getHomeContent(theme, useThemedContent);
 
   return (
     <div className="home-container">

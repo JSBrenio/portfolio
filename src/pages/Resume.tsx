@@ -5,8 +5,8 @@ import { MarkdownContent } from '../components/MarkdownContent';
 import '../styles/Resume.css';
 
 const Resume = () => {
-  const { theme } = useTheme();
-  const resumeContent = getResumeContent(theme);
+  const { theme, useThemedContent } = useTheme();
+  const resumeContent = getResumeContent(theme, useThemedContent);
 
   return (
     <div className="resume-page">

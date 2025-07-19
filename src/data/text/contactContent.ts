@@ -32,7 +32,7 @@ export interface ContactContent {
   };
 }
 
-export const getContactContent = (theme: Theme): ContactContent => {
+export const getContactContent = (theme: Theme, useThemedContent = true): ContactContent => {
   const baseContent: ContactContent = {
     title: "Get In Touch",
     subtitle: "Have a project in mind? Let's **discuss** how we can bring your *ideas* to life.",
@@ -64,6 +64,11 @@ export const getContactContent = (theme: Theme): ContactContent => {
       success: "Message sent!"
     }
   };
+
+  // If themed content is disabled, always return base content
+  if (!useThemedContent) {
+    return baseContent;
+  }
 
   // Theme-specific overrides
   if (theme === 'cyberpunk') {

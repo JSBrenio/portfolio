@@ -14,8 +14,8 @@ import { useState } from "react";
 import "../styles/Contact.css";
 
 const Contact = () => {
-  const { theme } = useTheme();
-  const contactContent = getContactContent(theme);
+  const { theme, useThemedContent } = useTheme();
+  const contactContent = getContactContent(theme, useThemedContent);
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -5,8 +5,8 @@ import InteractiveSkills from '../components/InteractiveSkills';
 import '../styles/About.css';
 
 const About = () => {
-  const { theme } = useTheme();
-  const aboutContent = getAboutContent(theme);
+  const { theme, useThemedContent } = useTheme();
+  const aboutContent = getAboutContent(theme, useThemedContent);
 
   return (
     <div className="about-container">
