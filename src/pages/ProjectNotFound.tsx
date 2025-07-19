@@ -4,8 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 import '../styles/NotFound.css';
 
 const ProjectNotFound = () => {
-  const { theme } = useTheme();
-
+  const { theme, useThemedContent } = useTheme();
   const getThemeIcon = () => {
     switch (theme) {
       case 'cyberpunk':
@@ -18,32 +17,35 @@ const ProjectNotFound = () => {
   };
 
   const getThemeText = () => {
-    switch (theme) {
-      case 'cyberpunk':
-        return {
-          title: 'PROJECT NOT FOUND',
-          subtitle: 'Database query returned null',
-          description: 'The requested project file could not be located in the system archives. It may have been deleted, moved, or never existed in this timeline.',
-          projectsText: 'Browse Available Projects',
-          homeText: 'Return to Main Terminal'
-        };
-      case 'witcher':
-        return {
-          title: 'Quest Unavailable',
-          subtitle: 'The contract has expired',
-          description: 'This particular quest seems to have vanished from the notice board. Perhaps it was completed by another witcher, or the winds of time have blown it away.',
-          projectsText: 'Browse Other Contracts',
-          homeText: 'Return to the Tavern'
-        };
-      default:
-        return {
-          title: 'Project Not Found',
-          subtitle: 'The requested project does not exist',
-          description: 'The project you are looking for might have been removed, renamed, or never existed. Please check the URL and try again.',
-          projectsText: 'View All Projects',
-          homeText: 'Go Home'
-        };
+    const baseContent = {
+      title: 'Project Not Found',
+      subtitle: 'The requested project does not exist',
+      description: 'The project you are looking for might have been removed, renamed, or never existed. Please check the URL and try again.',
+      projectsText: 'View All Projects',
+      homeText: 'Go Home'
     }
+    if (!useThemedContent) {
+      return baseContent;
+    }
+    if (theme === 'cyberpunk') {
+      return {
+      title: 'PROJECT NOT FOUND',
+      subtitle: 'Database query returned null',
+      description: 'The requested project file could not be located in the system archives. It may have been deleted, moved, or never existed in this timeline.',
+      projectsText: 'Browse Available Projects',
+      homeText: 'Return to Main Terminal'
+      };
+    }
+    if (theme === 'witcher') {
+      return {
+      title: 'Quest Unavailable',
+      subtitle: 'The contract has expired',
+      description: 'This particular quest seems to have vanished from the notice board. Perhaps it was completed by another witcher, or the winds of time have blown it away.',
+      projectsText: 'Browse Other Contracts',
+      homeText: 'Return to the Tavern'
+      };
+    }
+    return baseContent;
   };
 
   const themeText = getThemeText();

@@ -4,8 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 import '../styles/NotFound.css';
 
 const NotFound = () => {
-  const { theme } = useTheme();
-
+  const { theme, useThemedContent } = useTheme();
   const getThemeIcon = () => {
     switch (theme) {
       case 'cyberpunk':
@@ -18,32 +17,35 @@ const NotFound = () => {
   };
 
   const getThemeText = () => {
-    switch (theme) {
-      case 'cyberpunk':
-        return {
-          title: 'SYSTEM ERROR 404',
-          subtitle: 'Neural pathway not found',
-          description: 'The requested data stream could not be located in the matrix. The connection may have been severed or the data corrupted.',
-          homeText: 'Return to Main Terminal',
-          projectsText: 'Browse Available Systems'
-        };
-      case 'witcher':
-        return {
-          title: 'Quest Not Found',
-          subtitle: 'The path has gone cold',
-          description: 'The trail you seek has vanished like morning mist. Perhaps this quest was never meant to be, or the winds of time have scattered its traces.',
-          homeText: 'Return to the Tavern',
-          projectsText: 'Browse Other Quests'
-        };
-      default:
-        return {
-          title: 'Page Not Found',
-          subtitle: 'Error 404',
-          description: 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.',
-          homeText: 'Go Home',
-          projectsText: 'View Projects'
-        };
+    const baseContent = {
+      title: 'Page Not Found',
+      subtitle: 'Error 404',
+      description: 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.',
+      homeText: 'Go Home',
+      projectsText: 'View Projects'
     }
+    if (!useThemedContent) {
+      return baseContent;
+    }
+    if (theme === 'cyberpunk') {
+      return {
+      title: 'SYSTEM ERROR 404',
+      subtitle: 'Neural pathway not found',
+      description: 'The requested data stream could not be located in the matrix. The connection may have been severed or the data corrupted.',
+      homeText: 'Return to Main Terminal',
+      projectsText: 'Browse Available Systems'
+      };
+    }
+    if (theme === 'witcher') {
+      return {
+      title: 'Quest Not Found',
+      subtitle: 'The path has gone cold',
+      description: 'The trail you seek has vanished like morning mist. Perhaps this quest was never meant to be, or the winds of time have scattered its traces.',
+      homeText: 'Return to the Tavern',
+      projectsText: 'Browse Other Quests'
+      };
+    }
+    return baseContent;
   };
 
   const themeText = getThemeText();

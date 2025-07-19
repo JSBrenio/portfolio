@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(var(--background), 0.8), rgba(var(--neutral), 0.1));
 }
 
 .not-found-content {

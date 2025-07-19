@@ -3,7 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import '../styles/Footer.css';
 
 export const Footer: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme, useThemedContent } = useTheme();
   const currentYear = new Date().getFullYear();
   
   const getFooterContent = () => {
@@ -12,6 +12,9 @@ export const Footer: React.FC = () => {
       additionalText: "Built with React and Passion <3."
     };
 
+    if (!useThemedContent) {
+      return baseContent
+    }
     if (theme === 'cyberpunk') {
       return {
         copyright: `© ${currentYear} Jeremiah Brenio. All rights protected with ICE.`,
