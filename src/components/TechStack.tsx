@@ -1,5 +1,5 @@
 import TechIcon from './TechIcon';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import '../styles/TechStack.css';
 
 interface TechStackProps {
@@ -21,7 +21,29 @@ const TechStack = ({
   variant = 'dark',
   className = ""
 }: TechStackProps) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [showCarousel, setShowCarousel] = useState(false);
+  
+  // Check if content overflows and needs carousel
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (containerRef.current && layout === 'row') {
+        const container = containerRef.current;
+        const containerWidth = container.offsetWidth;
+        const scrollWidth = container.scrollWidth;
+        setShowCarousel(scrollWidth > containerWidth);
+      } else {
+        setShowCarousel(false);
+      }
+    };
+
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+    
+    return () => {
+      window.removeEventListener('resize', checkOverflow);
+    };
+  }, [technologies, layout, size]);
   
   // Map tech names to display names
   const getDisplayName = (tech: string) => {
@@ -46,9 +68,6 @@ const TechStack = ({
     return displayNames[tech.toLowerCase()] || tech;
   };
   
-  // Show carousel if more than 4 technologies and layout is row
-  const showCarousel = technologies.length > 4 && layout === 'row';
-  
   const spacingClasses = {
     sm: 'gap-1',
     md: 'gap-2',
@@ -58,49 +77,25 @@ const TechStack = ({
   const layoutClasses = {
     row: '',
     grid: 'grid'
-  };  useEffect(() => {
-    // Continuous scrolling animation
-    if (!showCarousel || !scrollRef.current) return;
-    
-    const scrollContainer = scrollRef.current;
-    let animationId: number;
-    
-    const animate = () => {
-      if (scrollContainer) {
-        const currentScroll = scrollContainer.scrollLeft;
-        const singleSetWidth = scrollContainer.scrollWidth / 3; // Third because content is tripled
-        
-        // Auto-scroll continuously
-        scrollContainer.scrollLeft = currentScroll + 0.5;
-        
-        // Seamless reset when we've scrolled through one complete set
-        if (scrollContainer.scrollLeft >= singleSetWidth) {
-          scrollContainer.scrollLeft = scrollContainer.scrollLeft - singleSetWidth;
-        }
-      }
-      animationId = requestAnimationFrame(animate);
-    };
-    
-    animationId = requestAnimationFrame(animate);
-    
-    return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
-    };
+  };
+
+  // No JavaScript animation needed - using CSS animations instead
+  useEffect(() => {
+    return;
   }, [showCarousel]);
 
   if (technologies.length === 0) {
     return null;
-  }  if (showCarousel) {
-    // Triple the technologies for better seamless infinite scroll
-    const duplicatedTechnologies = [...technologies, ...technologies, ...technologies];
+  }
+
+  if (showCarousel) {
+    // Duplicate the technologies for seamless infinite scroll
+    const duplicatedTechnologies = [...technologies, ...technologies];
     
     return (
       <div className={`tech-stack-carousel ${className}`}>
         <div 
-          ref={scrollRef}
-          className={`tech-stack-scroll ${spacingClasses[spacing]}`}
+          className={`tech-stack-scroll ${spacingClasses[spacing]} infinite-scroll`}
         >
           {duplicatedTechnologies.map((tech, index) => (
             <div key={`${tech}-${index}`} className="tech-item carousel-item">
@@ -123,7 +118,11 @@ const TechStack = ({
   }
 
   return (
-    <div className={`tech-stack ${layoutClasses[layout]} ${spacingClasses[spacing]} ${className}`}>      {technologies.map((tech, index) => (
+    <div 
+      ref={containerRef}
+      className={`tech-stack ${layoutClasses[layout]} ${spacingClasses[spacing]} ${className}`}
+    >
+      {technologies.map((tech, index) => (
         <div key={`${tech}-${index}`} className="tech-item">
           <TechIcon 
             tech={tech} 

@@ -70,6 +70,7 @@ export const realProjects: Project[] = [
     featured: true,
     date: '2024-10'
   },
+    // Other Projects
   {
     id: 'j-minus-minus-compiler',
     name: 'J-- Compiler',
@@ -78,11 +79,9 @@ export const realProjects: Project[] = [
     techStack: ['java', 'compiler-design', 'jvm', 'algorithms'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/westerntoad/tcss421-jminusminus',
-    featured: true,
+    featured: false,
     date: '2025-01'
   },
-  
-  // Other Projects
   {
     id: 'jbash',
     name: 'JBash Shell',
@@ -121,7 +120,7 @@ export const realProjects: Project[] = [
     name: 'ChatGPT at Home',
     description: 'Self-hosted AI chat application with privacy-first design, multiple model support, and custom deployment options.',
     detailedDescription: chatgptHomeMd,
-    techStack: ['python', 'ai', 'docker', 'apis', 'machine-learning'],
+    techStack: ['python', 'ai', 'docker', 'apis', 'machine-learning', 'python', 'ai', 'docker', 'apis', 'machine-learning'],
     image: '/blue_nobg.png',
     githubUrl: 'https://github.com/ChatGPTatHome/Project',
     featured: false,
