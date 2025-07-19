@@ -16,6 +16,12 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     return savedTheme && themes.some(t => t.name === savedTheme) ? savedTheme : 'dark';
   });
 
+  const [useThemedContent, setUseThemedContent] = useState<boolean>(() => {
+    // Get themed content preference from localStorage or default to true
+    const savedThemedContent = localStorage.getItem('portfolio-themed-content');
+    return savedThemedContent !== null ? JSON.parse(savedThemedContent) : false;
+  });
+
   useEffect(() => {
     // Apply theme to document body
     document.body.className = theme;
@@ -23,10 +29,17 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    // Save themed content preference to localStorage
+    localStorage.setItem('portfolio-themed-content', JSON.stringify(useThemedContent));
+  }, [useThemedContent]);
+
   const value = {
     theme,
     setTheme,
     themes,
+    useThemedContent,
+    setUseThemedContent,
   };
 
   return (

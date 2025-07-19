@@ -27,4 +27,6 @@ export interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
   themes: { name: Theme; label: string; description: string }[];
+  useThemedContent: boolean;
+  setUseThemedContent: (use: boolean) => void;
 }

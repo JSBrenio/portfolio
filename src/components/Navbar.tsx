@@ -73,7 +73,7 @@ const Navbar = () => {
             </Link>
           </div>
           
-          <ThemeSwitcher variant="mobile" onThemeChange={() => setIsMenuOpen(false)} />
+          <ThemeSwitcher variant="mobile" />
         </div>
       )}
     </nav>
