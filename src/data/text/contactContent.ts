@@ -8,6 +8,27 @@ export interface ContactContent {
     email: string;
     message: string;
     submit: string;
+    title: string;
+  };
+  info: {
+    email: {
+      title: string;
+      value: string;
+    };
+    phone: {
+      title: string;
+      value: string;
+    };
+    location: {
+      title: string;
+      value: string;
+    };
+    social: {
+      title: string;
+    };
+  };
+  alerts: {
+    success: string;
   };
 }
 
@@ -19,7 +40,28 @@ export const getContactContent = (theme: Theme): ContactContent => {
       name: "Name",
       email: "Email",
       message: "Message",
-      submit: "Send Message"
+      submit: "Send Message",
+      title: "Send Message"
+    },
+    info: {
+      email: {
+        title: "Email",
+        value: "jeremiah.brenio@example.com"
+      },
+      phone: {
+        title: "Phone",
+        value: "+1 (555) 123-4567"
+      },
+      location: {
+        title: "Location",
+        value: "San Francisco, CA"
+      },
+      social: {
+        title: "Social Links"
+      }
+    },
+    alerts: {
+      success: "Message sent!"
     }
   };
 
@@ -32,7 +74,28 @@ export const getContactContent = (theme: Theme): ContactContent => {
         name: "Handle",
         email: "Contact Frequency",
         message: "Data Packet",
-        submit: "Transmit"
+        submit: "Transmit",
+        title: "Initiate Contact Protocol"
+      },
+      info: {
+        email: {
+          title: "Neural Mail",
+          value: baseContent.info.email.value
+        },
+        phone: {
+          title: "Holo Call",
+          value: baseContent.info.phone.value
+        },
+        location: {
+          title: "Coordinates",
+          value: baseContent.info.location.value
+        },
+        social: {
+          title: "Network Links"
+        }
+      },
+      alerts: {
+        success: "Neural link established!"
       }
     };
   }
@@ -45,7 +108,28 @@ export const getContactContent = (theme: Theme): ContactContent => {
         name: "Your Name",
         email: "Correspondence Address",
         message: "Your Quest",
-        submit: "Send Raven"
+        submit: "Send Raven",
+        title: "Send Message"
+      },
+      info: {
+        email: {
+          title: "Raven Post",
+          value: baseContent.info.email.value
+        },
+        phone: {
+          title: "Megascope",
+          value: baseContent.info.phone.value
+        },
+        location: {
+          title: "Location",
+          value: baseContent.info.location.value
+        },
+        social: {
+          title: "Guild Connections"
+        }
+      },
+      alerts: {
+        success: "Message sent by raven!"
       }
     };
   }

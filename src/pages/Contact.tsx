@@ -36,13 +36,7 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
-    alert(
-      theme === "cyberpunk"
-        ? "Neural link established!"
-        : theme === "witcher"
-          ? "Message sent by raven!"
-          : "Message sent!",
-    );
+    alert(contactContent.alerts.success);
   };
 
   return (
@@ -69,14 +63,10 @@ const Contact = () => {
               </div>
               <div className="contact-info-text">
                 <h3 className="contact-info-title">
-                  {theme === "cyberpunk"
-                    ? "Neural Mail"
-                    : theme === "witcher"
-                      ? "Raven Post"
-                      : "Email"}
+                  {contactContent.info.email.title}
                 </h3>
                 <p className="contact-info-description">
-                  jeremiah.brenio@example.com
+                  {contactContent.info.email.value}
                 </p>
               </div>
             </div>
@@ -90,13 +80,9 @@ const Contact = () => {
               </div>
               <div className="contact-info-text">
                 <h3 className="contact-info-title">
-                  {theme === "cyberpunk"
-                    ? "Holo Call"
-                    : theme === "witcher"
-                      ? "Megascope"
-                      : "Phone"}
+                  {contactContent.info.phone.title}
                 </h3>
-                <p className="contact-info-description">+1 (555) 123-4567</p>
+                <p className="contact-info-description">{contactContent.info.phone.value}</p>
               </div>
             </div>
           </div>
@@ -109,18 +95,10 @@ const Contact = () => {
               </div>
               <div className="contact-info-text">
                 <h3 className="contact-info-title">
-                  {theme === "cyberpunk"
-                    ? "Coordinates"
-                    : theme === "witcher"
-                      ? "Location"
-                      : "Location"}
+                  {contactContent.info.location.title}
                 </h3>
                 <p className="contact-info-description">
-                  {theme === "cyberpunk"
-                    ? "Night City, Sector 7"
-                    : theme === "witcher"
-                      ? "Oxenfurt, Redania"
-                      : "San Francisco, CA"}
+                  {contactContent.info.location.value}
                 </p>
               </div>
             </div>
@@ -128,11 +106,7 @@ const Contact = () => {
           {/* Social Links */}
           <div className="contact-info-card">
             <h3 className="contact-info-title social-links-title">
-              {theme === "cyberpunk"
-                ? "Network Links"
-                : theme === "witcher"
-                  ? "Guild Connections"
-                  : "Social Links"}
+              {contactContent.info.social.title}
             </h3>
             <div className="contact-social-links">
               <a
@@ -165,11 +139,7 @@ const Contact = () => {
           className={`contact-form glow-highlight`}
         >
           <h2 className="contact-form-title">
-            {theme === "cyberpunk"
-              ? "Initiate Contact Protocol"
-              : theme === "witcher"
-                ? "Send Message"
-                : "Send Message"}
+            {contactContent.form.title}
           </h2>
 
           <form onSubmit={handleSubmit}>
