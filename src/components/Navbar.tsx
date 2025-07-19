@@ -1,18 +1,10 @@
-import { useTheme } from '../hooks/useTheme';
-import { Sun, Moon, Zap, Sword, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import ThemeSwitcher from './ThemeSwitcher';
 import '../styles/Navbar.css';
 
-const themeIcons = {
-  light: Sun,
-  dark: Moon,
-  witcher: Sword,
-  cyberpunk: Zap,
-};
-
 const Navbar = () => {
-  const { theme, setTheme, themes } = useTheme();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,23 +40,8 @@ const Navbar = () => {
           <Link to="/resume" className={`nav-link ${activeStates.resume ? 'active' : ''}`}>Resume</Link>
           <Link to="/contact" className={`nav-link ${activeStates.contact ? 'active' : ''}`}>Contact</Link>
         </div>        
-        {/* Theme Toggles */}
-        <div className="theme-toggles">
-          {themes.map((themeOption) => {
-            const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
-            return (
-              <button
-                key={themeOption.name}
-                className={`theme-toggle ${theme === themeOption.name ? 'active' : ''}`}
-                onClick={() => setTheme(themeOption.name)}
-                title={`Switch to ${themeOption.label} theme`}
-              >
-                <IconComponent size={18} />
-                <span className="theme-toggle-label">{themeOption.label}</span>
-              </button>
-            );
-          })}
-        </div>
+        {/* Theme Switcher */}
+        <ThemeSwitcher variant="desktop" />
 
         {/* Mobile Menu Button */}
         <button 
@@ -96,28 +73,7 @@ const Navbar = () => {
             </Link>
           </div>
           
-          <div className="mobile-theme-toggles">
-            <span className="mobile-theme-label">Theme:</span>
-            <div className="mobile-theme-buttons">
-              {themes.map((themeOption) => {
-                const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
-                return (
-                  <button
-                    key={themeOption.name}
-                    className={`mobile-theme-toggle ${theme === themeOption.name ? 'active' : ''}`}
-                    onClick={() => {
-                      setTheme(themeOption.name);
-                      setIsMenuOpen(false);
-                    }}
-                    title={`Switch to ${themeOption.label} theme`}
-                  >
-                    <IconComponent size={16} />
-                    <span>{themeOption.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+          <ThemeSwitcher variant="mobile" onThemeChange={() => setIsMenuOpen(false)} />
         </div>
       )}
     </nav>

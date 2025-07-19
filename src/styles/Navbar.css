@@ -124,69 +124,6 @@
   width: 100%;
 }
 
-/* Theme Toggles */
-.theme-toggles {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid rgba(var(--neutral), 0.3);
-  border-radius: 8px;
-  background-color: rgba(var(--background), 0.8);
-  color: rgb(var(--text));
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.theme-toggle:hover {
-  border-color: rgb(var(--accent));
-  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1));
-  color: rgb(var(--accent));
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(var(--accent), 0.15);
-}
-
-.theme-toggle.active {
-  border-color: rgb(var(--accent));
-  background: linear-gradient(135deg, rgba(var(--accent), 0.2), rgba(var(--highlight), 0.15));
-  color: rgb(var(--accent));
-  box-shadow: 0 4px 12px rgba(var(--accent), 0.25);
-}
-
-.light .theme-toggle:hover {  border-color: rgb(var(--primary));
-  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--highlight), 0.1));
-  color: rgb(var(--primary));
-}
-
-.dark .theme-toggle:hover {  border-color: rgb(var(--accent));
-  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--accent), 0.1));
-  color: rgb(var(--accent));
-}
-
-.cyberpunk .theme-toggle:hover {
-  border-color: rgb(var(--secondary));
-  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.1));
-  color: rgb(var(--secondary));
-  box-shadow: var(--glow-secondary);
-}
-
-.witcher .theme-toggle:hover {  border-color: rgb(var(--secondary));
-  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--highlight), 0.1));
-  color: rgb(var(--secondary));
-}
-
-.theme-toggle-label {
-  font-size: 0.875rem;
-}
-
 /* Mobile Menu Button */
 .mobile-menu-button {
   display: none;
@@ -267,60 +204,7 @@
   border-left-color: rgb(var(--primary));
 }
 
-.mobile-theme-toggles {
-  border-top: 1px solid rgba(var(--neutral), 0.2);
-  padding-top: 1rem;
-}
-
-.mobile-theme-label {
-  display: block;
-  color: rgb(var(--text));
-  font-weight: 600;
-  font-size: 0.875rem;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.mobile-theme-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.mobile-theme-toggle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  padding: 0.75rem;
-  border: 1px solid rgba(var(--neutral), 0.3);
-  border-radius: 6px;
-  background-color: rgba(var(--background), 0.8);
-  color: rgb(var(--text));
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.75rem;
-  font-weight: 500;
-  flex: 1;
-}
-
-.mobile-theme-toggle:hover {
-  border-color: rgb(var(--accent));
-  background-color: rgba(var(--accent), 0.1);
-  color: rgb(var(--accent));
-}
-
-.mobile-theme-toggle.active {
-  border-color: rgb(var(--accent));
-  background-color: rgba(var(--accent), 0.15);
-  color: rgb(var(--accent));
-}
-
 /* Cyberpunk-specific glow effects for navbar */
-.cyberpunk .theme-toggle.active {
-  box-shadow: var(--glow-accent);
-}
-
 .cyberpunk .nav-link:hover {
   text-shadow: var(--glow-accent);
 }
@@ -330,12 +214,8 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 728px) {
   .navbar-links {
-    display: none;
-  }
-  
-  .theme-toggles {
     display: none;
   }
   
@@ -346,23 +226,22 @@
   .mobile-menu {
     display: block;
   }
+}
+
+/* Responsive Design */
+@media (max-width: 1128px) {
+
+  .mobile-menu-button {
+    display: block;
+  }
   
-  .theme-toggle-label {
-    display: none;
+  .mobile-menu {
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
   .navbar-container {
     padding: 0 0.75rem;
-  }
-  
-  .mobile-theme-buttons {
-    flex-direction: column;
-  }
-  
-  .mobile-theme-toggle {
-    flex-direction: row;
-    justify-content: center;
   }
 }

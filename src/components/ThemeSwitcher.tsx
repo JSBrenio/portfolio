@@ -9,33 +9,59 @@ const themeIcons = {
   cyberpunk: Zap,
 };
 
-const ThemeSwitcher = () => {
+interface ThemeSwitcherProps {
+  variant?: 'desktop' | 'mobile';
+  onThemeChange?: () => void;
+}
+
+const ThemeSwitcher = ({ variant = 'desktop', onThemeChange }: ThemeSwitcherProps) => {
   const { theme, setTheme, themes } = useTheme();
 
-  return (
-    <div className="theme-switcher">
-      <label className="theme-label">Theme:</label>
-      <div className="theme-options">
-        {themes.map((themeOption) => {
-          const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
-          return (
-            <button
-              key={themeOption.name}
-              className={`theme-button ${theme === themeOption.name ? 'active' : ''}`}
-              onClick={() => setTheme(themeOption.name)}
-              title={themeOption.description}
-            >
-              <div className="theme-icon-container">
-                <IconComponent 
-                  size={20} 
-                  className={`theme-icon ${themeOption.name}`}
-                />
-              </div>
-              <span className="theme-name">{themeOption.label}</span>
-            </button>
-          );
-        })}
+  const handleThemeChange = (newTheme: typeof theme) => {
+    setTheme(newTheme);
+    onThemeChange?.();
+  };
+
+  if (variant === 'mobile') {
+    return (
+      <div className="mobile-theme-toggles">
+        <span className="mobile-theme-label">Theme:</span>
+        <div className="mobile-theme-buttons">
+          {themes.map((themeOption) => {
+            const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
+            return (
+              <button
+                key={themeOption.name}
+                className={`mobile-theme-toggle ${theme === themeOption.name ? 'active' : ''}`}
+                onClick={() => handleThemeChange(themeOption.name)}
+                title={`Switch to ${themeOption.label} theme`}
+              >
+                <IconComponent size={16} />
+                <span>{themeOption.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
+    );
+  }
+
+  return (
+    <div className="theme-toggles">
+      {themes.map((themeOption) => {
+        const IconComponent = themeIcons[themeOption.name as keyof typeof themeIcons];
+        return (
+          <button
+            key={themeOption.name}
+            className={`theme-toggle ${theme === themeOption.name ? 'active' : ''}`}
+            onClick={() => handleThemeChange(themeOption.name)}
+            title={`Switch to ${themeOption.label} theme`}
+          >
+            <IconComponent size={18} />
+            <span className="theme-toggle-label">{themeOption.label}</span>
+          </button>
+        );
+      })}
     </div>
   );
 };
