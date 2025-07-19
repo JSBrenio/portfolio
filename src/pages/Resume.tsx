@@ -1,6 +1,6 @@
 import { useTheme } from '../hooks/useTheme';
 import { getResumeContent } from '../data/text/resumeContent';
-import { GraduationCap, Briefcase } from 'lucide-react';
+import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import { MarkdownContent } from '../components/MarkdownContent';
 import '../styles/Resume.css';
 
@@ -14,6 +14,20 @@ const Resume = () => {
         <header className="page-header">
           <h1 className="page-title glow-primary">Resume</h1>
         </header>
+
+        {/* Fixed Download Link */}
+        <div className="resume-download-fixed">
+          <a 
+            href="/resume.pdf" 
+            className="download-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Download Resume PDF"
+          >
+            <Download size={18} />
+            <span>Download PDF</span>
+          </a>
+        </div>
 
         <div className="resume-content">
           {/* Education Section */}

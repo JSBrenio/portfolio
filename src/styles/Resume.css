@@ -43,7 +43,7 @@
   padding-left: clamp(1.5rem, 2vw, 1.8rem);
 }
 
-.timeline::before {
+.resume-container .timeline::before {
   content: '';
   position: absolute;
   left: 0.5rem;
@@ -63,9 +63,9 @@
   margin-bottom: 0;
 }
 
-.timeline-marker {
-  position: absolute;
-  left: clamp(-1.35rem, -2vw, -1.75rem);
+.resume-container .timeline-marker {
+  position: relative;
+  left: -3.75rem;
   top: 2rem;
   width: clamp(10px, 1.5vw, 12px);
   height: clamp(10px, 1.5vw, 12px);
@@ -182,13 +182,13 @@
   border-left-color: rgb(var(--secondary));
 }
 
-.cyberpunk .timeline-marker {
+.cyberpunk .resume-container .timeline-marker {
   background-color: rgb(var(--secondary));
   border: 3px solid rgb(var(--background));
   box-shadow: 0 0 10px rgba(var(--secondary), 0.5);
 }
 
-.cyberpunk .timeline::before {
+.cyberpunk .resume-container .timeline::before {
   background: linear-gradient(180deg, rgb(var(--primary)), rgb(var(--secondary)));
 }
 
@@ -202,7 +202,7 @@
   border-left-color: rgb(var(--primary));
 }
 
-.witcher .timeline-marker {
+.witcher .resume-container .timeline-marker {
   background-color: rgb(var(--secondary));
   border: 3px solid rgb(var(--background));
   box-shadow: 0 0 0 2px rgb(var(--secondary));
@@ -213,6 +213,12 @@
 }
 
 /* Responsive Design - Mobile layout adjustments only */
+@media (max-width: 1300px) {
+  .resume-container .timeline-marker {
+    left: -3.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .section-header {
     flex-direction: column;
@@ -225,4 +231,48 @@
     display: block;
     margin: 0.25rem 0;
   }
+
+  .resume-container .timeline-marker {
+    left: -3.4rem;
+  }
+}
+
+/* Download Link */
+  .resume-download-fixed {
+    position: static;
+    top: auto;
+    right: auto;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.download-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(var(--background), 0.95);
+  border: 1px solid rgba(var(--accent), 0.6);
+  border-radius: 8px;
+  color: rgb(var(--accent));
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(var(--neutral), 0.15);
+  transition: all 0.2s ease;
+  width: auto;
+}
+
+.download-link:hover {
+  background: rgba(var(--accent), 0.1);
+  border-color: rgb(var(--accent));
+  color: rgb(var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(var(--accent), 0.25);
+}
+
+.download-link:active {
+  transform: translateY(-1px);
 }

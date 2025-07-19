@@ -46,15 +46,15 @@ export const getContactContent = (theme: Theme, useThemedContent = true): Contac
     info: {
       email: {
         title: "Email",
-        value: "jeremiah.brenio@example.com"
+        value: "jsbrenio@gmail.com"
       },
       phone: {
         title: "Phone",
-        value: "+1 (555) 123-4567"
+        value: "+1 (206) 503-1211"
       },
       location: {
         title: "Location",
-        value: "San Francisco, CA"
+        value: "Seattle, WA"
       },
       social: {
         title: "Social Links"
