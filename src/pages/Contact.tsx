@@ -8,8 +8,11 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Twitter,
+  Instagram,
 } from "lucide-react";
+import { 
+  FaSteam,
+} from "react-icons/fa";
 import "../styles/Contact.css";
 
 const Contact = () => {
@@ -87,25 +90,28 @@ const Contact = () => {
             </h3>
             <div className="contact-social-links">
               <a
-                href="#"
+                href="https://github.com/jsbrenio"
                 className="contact-social-link accent"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Github size={20} />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com/in/jeremiah-brenio"
                 className="contact-social-link secondary"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin size={20} />
               </a>
               <a
-                href="#"
+                href="https://steamcommunity.com/id/capncandy/"
                 className="contact-social-link highlight"
-                onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Twitter size={20} />
+                <FaSteam size={20}/>
               </a>
             </div>
           </div>
