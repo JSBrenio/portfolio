@@ -1,0 +1,227 @@
+/* Contact Form Styles */
+.contact-form {
+  position: relative;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: rgba(var(--background), 0.5);
+  border: 1px solid rgba(var(--neutral), 0.2);
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(var(--text));
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* HCaptcha styling */
+.contact-form-group .h-captcha {
+  margin: 0 auto;
+  display: block;
+}
+
+.contact-form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(var(--text));
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--neutral), 0.3);
+  background-color: rgba(var(--background), 0.8);
+  color: rgb(var(--text));
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.contact-form-input:focus {
+  outline: none;
+  border-color: rgb(var(--primary));
+  box-shadow: 0 0 0 2px rgba(var(--primary), 0.2);
+}
+
+.contact-form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--neutral), 0.3);
+  background-color: rgba(var(--background), 0.8);
+  color: rgb(var(--text));
+  font-size: 1rem;
+  min-height: 120px;
+  resize: vertical;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.contact-form-textarea:focus {
+  outline: none;
+  border-color: rgb(var(--primary));
+  box-shadow: 0 0 0 2px rgba(var(--primary), 0.2);
+}
+
+.contact-form-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgb(var(--primary));
+  background-color: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contact-form-button:hover {
+  background-color: rgba(var(--primary), 0.2);
+  transform: translateY(-1px);
+}
+
+.contact-form-button:active {
+  transform: translateY(0);
+}
+
+/* Success Popup Styles */
+.success-popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  border-radius: 12px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.success-popup {
+  background: rgb(var(--navbar-bg));
+  border: 1px solid rgb(var(--border));
+  border-radius: 16px;
+  padding: 1.5rem;
+  max-width: 90%;
+  width: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+}
+
+.success-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgb(var(--text-secondary));
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.success-popup-close:hover {
+  background: rgb(var(--hover-bg));
+  color: rgb(var(--text-primary));
+}
+
+.success-popup-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.success-icon {
+  color: #10b981;
+  animation: checkmark 0.5s ease-out 0.2s both;
+}
+
+.success-title {
+  color: rgb(var(--text-primary));
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.success-message {
+  color: rgb(var(--text-secondary));
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes checkmark {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .success-popup {
+    padding: 1rem;
+    max-width: 95%;
+  }
+  
+  .success-title {
+    font-size: 1.125rem;
+  }
+  
+  .success-message {
+    font-size: 0.8rem;
+  }
+  
+  .success-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -1,6 +1,7 @@
 import { useTheme } from "../hooks/useTheme";
 import { getContactContent } from "../data/text";
 import MarkdownContent from "../components/MarkdownContent";
+import ContactForm from "../components/ContactForm";
 import {
   Mail,
   Phone,
@@ -8,36 +9,12 @@ import {
   Github,
   Linkedin,
   Twitter,
-  Send,
 } from "lucide-react";
-import { useState } from "react";
 import "../styles/Contact.css";
 
 const Contact = () => {
   const { theme, useThemedContent } = useTheme();
   const contactContent = getContactContent(theme, useThemedContent);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    alert(contactContent.alerts.success);
-  };
 
   return (
     <div className="contact-container">
@@ -135,63 +112,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div
-          className={`contact-form glow-highlight`}
-        >
-          <h2 className="contact-form-title">
-            {contactContent.form.title}
-          </h2>
-
-          <form onSubmit={handleSubmit}>
-            {" "}
-            <div className="contact-form-group">
-              {" "}
-              <label className="contact-form-label" htmlFor="name">
-                {contactContent.form.name}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                className="contact-form-input"
-                required
-              />
-            </div>
-            <div className="contact-form-group">
-              <label className="contact-form-label" htmlFor="email">
-                {contactContent.form.email}
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="contact-form-input"
-                required
-              />
-            </div>
-            <div className="contact-form-group">
-              <label className="contact-form-label" htmlFor="message">
-                {contactContent.form.message}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                className="contact-form-textarea"
-                required
-              />
-            </div>
-            <button type="submit" className="contact-form-button">
-              <Send size={18} />
-              {contactContent.form.submit}
-            </button>
-          </form>
-        </div>
+        <ContactForm contactContent={contactContent} />
       </div>
     </div>
   );

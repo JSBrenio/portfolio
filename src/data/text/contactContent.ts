@@ -61,7 +61,7 @@ export const getContactContent = (theme: Theme, useThemedContent = true): Contac
       }
     },
     alerts: {
-      success: "Message sent!"
+      success: "Success!"
     }
   };
 
