@@ -33,9 +33,17 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
 
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [captchaRef, setCaptchaRef] = useState<any>(null);
 
   const onHCaptchaChange = (token: string) => {
     setCaptchaToken(token);
+  };
+
+  const resetCaptcha = () => {
+    if (captchaRef) {
+      captchaRef.resetCaptcha();
+    }
+    setCaptchaToken(null);
   };
 
   const handleInputChange = (
@@ -64,7 +72,7 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
       setShowSuccessPopup(true);
       // Reset form
       setFormData({ name: '', email: '', message: '' });
-      setCaptchaToken(null);
+      resetCaptcha();
       // Auto-hide popup after 3 seconds
       setTimeout(() => setShowSuccessPopup(false), 3000);
       return;
@@ -97,16 +105,18 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
         setShowSuccessPopup(true);
         // Reset form
         setFormData({ name: '', email: '', message: '' });
-        setCaptchaToken(null);
+        resetCaptcha();
         // Auto-hide popup after 3 seconds
         setTimeout(() => setShowSuccessPopup(false), 3000);
       } else {
         console.error("Form submission failed", res);
         alert("Failed to send message. Please try again.");
+        resetCaptcha(); // Reset captcha on failure
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Failed to send message. Please try again.");
+      resetCaptcha(); // Reset captcha on error
     }
   };
 
@@ -163,6 +173,7 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
 
       <div className="contact-form-group">
         <HCaptcha
+           ref={(ref) => setCaptchaRef(ref)}
            sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
            reCaptchaCompat={false}
            onVerify={onHCaptchaChange} 
