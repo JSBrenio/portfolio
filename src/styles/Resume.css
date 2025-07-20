@@ -11,6 +11,24 @@
   gap: 3rem;
 }
 
+.resume-card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 12px;
+  overflow: visible;
+}
+
+.resume-card.education {
+  border: 1px solid rgba(var(--primary), 0.2);
+  background: linear-gradient(135deg, rgba(var(--neutral), 0.1), rgba(var(--background), 0.15));
+  box-shadow: var(--glow-primary);
+}
+
+.resume-card.experience {
+  border: 1px solid rgba(var(--primary), 0.2);
+  background: linear-gradient(135deg, rgba(var(--neutral), 0.1), rgba(var(--background), 0.15));
+  box-shadow: var(--glow-primary);
+}
+
 .resume-section {
   position: relative;
 }
@@ -239,10 +257,9 @@
 
 /* Download Link */
   .resume-download-fixed {
-    position: static;
-    top: auto;
-    right: auto;
-    margin: 1rem 0;
+    position: relative;
+    bottom: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
 }

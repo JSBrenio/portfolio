@@ -84,7 +84,7 @@ const Contact = () => {
             </div>
           </div>{" "}
           {/* Social Links */}
-          <div className="contact-info-card">
+          <div className="contact-info-card glow-neutral">
             <h3 className="contact-info-title social-links-title">
               {contactContent.info.social.title}
             </h3>

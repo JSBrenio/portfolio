@@ -7,7 +7,7 @@
 
 .projects-subtitle {
   font-size: 1.2rem;
-  color: rgb(var(--text-light));
+  color: rgb(var(--text));
   margin-bottom: 2rem;
   max-width: 600px;
   margin: 1rem auto 2rem auto;
@@ -17,11 +17,33 @@
   margin-bottom: 3rem;
 }
 
+.projects-card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 12px;
+  overflow: visible;
+}
+
+.projects-card.featured {
+  border: 1px solid rgba(var(--secondary), 0.2);
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.05));
+  box-shadow: var(--glow-secondary);
+
+}
+
+.projects-card.other {
+  border: 1px solid rgba(var(--highlight), 0.2);
+  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--secondary), 0.05));
+  box-shadow: var(--glow-highlight);
+
+}
+
 .projects-section-title {
+  text-align: center;
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  text-align: center;
+  margin-top: -1rem;
+  text-align: left;
 }
 
 .featured {

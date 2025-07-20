@@ -31,18 +31,20 @@ const Projects = () => {
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
         <div className="projects-section">
-          <h2 className={`projects-section-title featured glow-secondary`}>
-            {projectsContent.sections.featured}
-          </h2>          
-          <div className="projects-grid">
-            {featuredProjects.map((project) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
-                size="medium"
-                className="shadow-orange"
-              />
-            ))}
+          <div className={`projects-card featured ${theme}`}>
+            <h2 className={`projects-section-title featured`}>
+              {projectsContent.sections.featured}
+            </h2>          
+            <div className="projects-grid">
+              {featuredProjects.map((project) => (
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  size="medium"
+                  className="shadow-orange"
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}
@@ -50,18 +52,20 @@ const Projects = () => {
       {/* Other Projects */}
       {otherProjects.length > 0 && (
         <div className="projects-section">
-          <h2 className={`projects-section-title other glow-highlight`}>
-            {projectsContent.sections.other}
-          </h2>          
-          <div className="projects-grid">
-            {otherProjects.map((project) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
-                size="medium"
-                className="shadow-emerald"
-              />
-            ))}
+          <div className={`projects-card other ${theme}`}>
+            <h2 className={`projects-section-title other`}>
+              {projectsContent.sections.other}
+            </h2>          
+            <div className="projects-grid">
+              {otherProjects.map((project) => (
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  size="medium"
+                  className="shadow-emerald"
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}

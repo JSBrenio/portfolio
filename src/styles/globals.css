@@ -18,6 +18,7 @@
   --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
   --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
   --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
+  --glow-neutral: 0 0 10px rgba(var(--neutral), 0.8);
 }
 
 .dark {
@@ -38,6 +39,7 @@
   --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
   --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
   --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
+  --glow-neutral: 0 0 10px rgba(var(--neutral), 0.8);
 }
 
 .cyberpunk {
@@ -59,6 +61,7 @@
   --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
   --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
   --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
+  --glow-neutral: 0 0 10px rgba(var(--neutral), 0.8);
 }
 
 .witcher {
@@ -81,6 +84,7 @@
   --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
   --glow-accent: 0 0 10px rgba(var(--accent), 0.8);
   --glow-highlight: 0 0 10px rgba(var(--highlight), 0.8);
+  --glow-neutral: 0 0 10px rgba(var(--neutral), 0.8);
 }
 
 /* Cyberpunk-specific body styling */
@@ -146,6 +150,11 @@ body.cyberpunk {
   text-shadow: var(--glow-highlight);
 }
 
+.glow-neutral {
+  box-shadow: var(--glow-neutral);
+  text-shadow: var(--glow-neutral);
+}
+
 /* Standardized Page Headers and Titles */
 .page-header {
   text-align: center;
@@ -163,6 +172,7 @@ body.cyberpunk {
   margin: 0;
   margin-top: 1rem;
   transition: color 0.3s ease;
+  background-color: rgba(var(--navbar-bg), 0.2);
 }
 
 /* Gradient backgrounds for more colorful elements */

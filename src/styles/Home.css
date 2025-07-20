@@ -27,6 +27,11 @@
   margin-bottom: 5rem;
 }
 
+/* Disable drag and drop */
+img {
+  -webkit-user-drag: none;
+}
+
 .profile-image {
   width: 100%;
   height: 100%;
@@ -34,6 +39,16 @@
   object-fit: cover;
   border: 4px solid rgb(var(--primary));
   transition: all 0.3s ease;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: none;
 }
 
 .profile-image:hover {

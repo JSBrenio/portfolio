@@ -184,13 +184,17 @@
 
 /* Description styling */
 .project-card-description {
+  flex-grow: 1;
   color: rgb(var(--text));
   margin: 0;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
+  line-height: 1.6;
   -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* margin-bottom: 1.5rem; */
 }
 
 .project-card-description.small {
@@ -311,17 +315,6 @@
   font-size: 2rem;
   color: rgba(var(--background), 0.9);
   font-weight: bold;
-}
-
-/* Description */
-.project-card-description {
-  color: rgb(var(--text-light));
-  line-height: 1.6;
-  /* margin-bottom: 1.5rem; */
-  flex-grow: 1;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 .project-card-description.small {
