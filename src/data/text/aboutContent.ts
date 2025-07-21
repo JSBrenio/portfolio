@@ -1,4 +1,5 @@
 import type { Theme } from '../../types/theme';
+import backgroundContent from '/src/data/text/about-background.md?raw';
 
 export interface AboutContent {
   title: string;
@@ -26,11 +27,11 @@ export interface AboutContent {
 export const getAboutContent = (theme: Theme, useThemedContent = true): AboutContent => {
   const baseContent: AboutContent = {
     title: "About Me",
-    subtitle: "This page demonstrates how themes persist across different routes. Notice how all colors automatically match your selected theme!",
+    subtitle: "Learn more about me as a **developer** and as a *person*!",
     sections: {
       background: {
         title: "Background",
-        content: "I'm a **passionate developer** who loves creating *beautiful, functional* web applications. This `theme system` demonstrates how **CSS variables** can create a seamless theming experience."
+        content: backgroundContent
       },
       skills: {
         title: "Skills",
@@ -180,7 +181,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
       sections: {
         background: {
           title: "Neural History",
-          content: baseContent.sections.background.content
+          content: backgroundContent
         },
         skills: {
           title: "Skill Matrix",
@@ -198,7 +199,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
       sections: {
         background: {
           title: "Origins",
-          content: baseContent.sections.background.content
+          content: backgroundContent
         },
         skills: {
           title: "Abilities",
