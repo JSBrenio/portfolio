@@ -12,9 +12,11 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 
+const FutureFlags = { v7_startTransition: true, v7_relativeSplatPath: true };
+
 function App() {
   return (
-    <Router>
+    <Router future={FutureFlags}>
       <ScrollToTop />
       <Navbar />
       <main>
