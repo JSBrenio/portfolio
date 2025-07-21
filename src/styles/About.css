@@ -8,7 +8,6 @@
 .about-subtitle {
   font-size: 1.25rem;
   color: rgb(var(--text-light));
-  margin-bottom: 2rem;
   max-width: 600px;
   margin: 0 auto 2rem auto;
 }
@@ -27,63 +26,15 @@
 
 .about-card.primary {
   border: 1px solid rgba(var(--primary), 0.2);
-}
-
-.about-card.primary.light {
-  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--secondary), 0.05));
-}
-
-.about-card.primary.dark {
-  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--secondary), 0.05));
-}
-
-.about-card.primary.cyberpunk {
   background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--secondary), 0.05));
   box-shadow: var(--glow-primary);
 }
 
-.about-card.primary.witcher {
-  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--accent), 0.05));
-}
-
 .about-card.secondary {
   border: 1px solid rgba(var(--secondary), 0.2);
-}
-
-.about-card.secondary.light {
   background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.05));
-}
+  box-shadow: var(--glow-secondary);
 
-.about-card.secondary.dark {
-  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.05));
-}
-
-.about-card.secondary.cyberpunk {
-  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.05));
-}
-
-.about-card.secondary.witcher {
-  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--highlight), 0.05));
-}
-
-.about-card.highlight {
-  border: 1px solid rgba(var(--highlight), 0.2);
-}
-
-.about-card.highlight.light {
-  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--secondary), 0.05));
-}
-
-.about-card.highlight.dark {
-  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--secondary), 0.05));
-}
-
-.about-card.highlight.cyberpunk {
-  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--secondary), 0.05));
-}
-
-.about-card.highlight.witcher {
-  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--accent), 0.05));
 }
 
 .about-card-title {
@@ -97,10 +48,6 @@
 
 .about-card-title.secondary {
   color: rgb(var(--secondary));
-}
-
-.about-card-title.highlight {
-  color: rgb(var(--highlight));
 }
 
 .about-card-text {

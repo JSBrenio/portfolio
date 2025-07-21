@@ -23,7 +23,7 @@ const About = () => {
 
       {/* Content sections using theme colors */}
       <div className="about-grid">
-        <div className={`about-card primary ${theme}`}>            
+        <div className={'about-card primary'}>            
           <h2 className="about-card-title primary">
             {aboutContent.sections.background.title}
           </h2>
@@ -33,7 +33,7 @@ const About = () => {
           />
         </div>
 
-        <div className={`about-card secondary ${theme}`}>          
+        <div className={'about-card secondary'}>          
           <h2 className="about-card-title secondary">
             {aboutContent.sections.skills.title}
           </h2>

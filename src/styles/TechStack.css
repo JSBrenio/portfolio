@@ -78,7 +78,6 @@
 /* Tech items */
 .tech-stack .tech-item {
   display: flex;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   flex-direction: column;
   align-items: center;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
@@ -129,4 +128,38 @@
 
 .hover-scale:hover {
   transform: scale(1.1);
+}
+
+/* Project Card Tech Stack Overrides */
+.project-card-tech-footer {
+  padding: 0.75rem 1.25rem 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(var(--primary), 0.03), rgba(var(--secondary), 0.03));
+  border-top: 1px solid rgba(var(--primary), 0.1);
+  flex-shrink: 0;
+  height: 4rem; /* Fixed height for consistent sizing */
+  display: flex;
+  align-items: center;
+}
+
+.project-card-tech-stack {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.25rem;
+  overflow: hidden; /* Hide overflow if too many tech items */
+  width: 100%;
+}
+
+/* Make sure tech icons are smaller in cards */
+.project-card-tech-stack .tech-item {
+  margin: 0 0.125rem;
+}
+
+/* Responsive adjustments for tech stack in project cards */
+.project-card-tech-stack .tech-stack-carousel {
+  max-width: 100%;
+}
+
+.project-card-tech-stack .tech-item-label {
+  font-size: 0.7rem;
 }

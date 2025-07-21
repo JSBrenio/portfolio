@@ -8,7 +8,6 @@
 .contact-subtitle {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: rgb(var(--text-light));
-  margin-bottom: 2rem;
   max-width: 600px;
   margin: 0 auto 2rem auto;
 }

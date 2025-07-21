@@ -17,12 +17,7 @@
   overflow: visible;
 }
 
-.resume-card.education {
-  border: 1px solid rgba(var(--primary), 0.2);
-  background: linear-gradient(135deg, rgba(var(--neutral), 0.1), rgba(var(--background), 0.15));
-  box-shadow: var(--glow-primary);
-}
-
+.resume-card.education,
 .resume-card.experience {
   border: 1px solid rgba(var(--primary), 0.2);
   background: linear-gradient(135deg, rgba(var(--neutral), 0.1), rgba(var(--background), 0.15));
