@@ -24,8 +24,8 @@ function Home() {
         <div className="home-profile">
           <div className="profile-image-container">
             <img 
-              src="/blue_nobg.png" 
-              alt="Profile" 
+              src="/me.jpg" 
+              alt="Profile Image" 
               className="profile-image"
             />
             <p className="profile-niche">{homeContent.niche}</p>
