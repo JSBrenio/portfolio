@@ -35,7 +35,7 @@ const ProjectCard = ({
     const date = new Date(parseInt(year), parseInt(month) - 1);
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
-      month: 'long' 
+      month: 'short' 
     });
   };
 
