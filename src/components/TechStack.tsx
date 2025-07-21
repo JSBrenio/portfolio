@@ -49,6 +49,7 @@ const TechStack = ({
   const getDisplayName = (tech: string) => {
     const displayNames: { [key: string]: string } = {
       'reactjs': 'React',
+      'c++': 'C/C++',
       'react': 'React',
       'ts': 'TypeScript',
       'js': 'JavaScript',

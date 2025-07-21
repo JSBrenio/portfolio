@@ -1,20 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
+import { Project } from '../data/projects';
 import TechStack from './TechStack';
 import '../styles/ProjectCard.css';
-
-export interface Project {
-  id: string;
-  name: string;
-  description: string;
-  detailedDescription?: string; // New field for markdown content
-  techStack: string[];
-  image: string;
-  liveUrl?: string;
-  githubUrl?: string;
-  featured?: boolean;
-  date: string; // Format: "YYYY-MM" (e.g., "2024-03")
-}
 
 interface ProjectCardProps {
   project: Project;

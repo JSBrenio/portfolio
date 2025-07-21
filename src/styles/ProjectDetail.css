@@ -49,10 +49,9 @@
   gap: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1128px) {
   .header-content {
     flex-direction: row;
-    align-items: flex-start;
   }
 }
 
@@ -65,7 +64,7 @@
   width: 100%;
   max-width: 50rem;
   aspect-ratio: 16/8;
-  background-color: rgba(var(--neutral), 0.1);
+  background-color: rgba(var(--navbar-bg), 0.1);
   border: 1px solid rgba(var(--neutral), 0.2);
 }
 
@@ -81,8 +80,9 @@
 
 /* Project info */
 .project-info {
-  flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-title-section {
@@ -94,31 +94,7 @@
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: rgb(var(--primary));
-}
-
-.project-title.light {
   background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.project-title.dark {
-  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--highlight)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.project-title.cyberpunk {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.project-title.witcher {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--highlight)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -151,14 +127,20 @@
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 600;
   background-color: rgba(var(--highlight), 0.9);
-  color: rgb(var(--background));
 }
 
 .featured-badge .icon {
   margin-right: 0.5rem;
+  color: rgb(var(--background));
+}
+
+.featured-badge-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgb(var(--background));
+  position: relative;
+  bottom: 0.35rem;
 }
 
 .project-description {
@@ -166,13 +148,14 @@
   margin-bottom: 1.5rem;
   line-height: 1.75;
   color: rgb(var(--text-light));
+  flex-grow: 1;
 }
 
 /* Project links */
 .project-links {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .project-link {
@@ -192,52 +175,24 @@
 }
 
 .project-link.live-link {
-  box-shadow: var(--shadow-orange);
-}
-
-.project-link.live-link.light {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-}
-
-.project-link.live-link.dark {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
-}
-
-.project-link.live-link.cyberpunk {
   background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
   box-shadow: var(--glow-primary);
 }
 
-.project-link.live-link.witcher {
-  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--highlight)));
+.project-link.live-link:hover {
+  color: rgb(var(--neutral));
 }
 
 .project-link.github-link {
   border: 1px solid;
-}
-
-.project-link.github-link.light {
-  border-color: rgba(var(--neutral), 0.3);
-  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1));
-  color: rgb(var(--accent));
-}
-
-.project-link.github-link.dark {
-  border-color: rgba(var(--neutral), 0.3);
-  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1));
-  color: rgb(var(--accent));
-}
-
-.project-link.github-link.cyberpunk {
   border-color: rgba(var(--accent), 0.4);
   background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1));
   color: rgb(var(--accent));
+  box-shadow: var(--glow-accent);
 }
 
-.project-link.github-link.witcher {
-  border-color: rgba(var(--highlight), 0.4);
-  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--secondary), 0.1));
-  color: rgb(var(--highlight));
+.project-link.github-link:hover {
+  color: rgb(var(--primary));
 }
 
 /* Main layout grid */
@@ -390,4 +345,20 @@
   color: rgb(var(--text));
   font-size: 1rem;
   line-height: 1.75;
+}
+
+/* Icon sizes */
+.icon-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-md {
+  width: 24px;/* 20px - equivalent to w-5 h-5 */
+  height: 24px;
+}
+
+/* Layout utility */
+.flex-shrink-none {
+  flex-shrink: 0;
 }
