@@ -140,7 +140,7 @@ const ProjectDetail = () => {
                   className="project-image"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = `https://via.placeholder.com/500x312/666666/ffffff?text=${encodeURIComponent(project.name)}`;
+                    target.src = '/plz.jpg';
                   }}
                 />
               </div>
