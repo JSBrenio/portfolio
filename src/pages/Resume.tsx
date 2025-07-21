@@ -9,11 +9,10 @@ const Resume = () => {
   const resumeContent = getResumeContent(theme, useThemedContent);
 
   return (
-    <div className="resume-page">
-      <div className="resume-container">
-        <header className="page-header">
-          <h1 className="page-title glow-primary">Resume</h1>
-        </header>
+    <div className="resume-container">
+      <header className="page-header">
+        <h1 className="page-title glow-primary">Resume</h1>
+      </header>
 
         {/* Fixed Download Link */}
         <div className="resume-download-fixed">
@@ -89,7 +88,6 @@ const Resume = () => {
             </section>
           </div>
         </div>
-      </div>
     </div>
   );
 };
