@@ -85,7 +85,7 @@ export const realProjects: Project[] = [
       'Card image galleries',
       'Set and rarity filters'
     ],
-    techStack: ['typescript', 'react', 'nodejs', 'mysql', 'expressjs'],
+    techStack: ['js', 'react', 'nodejs', 'mysql', 'expressjs'],
     image: '/lotus-query/image.png',
     githubUrl: 'https://github.com/cnlwebber/Lotus-Query',
     featured: true,
