@@ -58,13 +58,13 @@ const InteractiveSkills: React.FC<InteractiveSkillsProps> = ({
               <div className="skill-definition-section">
                 <h5 className="skill-section-header">Definition</h5>
                 <p className="skill-definition-text">
-                  {skillDetails[selectedSkill]?.definition || 'No definition available for this skill.'}
+                  {skillDetails[selectedSkill]?.definition || 'Still writing it! 😅.'}
                 </p>
               </div>
               <div className="skill-experience-section">
                 <h5 className="skill-section-header">My Experience</h5>
                 <p className="skill-experience-text">
-                  {skillDetails[selectedSkill]?.experience || 'No experience details available for this skill.'}
+                  {skillDetails[selectedSkill]?.experience || 'Still writing it! 😅.'}
                 </p>
               </div>
             </div>
