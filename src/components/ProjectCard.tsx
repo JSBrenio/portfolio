@@ -3,6 +3,7 @@ import { useTheme } from '../hooks/useTheme';
 import { Project } from '../data/projects';
 import TechStack from './TechStack';
 import '../styles/ProjectCard.css';
+import MarkdownContent from './MarkdownContent';
 
 interface ProjectCardProps {
   project: Project;
@@ -69,9 +70,7 @@ const ProjectCard = ({
         {/* Content - Right side */}
         <div className={`project-card-content ${size}`}>
           {/* Description */}
-          <p className={`project-card-description ${size}`}>
-            {project.description}
-          </p>
+          <MarkdownContent content={project.description} className={`project-card-description ${size}`}/>
         </div>
       </div>
 
