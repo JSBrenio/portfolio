@@ -72,8 +72,6 @@ const ProjectCard = React.memo(({
         <TechStack
           technologies={project.techStack}
           size={size === 'small' ? 18 : size === 'medium' ? 20 : 22}
-          spacing="sm"
-          layout="row"
           showLabels={true}
           className="project-card-tech-stack"
         />

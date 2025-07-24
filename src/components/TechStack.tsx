@@ -1,13 +1,10 @@
 import React from 'react';
 import TechIcon from './TechIcon';
-import { useRef, useEffect, useState } from 'react';
 import '../styles/TechStack.css';
 
 interface TechStackProps {
   technologies: string[];
   size?: number;
-  spacing?: 'sm' | 'md' | 'lg';
-  layout?: 'row' | 'grid';
   showLabels?: boolean;
   className?: string;
 }
@@ -15,34 +12,9 @@ interface TechStackProps {
 const TechStack = React.memo(({ 
   technologies, 
   size = 40, 
-  spacing = 'md',
-  layout = 'row',
   showLabels = false,
   className = ""
 }: TechStackProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [showCarousel, setShowCarousel] = useState(false);
-  
-  // Check if content overflows and needs carousel
-  useEffect(() => {
-    const checkOverflow = () => {
-      if (containerRef.current && layout === 'row') {
-        const container = containerRef.current;
-        const containerWidth = container.offsetWidth;
-        const scrollWidth = container.scrollWidth;
-        setShowCarousel(scrollWidth > containerWidth);
-      } else {
-        setShowCarousel(false);
-      }
-    };
-
-    checkOverflow();
-    window.addEventListener('resize', checkOverflow);
-    
-    return () => {
-      window.removeEventListener('resize', checkOverflow);
-    };
-  }, [technologies, layout, size]);
   
   // Map tech names to display names
   const getDisplayName = (tech: string) => {
@@ -67,74 +39,47 @@ const TechStack = React.memo(({
     };
     return displayNames[tech.toLowerCase()] || tech;
   };
-  
-  const spacingClasses = {
-    sm: 'gap-1',
-    md: 'gap-2',
-    lg: 'gap-3'
-  };
-
-  const layoutClasses = {
-    row: '',
-    grid: 'grid'
-  };
-
-  // No JavaScript animation needed - using CSS animations instead
-  useEffect(() => {
-    return;
-  }, [showCarousel]);
 
   if (technologies.length === 0) {
     return null;
   }
 
-  if (showCarousel) {
-    // Duplicate the technologies for seamless infinite scroll
-    const duplicatedTechnologies = [...technologies, ...technologies];
-    
-    return (
-      <div className={`tech-stack-carousel ${className}`}>
-        <div 
-          className={`tech-stack-scroll ${spacingClasses[spacing]} infinite-scroll`}
-        >
-          {duplicatedTechnologies.map((tech, index) => (
-            <div key={`${tech}-${index}`} className="tech-item carousel-item">
-              <TechIcon 
-                tech={tech} 
-                size={size}
-                className="hover-scale"
-              />
-              {showLabels && (
-                <span className="tech-item-label">
-                  {getDisplayName(tech)}
-                </span>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div 
-      ref={containerRef}
-      className={`tech-stack ${layoutClasses[layout]} ${spacingClasses[spacing]} ${className}`}
-    >
-      {technologies.map((tech, index) => (
-        <div key={`${tech}-${index}`} className="tech-item">
+  const totalItems = technologies.length;
+  const animationDuration = Math.max(totalItems * 2, 15);
+  
+  const marqueStyle = {
+    '--total-items': totalItems,
+    '--animation-duration': `${animationDuration}s`,
+    '--gap': '0.5rem'
+  } as React.CSSProperties;
+  
+  const renderTechItems = () => (
+    technologies.map((tech, index) => (
+      <li key={`${tech}-${index}`} className="tech-item">
+        <span className="tech-icon-container">
           <TechIcon 
             tech={tech} 
             size={size}
             className="hover-scale"
           />
-          {showLabels && (
-            <span className="tech-item-label">
-              {getDisplayName(tech)}
-            </span>
-          )}
-        </div>
-      ))}
+        </span>
+        {showLabels && (
+          <span className="tech-item-label">
+            {getDisplayName(tech)}
+          </span>
+        )}
+      </li>
+    ))
+  );
+  
+  return (
+    <div className={`tech-stack-marquee ${className}`} style={marqueStyle}>
+      <ul>
+        {renderTechItems()}
+      </ul>
+      <ul aria-hidden="true">
+        {renderTechItems()}
+      </ul>
     </div>
   );
 });

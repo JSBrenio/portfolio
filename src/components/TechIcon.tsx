@@ -7,9 +7,10 @@ interface TechIconProps {
   tech: string;
   size?: number;
   className?: string;
+  variant?: 'light' | 'dark';
 }
 
-const TechIcon = React.memo(({ tech, size = 64, className = "" }: TechIconProps) => {
+const TechIcon = React.memo(({ tech, size = 64, className = "", variant = "dark" }: TechIconProps) => {
   const iconName: IconName = tech;
   
   const getSizeClass = () => {
@@ -26,6 +27,7 @@ const TechIcon = React.memo(({ tech, size = 64, className = "" }: TechIconProps)
     >      
       <StackIcon 
         name={iconName} 
+        variant={variant}
         style={{ width: size, height: size }}
       />
     </div>
