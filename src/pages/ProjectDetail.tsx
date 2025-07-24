@@ -19,11 +19,6 @@ const ProjectDetail = () => {
     return <ProjectNotFound />;
   }
 
-  const getThemeVariant = () => {
-    if (theme === 'dark' || theme === 'cyberpunk') return 'dark';
-    return 'light';
-  };
-
   // Format the date from YYYY-MM to "Month Year"
   const formatDate = (dateString: string): string => {
     const [year, month] = dateString.split('-');
@@ -175,7 +170,6 @@ const ProjectDetail = () => {
                       <TechIcon
                         tech={tech.toLowerCase()}
                         size={32}
-                        variant={getThemeVariant()}
                       />
                       <span className="project-detail-tech-name">{tech}</span>
                     </div>

@@ -1,5 +1,5 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../hooks/useTheme';
 import { Project } from '../data/projects';
 import TechStack from './TechStack';
 import '../styles/ProjectCard.css';
@@ -11,13 +11,11 @@ interface ProjectCardProps {
   className?: string;
 }
 
-const ProjectCard = ({ 
+const ProjectCard = React.memo(({ 
   project, 
   size = 'medium', 
   className = '' 
 }: ProjectCardProps) => {
-  const { theme } = useTheme();
-
   // Format the date from YYYY-MM to "Month Year"
   const formatDate = (dateString: string): string => {
     const [year, month] = dateString.split('-');
@@ -26,11 +24,6 @@ const ProjectCard = ({
       year: 'numeric', 
       month: 'short' 
     });
-  };
-
-  const getThemeVariant = () => {
-    if (theme === 'dark' || theme === 'cyberpunk') return 'dark';
-    return 'light';
   };
 
   return (
@@ -82,12 +75,13 @@ const ProjectCard = ({
           spacing="sm"
           layout="row"
           showLabels={true}
-          variant={getThemeVariant()}
           className="project-card-tech-stack"
         />
       </div>
     </div>
   );
-};
+});
+
+ProjectCard.displayName = 'ProjectCard';
 
 export default ProjectCard;

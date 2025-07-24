@@ -2,7 +2,7 @@ import React from 'react';
 import { useTheme } from '../hooks/useTheme';
 import '../styles/Footer.css';
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC = React.memo(() => {
   const { theme, useThemedContent } = useTheme();
   const currentYear = new Date().getFullYear();
   
@@ -44,6 +44,8 @@ export const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

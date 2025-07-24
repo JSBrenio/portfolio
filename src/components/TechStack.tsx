@@ -1,3 +1,4 @@
+import React from 'react';
 import TechIcon from './TechIcon';
 import { useRef, useEffect, useState } from 'react';
 import '../styles/TechStack.css';
@@ -8,17 +9,15 @@ interface TechStackProps {
   spacing?: 'sm' | 'md' | 'lg';
   layout?: 'row' | 'grid';
   showLabels?: boolean;
-  variant?: 'light' | 'dark' | 'grayscale';
   className?: string;
 }
 
-const TechStack = ({ 
+const TechStack = React.memo(({ 
   technologies, 
   size = 40, 
   spacing = 'md',
   layout = 'row',
   showLabels = false,
-  variant = 'dark',
   className = ""
 }: TechStackProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,7 +46,7 @@ const TechStack = ({
   
   // Map tech names to display names
   const getDisplayName = (tech: string) => {
-    const displayNames: { [key: string]: string } = {
+    const displayNames: Record<string, string> = {
       'reactjs': 'React',
       'c++': 'C/C++',
       'react': 'React',
@@ -104,7 +103,6 @@ const TechStack = ({
                 tech={tech} 
                 size={size}
                 className="hover-scale"
-                variant={variant}
               />
               {showLabels && (
                 <span className="tech-item-label">
@@ -129,7 +127,6 @@ const TechStack = ({
             tech={tech} 
             size={size}
             className="hover-scale"
-            variant={variant}
           />
           {showLabels && (
             <span className="tech-item-label">
@@ -140,6 +137,8 @@ const TechStack = ({
       ))}
     </div>
   );
-};
+});
+
+TechStack.displayName = 'TechStack';
 
 export default TechStack;

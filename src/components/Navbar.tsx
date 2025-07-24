@@ -1,10 +1,11 @@
+import React from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
 import '../styles/Navbar.css';
 
-const Navbar = () => {
+const Navbar = React.memo(() => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -78,6 +79,8 @@ const Navbar = () => {
       )}
     </nav>
   );
-};
+});
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

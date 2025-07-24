@@ -1,7 +1,7 @@
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
-import { useTheme } from '../hooks/useTheme';
 import '../styles/Markdown.css';
 
 interface MarkdownContentProps {
@@ -9,9 +9,7 @@ interface MarkdownContentProps {
   className?: string;
 }
 
-export const MarkdownContent: React.FC<MarkdownContentProps> = ({ content, className = "" }) => {
-  const { theme } = useTheme();
-  
+export const MarkdownContent: React.FC<MarkdownContentProps> = React.memo(({ content, className = "" }) => {  
   // Custom sanitization schema that allows img tags and common attributes
   const sanitizeOptions = {
     ...defaultSchema,
@@ -33,7 +31,7 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = ({ content, class
   );
 
   return (
-    <div className={`markdown-content ${theme} ${className}`}>
+    <div className={`markdown-content ${className}`}>
       <ReactMarkdown
         rehypePlugins={[
           rehypeRaw,
@@ -69,6 +67,8 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = ({ content, class
       </ReactMarkdown>
     </div>
   );
-};
+});
+
+MarkdownContent.displayName = 'MarkdownContent';
 
 export default MarkdownContent;

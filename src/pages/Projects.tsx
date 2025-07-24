@@ -1,21 +1,25 @@
+import React, { useMemo } from 'react';
 import { useTheme } from '../hooks/useTheme';
 import ProjectCard from '../components/ProjectCard';
 import { realProjects } from '../data/projects';
 import { getProjectsContent } from '../data/text';
 import '../styles/Projects.css';
 
-const Projects = () => {
+const Projects = React.memo(() => {
   const { theme, useThemedContent } = useTheme();
   const projectsContent = getProjectsContent(theme, useThemedContent);
-  const projects = realProjects;
   
-  // Sort projects by date (newest first)
-  const sortedProjects = [...projects].sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
-  
-  const featuredProjects = sortedProjects.filter(project => project.featured);
-  const otherProjects = sortedProjects.filter(project => !project.featured);
+  // Memoize the sorted projects to prevent recalculation on every render
+  const { featuredProjects, otherProjects } = useMemo(() => {
+    const sortedProjects = [...realProjects].sort((a, b) => {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+    
+    return {
+      featuredProjects: sortedProjects.filter(project => project.featured),
+      otherProjects: sortedProjects.filter(project => !project.featured)
+    };
+  }, []); // Empty dependency array since realProjects is static
 
   return (
     <div className="projects-container">      
@@ -41,7 +45,6 @@ const Projects = () => {
                   key={project.id} 
                   project={project} 
                   size="medium"
-                  className="shadow-orange"
                 />
               ))}
             </div>
@@ -62,7 +65,6 @@ const Projects = () => {
                   key={project.id} 
                   project={project} 
                   size="medium"
-                  className="shadow-emerald"
                 />
               ))}
             </div>
@@ -71,6 +73,8 @@ const Projects = () => {
       )}
     </div>
   );
-};
+});
+
+Projects.displayName = 'Projects';
 
 export default Projects;

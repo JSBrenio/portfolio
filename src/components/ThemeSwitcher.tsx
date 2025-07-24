@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTheme } from '../hooks/useTheme';
 import { Sun, Moon, Zap, Sword, Settings } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
@@ -15,7 +16,7 @@ interface ThemeSwitcherProps {
   onThemeChange?: () => void;
 }
 
-const ThemeSwitcher = ({ variant = 'desktop', onThemeChange }: ThemeSwitcherProps) => {
+const ThemeSwitcher = React.memo(({ variant = 'desktop', onThemeChange }: ThemeSwitcherProps) => {
   const { theme, setTheme, themes, useThemedContent, setUseThemedContent } = useTheme();
   const [showSettings, setShowSettings] = useState(false);
   const [highlightSettings, setHighlightSettings] = useState(false);
@@ -157,6 +158,8 @@ const ThemeSwitcher = ({ variant = 'desktop', onThemeChange }: ThemeSwitcherProp
       )}
     </div>
   );
-};
+});
+
+ThemeSwitcher.displayName = 'ThemeSwitcher';
 
 export default ThemeSwitcher;

@@ -1,3 +1,4 @@
+import React from 'react';
 import StackIcon from 'tech-stack-icons';
 import type { IconName } from 'tech-stack-icons';
 import '../styles/TechIcon.css';
@@ -6,10 +7,9 @@ interface TechIconProps {
   tech: string;
   size?: number;
   className?: string;
-  variant?: 'light' | 'dark' | 'grayscale';
 }
 
-const TechIcon = ({ tech, size = 64, className = "", variant = 'light' }: TechIconProps) => {
+const TechIcon = React.memo(({ tech, size = 64, className = "" }: TechIconProps) => {
   const iconName = tech as IconName;
   
   const getSizeClass = () => {
@@ -26,11 +26,12 @@ const TechIcon = ({ tech, size = 64, className = "", variant = 'light' }: TechIc
     >      
       <StackIcon 
         name={iconName} 
-        variant={variant}
         style={{ width: size, height: size }}
       />
     </div>
   );
-};
+});
+
+TechIcon.displayName = 'TechIcon';
 
 export default TechIcon;
