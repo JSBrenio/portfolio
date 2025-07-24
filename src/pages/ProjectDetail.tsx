@@ -78,9 +78,8 @@ const ProjectDetail = () => {
                 )}
               </div>
 
-              <p className="project-description">
-                {project.description}
-              </p>
+              <MarkdownContent content={project.description} className='project-description'/>
+              
 
               {/* Project Links */}
               {(project.liveUrl ?? project.githubUrl) && (

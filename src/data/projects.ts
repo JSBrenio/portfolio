@@ -32,7 +32,7 @@ export const realProjects: Project[] = [
     {
     id: 'portfolio',
     name: 'Portfolio',
-    description: 'The portfolio you\'re looking at right now! A static website featuring all things me!',
+    description: 'The **portfolio** you\'re looking at right now! A `static website` featuring all things *me*!',
     detailedDescription: pathfindingMd,
     keyFeatures: [
       'Multi-theme support (4 themes)',
@@ -53,7 +53,7 @@ export const realProjects: Project[] = [
   {
     id: 'path-finding-visualizer',
     name: 'Path Finding Visualizer',
-    description: 'Interactive visualization of pathfinding algorithms including A*, Dijkstra\'s, and BFS with real-time animation and performance metrics.',
+    description: 'Interactive **visualization** of *pathfinding algorithms* including `A*`, `Dijkstra\'s`, and `BFS` with **real-time animation** and *performance metrics*.',
     detailedDescription: pathfindingMd,
     keyFeatures: [
       'Real-time algorithm visualization',
@@ -75,7 +75,7 @@ export const realProjects: Project[] = [
   {
     id: 'lotus-query',
     name: 'Lotus Query',
-    description: 'A Magic the Gathering database and card searching application.',
+    description: 'A **Magic the Gathering database** and *card searching application* with advanced filtering capabilities.',
     detailedDescription: lotusQueryMd,
     keyFeatures: [
       'Advanced card search and filtering',
@@ -96,7 +96,7 @@ export const realProjects: Project[] = [
   {
     id: 'mock-library-frontend',
     name: 'Mock Library - Frontend',
-    description: 'Mock Library Web Service using another team\'s RESTful API for querying books and designed with prebuilt MUI React components for a modern design.',
+    description: '**Mock Library Web Service** using another team\'s `RESTful API` for querying *books* and designed with prebuilt **MUI React components** for a *modern design*.',
     detailedDescription: courseFrontendMd,
     techStack: ['react', 'typescript', 'css3'],
     image: image,
@@ -109,7 +109,7 @@ export const realProjects: Project[] = [
   {
     id: 'mock-library-backend',
     name: 'Mock Library - Backend',
-    description: 'A Fully documented RESTful API for getting, modifying, adding, and deleting mock book data in a Postgres database.',
+    description: 'A **fully documented** `RESTful API` for *getting*, *modifying*, *adding*, and *deleting* mock book data in a **Postgres database**.',
     detailedDescription: courseBackendMd,
     techStack: ['python', 'typescript', 'nodejs', 'postgresql', 'postman'],
     image: image,
@@ -123,7 +123,7 @@ export const realProjects: Project[] = [
   {
     id: 'j-minus-minus-compiler',
     name: 'J-- Compiler',
-    description: 'Compiler implementation for J-- (Java subset) with lexical analysis, parsing, semantic analysis, and bytecode generation.',
+    description: '**Compiler implementation** for `J--` (*Java subset*) with *lexical analysis*, *parsing*, *semantic analysis*, and **bytecode generation**.',
     detailedDescription: jCompilerMd,
     techStack: ['java'],
     image: image,
@@ -136,7 +136,7 @@ export const realProjects: Project[] = [
   {
     id: 'jbash',
     name: 'JBash Shell',
-    description: 'Custom Unix shell implementation in C using fork( ), exec( ), and wait( ) with basic line editing.',
+    description: '**Custom Unix shell** implementation in `C` using `fork()`, `exec()`, and `wait()` with *basic line editing*.',
     detailedDescription: jbashMd,
     techStack: ['c++', 'linux', 'ubuntu', 'bash'],
     image: '/jbash/image.gif',
@@ -149,7 +149,7 @@ export const realProjects: Project[] = [
   {
     id: 'taleless',
     name: 'Taleless',
-    description: 'A one week UW Game Jam submission made in Godot by a team of three.',
+    description: 'A **one week UW Game Jam** submission made in `Godot` by a *team of three*.',
     detailedDescription: talelessMd,
     techStack: ['godot', 'git'],
     image: '/taleless/image.gif',
@@ -162,7 +162,7 @@ export const realProjects: Project[] = [
   {
     id: 'are-you-sure',
     name: 'Synchro Reimagined',
-    description: 'A collaboration with Civil Engineering students to redesign Cubic\'s Synchro Studio user interface',
+    description: 'A **collaboration** with *Civil Engineering students* to redesign `Cubic\'s Synchro Studio` **user interface**',
     detailedDescription: areYouSureMd,
     techStack: ['markdown', 'figma', 'github'],
     image: '/are-you-sure/image.png',
@@ -175,7 +175,7 @@ export const realProjects: Project[] = [
   {
     id: 'project-hub',
     name: 'Project Hub',
-    description: 'A project manager made in Java Swing through Agile Methodologies.',
+    description: 'A **project manager** made in `Java Swing` through *Agile Methodologies*.',
     detailedDescription: chatgptHomeMd,
     techStack: ['java', 'github', 'git'],
     image: image,
