@@ -8,7 +8,6 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Instagram,
 } from "lucide-react";
 import { 
   FaSteam,

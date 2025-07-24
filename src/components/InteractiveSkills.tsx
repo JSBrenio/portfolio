@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import '../styles/InteractiveSkills.css';
 
 interface InteractiveSkillsProps {
-  categories: { [key: string]: string[] };
-  skillDetails: { [key: string]: { definition: string; experience: string } };
+  categories: Record<string, string[]>;
+  skillDetails: Record<string, { definition: string; experience: string }>;
   theme: string;
 }
 
@@ -58,13 +58,13 @@ const InteractiveSkills: React.FC<InteractiveSkillsProps> = ({
               <div className="skill-definition-section">
                 <h5 className="skill-section-header">Definition</h5>
                 <p className="skill-definition-text">
-                  {skillDetails[selectedSkill]?.definition || 'Still writing it! 😅.'}
+                  {selectedSkill ? (skillDetails[selectedSkill]?.definition ?? 'Still writing it! 😅.') : 'Still writing it! 😅.'}
                 </p>
               </div>
               <div className="skill-experience-section">
                 <h5 className="skill-section-header">My Experience</h5>
                 <p className="skill-experience-text">
-                  {skillDetails[selectedSkill]?.experience || 'Still writing it! 😅.'}
+                  {selectedSkill ? (skillDetails[selectedSkill]?.experience ?? 'Still writing it! 😅.') : 'Still writing it! 😅.'}
                 </p>
               </div>
             </div>

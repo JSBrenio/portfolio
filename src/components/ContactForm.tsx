@@ -21,9 +21,6 @@ interface ContactFormProps {
 
 const ACCESS_KEY = "a3661aa4-593b-443a-906e-cabf1373d884";
 
-// Set to true for testing to avoid sending actual emails
-const TESTING_MODE = false;
-
 const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -33,7 +30,7 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
 
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-  const [captchaRef, setCaptchaRef] = useState<any>(null);
+  const [captchaRef, setCaptchaRef] = useState<{ resetCaptcha: () => void } | null>(null);
 
   const onHCaptchaChange = (token: string) => {
     setCaptchaToken(token);
@@ -59,22 +56,9 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Check if captcha is completed (in production mode)
-    if (!TESTING_MODE && !captchaToken) {
+    // Check if captcha is completed
+    if (!captchaToken) {
       alert("Please complete the captcha verification.");
-      return;
-    }
-    
-    // Testing mode - simulate success without sending email
-    if (TESTING_MODE) {
-      console.log("TESTING MODE: Form data would be sent:", formData);
-      console.log("TESTING MODE: Captcha token:", captchaToken);
-      setShowSuccessPopup(true);
-      // Reset form
-      setFormData({ name: '', email: '', message: '' });
-      resetCaptcha();
-      // Auto-hide popup after 3 seconds
-      setTimeout(() => setShowSuccessPopup(false), 3000);
       return;
     }
     
@@ -91,14 +75,16 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
     const json = JSON.stringify(object);
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json"
         },
         body: json
-      }).then((res) => res.json());
+      });
+      
+      const res = await response.json() as { success: boolean; message?: string };
 
       if (res.success) {
         console.log("Success", res);
@@ -126,7 +112,7 @@ const ContactForm = ({ contactContent, className = '' }: ContactFormProps) => {
         {contactContent.form.title}
       </h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => { void handleSubmit(e); }}>
       <div className="contact-form-group">
         <label className="contact-form-label" htmlFor="name">
           {contactContent.form.name}

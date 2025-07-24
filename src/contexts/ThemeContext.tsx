@@ -12,14 +12,14 @@ interface ThemeProviderProps {
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme>(() => {
     // Get theme from localStorage or default to 'dark'
-    const savedTheme = localStorage.getItem('portfolio-theme') as Theme;
+    const savedTheme = localStorage.getItem('portfolio-theme') as Theme | null;
     return savedTheme && themes.some(t => t.name === savedTheme) ? savedTheme : 'dark';
   });
 
   const [useThemedContent, setUseThemedContent] = useState<boolean>(() => {
     // Get themed content preference from localStorage or default to true
     const savedThemedContent = localStorage.getItem('portfolio-themed-content');
-    return savedThemedContent !== null ? JSON.parse(savedThemedContent) : false;
+    return savedThemedContent !== null ? JSON.parse(savedThemedContent) as boolean : false;
   });
 
   useEffect(() => {

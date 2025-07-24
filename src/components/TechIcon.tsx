@@ -10,7 +10,7 @@ interface TechIconProps {
 }
 
 const TechIcon = React.memo(({ tech, size = 64, className = "" }: TechIconProps) => {
-  const iconName = tech as IconName;
+  const iconName: IconName = tech;
   
   const getSizeClass = () => {
     if (size <= 20) return 'small';

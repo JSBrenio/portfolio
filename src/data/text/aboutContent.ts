@@ -11,15 +11,11 @@ export interface AboutContent {
     };
     skills: {
       title: string;
-      categories: {
-        [key: string]: string[];
-      };
-      skillDetails: {
-        [key: string]: {
+      categories: Record<string, string[]>;
+      skillDetails: Record<string, {
           definition: string;
           experience: string;
-        };
-      };
+      }>;
     };
   };
 }

@@ -83,7 +83,7 @@ const ProjectDetail = () => {
               </p>
 
               {/* Project Links */}
-              {(project.liveUrl || project.githubUrl) && (
+              {(project.liveUrl ?? project.githubUrl) && (
                 <div className="project-links">
                   {project.liveUrl && (
                     <a
@@ -128,7 +128,7 @@ const ProjectDetail = () => {
                   />
                 ) : (
                   <p className="fallback-content">
-                    Sorry! Either the project's content was malformed or I haven't created one!
+                    Sorry! Either the project&apos;s content was malformed or I haven&apos;t created one!
                   </p>
                 )}
               </div>
@@ -188,13 +188,13 @@ const ProjectDetail = () => {
                   <div className="stat-item">
                     <span className="stat-label">Status</span>
                     <span className="stat-value highlight">
-                      {project.status ? project.status : "TBD"}
+                      {project.status ?? "TBD"}
                     </span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-label">Type</span>
                     <span className="stat-value">
-                      {project.projectType ? project.projectType : "TBD"}
+                      {project.projectType ?? "TBD"}
                     </span>
                   </div>
                   <div className="stat-item">

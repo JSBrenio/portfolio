@@ -14,7 +14,7 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = React.memo(({ con
   const sanitizeOptions = {
     ...defaultSchema,
     tagNames: [
-      ...(defaultSchema.tagNames || []),
+      ...(defaultSchema.tagNames ?? []),
       'img'
     ],
     attributes: {
