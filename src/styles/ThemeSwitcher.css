@@ -22,16 +22,20 @@
   background-color: rgba(var(--background), 0.8);
   color: rgb(var(--text));
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, 
+              color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
   font-size: 0.875rem;
   font-weight: 500;
+  /* Performance optimizations */
+  will-change: transform, background-color, border-color;
+  contain: layout style;
 }
 
 .theme-toggle:hover {
   border-color: rgb(var(--accent));
   background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--highlight), 0.1));
   color: rgb(var(--accent));
-  transform: translateY(-1px);
+  transform: translate3d(0, -1px, 0);
   box-shadow: 0 4px 12px rgba(var(--accent), 0.15);
 }
 
@@ -46,12 +50,14 @@
   border-color: rgb(var(--primary));
   background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--highlight), 0.1));
   color: rgb(var(--primary));
+  box-shadow: var(--glow-primary);
 }
 
 .dark .theme-toggle:hover {
   border-color: rgb(var(--accent));
   background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--accent), 0.1));
   color: rgb(var(--accent));
+  box-shadow: var(--glow-accent);
 }
 
 .cyberpunk .theme-toggle:hover {
@@ -65,6 +71,7 @@
   border-color: rgb(var(--secondary));
   background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--highlight), 0.1));
   color: rgb(var(--secondary));
+  box-shadow: var(--glow-secondary);
 }
 
 .theme-toggle-label {
@@ -171,16 +178,20 @@
   background-color: rgba(var(--background), 0.8);
   color: rgb(var(--text));
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease, 
+              color 0.15s ease, transform 0.15s ease;
   font-size: 0.875rem;
   font-weight: 500;
+  /* Performance optimizations */
+  will-change: transform, background-color, border-color;
+  contain: layout style;
 }
 
 .theme-settings-button:hover {
   border-color: rgb(var(--neutral));
   background-color: rgba(var(--neutral), 0.1);
   color: rgb(var(--accent));
-  transform: translateY(-1px);
+  transform: translate3d(0, -1px, 0);
 }
 
 /* Settings Button Highlight Animation */
