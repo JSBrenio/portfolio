@@ -8,6 +8,9 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(var(--neutral), 0.2);
   transition: all 0.3s ease;
+  /* Performance optimization - removed 'paint' to allow mobile menu overflow */
+  will-change: backdrop-filter;
+  contain: layout style;
 }
 
 .navbar-container {
@@ -136,7 +139,6 @@
 
 /* Mobile Menu */
 .mobile-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -148,6 +150,7 @@
   max-height: calc(100vh - 100px);
   overflow-y: auto;
   z-index: 999;
+  /* Mobile menu is controlled by React conditional rendering */
 }
 
 .mobile-nav-links {
@@ -222,20 +225,12 @@
   .mobile-menu-button {
     display: block;
   }
-  
-  .mobile-menu {
-    display: block;
-  }
 }
 
 /* Responsive Design */
 @media (max-width: 1172px) {
 
   .mobile-menu-button {
-    display: block;
-  }
-  
-  .mobile-menu {
     display: block;
   }
 }

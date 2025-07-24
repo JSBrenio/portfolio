@@ -8,6 +8,9 @@
   --neutral: 107, 114, 128;      /* #6B7280 - Gray */  
   --background: 255, 255, 255;   /* #FFFFFF - White */
   --text: 17, 24, 39;            /* #111827 - Dark Gray */
+  
+  /* Performance optimization: smooth theme transitions */
+  transition: all 0.3s ease;
   --text-light: 75, 85, 99;      /* #4B5563 - Medium Gray */
   
   /* Navbar-specific background */
@@ -34,6 +37,9 @@
   /* Navbar-specific background */
   --navbar-bg: 31, 41, 55;       /* #1F2937 - Darker gray than background */
   
+  /* Performance optimization: smooth theme transitions */
+  transition: all 0.3s ease;
+  
   /* Dark theme glow effects - unified with cyberpunk */
   --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
   --glow-secondary: 0 0 10px rgba(var(--secondary), 0.8);
@@ -55,6 +61,9 @@
   
   /* Navbar-specific background */
   --navbar-bg: 15, 25, 35;       /* #0F1923 - Lighter than background for contrast */
+  
+  /* Performance optimization: smooth theme transitions */
+  transition: all 0.3s ease;
   
   /* Cyberpunk theme glow effects - unified standard */
   --glow-primary: 0 0 10px rgba(var(--primary), 0.8);
@@ -78,6 +87,9 @@
   
   /* Navbar-specific background */
   --navbar-bg: 220, 220, 220;    /* #DCDCDC - Darker gray than background */
+  
+  /* Performance optimization: smooth theme transitions */
+  transition: all 0.3s ease;
   
   /* Witcher theme glow effects - unified with cyberpunk */
   --glow-primary: 0 0 10px rgba(var(--primary), 0.8);

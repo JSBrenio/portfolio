@@ -12,10 +12,13 @@
   position: relative;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(var(--primary), 0.1);
+  /* Performance optimizations */
+  will-change: transform, box-shadow;
+  contain: layout style paint;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-8px) translateZ(0);
   box-shadow: 0 12px 40px rgba(var(--primary), 0.2);
   border-color: rgba(var(--primary), 0.3);
 }

@@ -20,6 +20,9 @@
   padding: clamp(1.5rem, 3vw, 2rem);
   border-radius: 12px;
   overflow: visible;
+  /* Performance optimization for theme transitions */
+  transition: all 0.3s ease;
+  contain: layout style;
 }
 
 .projects-card.featured {
@@ -59,6 +62,8 @@
   justify-items: center;
   max-width: 1400px;
   margin: 0 auto;
+  /* Performance optimization */
+  contain: layout;
 }
 
 /* Enhanced responsive grid adjustments */
