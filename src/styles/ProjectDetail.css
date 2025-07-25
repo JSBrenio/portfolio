@@ -68,8 +68,8 @@
   border: 1px solid rgba(var(--neutral), 0.2);
 }
 
-.project-image-container.cyberpunk {
-  box-shadow: var(--glow-primary);
+.project-image-container {
+  box-shadow: var(--glow-secondary);
 }
 
 .project-image {
