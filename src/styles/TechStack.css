@@ -67,7 +67,7 @@
   justify-content: center;
   min-width: 3rem;
   width: max-content;
-  padding: 0.5rem 0.75rem;
+  padding: 0rem 0.75rem;
   border-radius: 0.5rem;
   background-color: rgba(var(--neutral), 0.1);
   transition: background-color 0.2s ease, transform 0.2s ease;

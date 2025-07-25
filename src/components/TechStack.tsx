@@ -1,5 +1,6 @@
 import React from 'react';
 import TechIcon from './TechIcon';
+import { getTechDisplayName } from './TechIcons';
 import '../styles/TechStack.css';
 
 interface TechStackProps {
@@ -15,30 +16,6 @@ const TechStack = React.memo(({
   showLabels = false,
   className = ""
 }: TechStackProps) => {
-  
-  // Map tech names to display names
-  const getDisplayName = (tech: string) => {
-    const displayNames: Record<string, string> = {
-      'reactjs': 'React',
-      'c++': 'C/C++',
-      'react': 'React',
-      'ts': 'TypeScript',
-      'js': 'JavaScript',
-      'nodejs': 'Node.js',
-      'node.js': 'Node.js',
-      'css3': 'CSS3',
-      'html5': 'HTML5',
-      'vitejs': 'Vite',
-      'vite': 'Vite',
-      'mongodb': 'MongoDB',
-      'express': 'Express',
-      'python': 'Python',
-      'flask': 'Flask',
-      'd3js': 'D3.js',
-      'd3.js': 'D3.js'
-    };
-    return displayNames[tech.toLowerCase()] || tech;
-  };
 
   if (technologies.length === 0) {
     return null;
@@ -65,7 +42,7 @@ const TechStack = React.memo(({
         </span>
         {showLabels && (
           <span className="tech-item-label">
-            {getDisplayName(tech)}
+            {getTechDisplayName(tech)}
           </span>
         )}
       </li>

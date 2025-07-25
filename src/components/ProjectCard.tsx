@@ -7,13 +7,11 @@ import MarkdownContent from './MarkdownContent';
 
 interface ProjectCardProps {
   project: Project;
-  size?: 'small' | 'medium' | 'large';
   className?: string;
 }
 
 const ProjectCard = React.memo(({ 
   project, 
-  size = 'medium', 
   className = '' 
 }: ProjectCardProps) => {
   // Format the date from YYYY-MM to "Month Year"
@@ -28,12 +26,12 @@ const ProjectCard = React.memo(({
 
   return (
     <div
-      className={`project-card ${size} ${className} glow-primary`}
+      className={`project-card ${className} glow-primary`}
     >
       {/* Title Header - Spans full width */}
-      <div className={`project-card-title-header ${size}`}>
+      <div className="project-card-title-header">
         <div className="project-card-title-row">
-          <h3 className={`project-card-title ${size}`}>
+          <h3 className="project-card-title">
             {project.name}
           </h3>
           <span className="project-card-date">
@@ -46,7 +44,7 @@ const ProjectCard = React.memo(({
       <div className="project-card-main-content">
         {/* Clickable Image - Left side */}
         <Link to={`/projects/${project.id}`}>
-          <div className={`project-card-image-container ${size}`}>
+          <div className="project-card-image-container">
             <img
               src={project.image}
               alt={project.name}
@@ -61,9 +59,9 @@ const ProjectCard = React.memo(({
         </Link>
 
         {/* Content - Right side */}
-        <div className={`project-card-content ${size}`}>
+        <div className="project-card-content">
           {/* Description */}
-          <MarkdownContent content={project.description} className={`project-card-description ${size}`}/>
+          <MarkdownContent content={project.description} className="project-card-description"/>
         </div>
       </div>
 
@@ -71,7 +69,7 @@ const ProjectCard = React.memo(({
       <div className="project-card-tech-footer">
         <TechStack
           technologies={project.techStack}
-          size={size === 'small' ? 18 : size === 'medium' ? 20 : 22}
+          size={32}
           showLabels={true}
           className="project-card-tech-stack"
         />

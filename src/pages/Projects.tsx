@@ -44,7 +44,6 @@ const Projects = React.memo(() => {
                 <ProjectCard 
                   key={project.id} 
                   project={project} 
-                  size="medium"
                 />
               ))}
             </div>
@@ -64,7 +63,6 @@ const Projects = React.memo(() => {
                 <ProjectCard 
                   key={project.id} 
                   project={project} 
-                  size="medium"
                 />
               ))}
             </div>
