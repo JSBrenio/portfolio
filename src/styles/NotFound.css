@@ -54,7 +54,6 @@
 }
 
 .cyberpunk .error-code {
-  font-family: 'Orbitron', monospace;
   color: rgba(var(--primary), 0.4);
   text-shadow: 
     0 0 10px rgba(var(--primary), 0.5),
@@ -69,7 +68,6 @@
 }
 
 .witcher .error-code {
-  font-family: 'Cinzel', serif;
   color: rgba(var(--accent), 0.4);
   text-shadow: 
     2px 2px 4px rgba(0, 0, 0, 0.5),
@@ -93,14 +91,12 @@
 }
 
 .cyberpunk .error-title {
-  font-family: 'Orbitron', monospace;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 0 0 10px rgba(var(--primary), 0.5);
 }
 
 .witcher .error-title {
-  font-family: 'Cinzel', serif;
   color: rgb(var(--accent));
 }
 
@@ -113,14 +109,12 @@
 }
 
 .cyberpunk .error-subtitle {
-  font-family: 'Orbitron', monospace;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgb(var(--highlight));
 }
 
 .witcher .error-subtitle {
-  font-family: 'Cinzel', serif;
   font-style: italic;
   color: rgb(var(--text-light));
 }
