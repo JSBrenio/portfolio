@@ -20,7 +20,6 @@ import pathfindingMd from './project-descriptions/path-finding-visualizer.md?raw
 import lotusQueryMd from './project-descriptions/lotus-query.md?raw';
 import courseFrontendMd from './project-descriptions/course-management-frontend.md?raw';
 import courseBackendMd from './project-descriptions/course-management-backend.md?raw';
-import jCompilerMd from './project-descriptions/j-minus-minus-compiler.md?raw';
 import jbashMd from './project-descriptions/jbash.md?raw';
 import talelessMd from './project-descriptions/taleless.md?raw';
 import areYouSureMd from './project-descriptions/are-you-sure.md?raw';
@@ -120,19 +119,6 @@ export const realProjects: Project[] = [
     projectType: 'Back End'
   },
     // Other Projects
-  {
-    id: 'j-minus-minus-compiler',
-    name: 'J-- Compiler',
-    description: '**Compiler implementation** for `J--` (*Java subset*) with *lexical analysis*, *parsing*, *semantic analysis*, and **bytecode generation**.',
-    detailedDescription: jCompilerMd,
-    techStack: ['java'],
-    image: image,
-    githubUrl: 'https://github.com/westerntoad/tcss421-jminusminus',
-    featured: false,
-    date: '2025-01',
-    status: 'Downloadable via Github Repo',
-    projectType: 'Compiler'
-  },
   {
     id: 'jbash',
     name: 'JBash Shell',
