@@ -1,4 +1,21 @@
 /* ProjectCard.css - Three-section layout: Title Header, Main Content, Tech Footer */
+.project-card p,
+.project-card a,
+.project-card h1,
+.project-card h2,
+.project-card h3,
+.project-card h4,
+.project-card h5,
+.project-card h6,
+.project-card span,
+.project-card label,
+.project-card li,
+.project-card strong,
+.project-card em,
+.project-card .project-card-main-content
+{
+  transition: none;
+}
 
 /* Main card container */
 .project-card {
@@ -6,7 +23,8 @@
   overflow: hidden;
   background-color: rgba(var(--background), 0.95);
   border: 1px solid rgba(var(--primary), 0.15);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -213,7 +231,9 @@
 
 /* Responsive design - Mobile ensures full width */
 @media (max-width: 768px) {
-  .project-card {
+  .project-card.large,
+  .project-card.medium,
+  .project-card.small {
     max-width: 100%;
   }
 }

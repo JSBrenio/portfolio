@@ -70,7 +70,7 @@
   padding: 0rem 0.75rem;
   border-radius: 0.5rem;
   background-color: rgba(var(--neutral), 0.1);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease;
   user-select: none;
 }
 
@@ -95,7 +95,6 @@
   display: block;
   text-align: center;
   text-transform: capitalize;
-  transition: color 0.2s ease;
   white-space: nowrap;
 }
 
