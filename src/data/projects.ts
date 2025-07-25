@@ -86,7 +86,7 @@ export const realProjects: Project[] = [
       'Set and rarity filters'
     ],
     techStack: ['js', 'react', 'nodejs', 'mysql', 'expressjs'],
-    image: '/lotus-query/image.gif',
+    image: '/lotus-query/image-1.gif',
     githubUrl: 'https://github.com/cnlwebber/Lotus-Query',
     featured: true,
     date: '2024-07',
