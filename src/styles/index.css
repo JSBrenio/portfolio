@@ -1,4 +1,5 @@
 @import './globals.css';
+@import './satoshi.css';
 
 /* Base HTML/Body Styles */
 html {
@@ -42,10 +43,11 @@ main {
 /* Satoshi,  */
 /* Typography */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  font-family: 'Satoshi', system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
-
+  font-style: normal;
+  
+  line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

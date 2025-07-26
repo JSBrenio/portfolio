@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'GoogleSansCode';
+  src: url('../assets/fonts/googlesanscode/GoogleSansCode-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Markdown content styling */
 .markdown-content {
   line-height: 1.6;
@@ -24,7 +32,9 @@
   padding: 0.125rem 0.25rem;
   border-radius: 4px;
   font-size: 0.875rem;
-  font-family: 'Courier New', Consolas, monospace;
+  font-family: 'Roboto', monospace;
+  font-family: 'GoogleSansCode';
+  font-weight: 400;
 }
 
 .markdown-content h1 {

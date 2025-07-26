@@ -12,7 +12,7 @@ export const getHomeContent = (theme: Theme, useThemedContent = true): HomeConte
     title: "Hello, There!",
     name: "Jeremiah Brenio",
     niche: "Software Developer",
-    statement: "Welcome to my **portfolio**! I am a *passionate* **software developer** who loves learning and creating anything `software`.",
+    statement: "Welcome to my **portfolio**! I'm a ***software developer*** with a *passion* for learning, building, and exploring all things `software`.",
   };
 
   // If themed content is disabled, always return base content

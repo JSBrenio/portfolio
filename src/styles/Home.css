@@ -106,7 +106,7 @@ img {
 
 .home-info {
   display: grid;
-  grid-template-columns: 0.7fr auto 1fr;
+  grid-template-columns: 0.75fr auto 1fr;
   gap: clamp(1rem, 2vw, 1.5rem);
   align-items: center;
 }
@@ -194,17 +194,21 @@ img {
 }
 
 /* Theme-specific styles */
+.profile-image {
+  box-shadow: 0 0 20px rgba(var(--primary), 0.3);
+}
+
 .cyberpunk .profile-image {
   border-color: rgb(var(--secondary));
   box-shadow: 0 0 20px rgba(var(--secondary), 0.3);
 }
 
-.cyberpunk .profile-border {
+.profile-border {
   border-color: rgba(var(--primary), 0.5);
   box-shadow: 0 0 30px rgba(var(--primary), 0.2);
 }
 
-.cyberpunk .home-divider {
+.home-divider {
   background: linear-gradient(180deg, 
     transparent 0%, 
     rgb(var(--secondary)) 20%, 
