@@ -53,10 +53,11 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = React.memo(({ con
                 height={height}
                 style={style}
                 className={className}
-                {...props}                onError={() => {
+                {...props}
+                onError={(event) => {
                   console.warn(`Failed to load image: ${transformedSrc}`);
                   // Optional: Set a fallback image
-                  // target.src = '/fallback-image.png';
+                  (event.currentTarget as HTMLImageElement).src = '/plz.png';
                 }}
               />
             );
