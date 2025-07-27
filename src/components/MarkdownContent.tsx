@@ -44,7 +44,7 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = React.memo(({ con
             const transformedSrc = src?.startsWith('/public/') 
               ? src.replace('/public/', '/') 
               : src;
-            
+          
             return (
               <img
                 src={transformedSrc}
@@ -60,7 +60,18 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = React.memo(({ con
                 }}
               />
             );
-          }
+          },
+          // Custom link component to open links in a new tab
+          a: ({ href, children, ...props }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...props}
+            >
+              {children}
+            </a>
+          ),
         }}
       >
         {transformedContent}

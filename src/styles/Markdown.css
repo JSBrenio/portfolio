@@ -59,7 +59,7 @@
 }
 
 .markdown-content a {
-  color: rgb(var(--accent));
+  color: rgb(var(--primary));
   text-decoration: underline;
   transition: color 0.2s ease;
 }
