@@ -169,13 +169,12 @@
 }
 
 .skill-description-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   color: rgb(var(--primary));
   text-align: center;
   border-bottom: 2px solid rgba(var(--primary), 0.3);
-  padding-bottom: 0.5rem;
 }
 
 .skill-definition-section,
@@ -189,7 +188,7 @@
 }
 
 .skill-section-header {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: rgb(var(--secondary));
@@ -203,7 +202,7 @@
 .skill-experience-text {
   color: rgb(var(--text));
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
 }
 
 /* Placeholder when no skill is selected */

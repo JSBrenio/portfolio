@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/InteractiveSkills.css';
+import MarkdownContent from './MarkdownContent';
 
 interface InteractiveSkillsProps {
   categories: Record<string, string[]>;
@@ -57,15 +58,15 @@ const InteractiveSkills: React.FC<InteractiveSkillsProps> = ({
               </h4>
               <div className="skill-definition-section">
                 <h5 className="skill-section-header">Definition</h5>
-                <p className="skill-definition-text">
-                  {selectedSkill ? (skillDetails[selectedSkill]?.definition ?? 'Still writing it! 😅.') : 'Still writing it! 😅.'}
-                </p>
+                <MarkdownContent 
+                content={selectedSkill ? (skillDetails[selectedSkill]?.definition || 'Still writing it! 😅.') : 'Still writing it! 😅.'} 
+                className="skill-definition-text"/>
               </div>
               <div className="skill-experience-section">
                 <h5 className="skill-section-header">My Experience</h5>
-                <p className="skill-experience-text">
-                  {selectedSkill ? (skillDetails[selectedSkill]?.experience ?? 'Still writing it! 😅.') : 'Still writing it! 😅.'}
-                </p>
+                <MarkdownContent 
+                content={selectedSkill ? (skillDetails[selectedSkill]?.experience || 'Still writing it! 😅.') : 'Still writing it! 😅.'} 
+                className="skill-experience-text"/>
               </div>
             </div>
           ) : (
