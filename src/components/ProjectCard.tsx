@@ -51,7 +51,7 @@ const ProjectCard = React.memo(({
               className="project-card-image"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = `https://via.placeholder.com/400x250/666666/ffffff?text=${encodeURIComponent(project.name)}`;
+                target.src = '/plz.jpg';
               }}
             />
             <div className="project-card-overlay" />
