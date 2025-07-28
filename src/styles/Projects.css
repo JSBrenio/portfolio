@@ -50,7 +50,7 @@
 
 .projects-card.featured {
   border: 1px solid rgba(var(--secondary), 0.2);
-  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.05));
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--highlight), 0.05));
   box-shadow: var(--glow-secondary);
 
 }

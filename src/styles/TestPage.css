@@ -284,55 +284,6 @@
   color: rgb(var(--text-light));
 }
 
-/* Timeline Test Elements */
-.test-timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.test-timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.5rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: rgb(var(--primary));
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-  padding-left: 2rem;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -1.75rem;
-  top: 1rem;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgb(var(--secondary));
-  border: 3px solid rgb(var(--background));
-  box-shadow: 0 0 0 2px rgb(var(--secondary));
-  z-index: 2;
-}
-
-.timeline-content {
-  box-shadow: var(--glow-secondary);
-  background-color: rgba(var(--text), 0.05);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid rgb(var(--primary));
-  transition: all 0.3s ease;
-}
-
-.timeline-content:hover {
-  background-color: rgba(var(--text), 0.08);
-  transform: translateX(5px);
-}
-
 .item-title {
   font-size: 1.25rem;
   font-weight: 600;

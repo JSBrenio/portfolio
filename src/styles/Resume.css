@@ -19,9 +19,9 @@
 
 .resume-card.education,
 .resume-card.experience {
-  border: 1px solid rgba(var(--primary), 0.2);
+  border: 1px solid rgba(var(--secondary), 0.2);
   background: linear-gradient(135deg, rgba(var(--neutral), 0.1), rgba(var(--background), 0.15));
-  box-shadow: var(--glow-primary);
+  box-shadow: var(--glow-secondary);
 }
 
 .resume-section {
@@ -68,8 +68,8 @@
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 2rem;
+  padding-left: clamp(2rem, 2.5vw, 2rem);
 }
 
 .timeline-item:last-child {
@@ -99,7 +99,7 @@
 }
 
 .timeline-content:hover {
-  background-color: rgba(var(--text), 0.08);
+  background-color: rgba(var(--primary), 0.08) !important;
   transform: translateX(5px);
 }
 

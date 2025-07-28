@@ -25,9 +25,9 @@
 }
 
 .about-card.primary {
-  border: 1px solid rgba(var(--primary), 0.2);
-  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--secondary), 0.05));
-  box-shadow: var(--glow-primary);
+  border: 1px solid rgba(var(--accent), 0.2);
+  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--secondary), 0.05));
+  box-shadow: var(--glow-accent);
 }
 
 .about-card.secondary {

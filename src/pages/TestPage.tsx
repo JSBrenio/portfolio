@@ -151,28 +151,6 @@ const TestPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Timeline Elements */}
-        <section className="test-section">
-          <h2 className="section-title">Timeline Elements (Resume Style)</h2>
-          <div className="test-timeline">
-            <div className="timeline-item">
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <h3 className="item-title">Sample Timeline Item</h3>
-                <p className="item-subtitle">Sample Company</p>
-                <div className="item-meta">
-                  <span className="item-period">2024 — Present</span>
-                  <span className="item-location">Location</span>
-                </div>
-                <ul className="achievements-list">
-                  <li className="achievement-item">Sample achievement with styling</li>
-                  <li className="achievement-item">Another achievement to test layout</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Footer Note */}
         <section className="test-section">
           <div className="test-note">
