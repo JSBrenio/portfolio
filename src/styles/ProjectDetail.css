@@ -98,6 +98,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  overflow: visible;
+  padding-bottom: 0.1em;
 }
 
 @media (min-width: 768px) {
@@ -226,11 +228,13 @@
   margin-bottom: 2rem;
 }
 
-.section-title {
+.project-section-title {
+  position: relative;
+  top: 0.5rem;
   font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0 0 2rem 0;
   color: rgb(var(--primary));
+  text-align: center;
 }
 
 .section-title-small {

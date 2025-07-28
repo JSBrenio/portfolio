@@ -35,14 +35,6 @@
   border: 1px solid rgba(var(--primary), 0.1);
 }
 
-.section-title {
-  font-size: 1.5rem;
-  color: rgb(var(--primary));
-  margin: 0 0 2rem 0;
-  text-align: center;
-  font-weight: 600;
-}
-
 /* Color Palette Grid */
 .color-grid {
   display: grid;
@@ -316,31 +308,6 @@
   font-size: 0.875rem;
   color: rgb(var(--text-light));
   font-style: italic;
-}
-
-.achievements-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.achievement-item {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: rgb(var(--text));
-  line-height: 1.5;
-  font-size: 1rem;
-}
-
-.achievement-item::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: rgb(var(--primary));
-  font-weight: bold;
-  font-size: 1.125rem;
 }
 
 /* Test Note */

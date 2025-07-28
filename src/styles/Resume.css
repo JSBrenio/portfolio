@@ -29,26 +29,30 @@
 }
 
 .section-header {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.0rem;
   margin-bottom: 2rem;
+  right: 1rem;
 }
 
 .section-icon {
   width: 48px;
   height: 48px;
   color: rgb(var(--secondary));
+  border: 1px solid rgba(var(--secondary), 0.2);
+  background: rgb(var(--navbar-bg));
+  box-shadow: var(--glow-secondary);
+  border-radius: 10px;
 }
 
 .section-title {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: rgb(var(--text));
-  margin: 0;
-  position: relative;
-  top: 0.5rem;
-  
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+  color: rgb(var(--primary)) !important;
+  margin: 0 !important;
+  position: relative !important;
 }
 
 .timeline {
@@ -60,10 +64,15 @@
   content: '';
   position: absolute;
   left: 0.5rem;
-  top: 0;
-  bottom: 0;
+  bottom: 0rem;
   width: 2px;
-  background-color: rgb(var(--primary));
+  /* background-color: rgb(var(--primary)); */
+  background: linear-gradient(180deg, 
+  rgb(var(--primary)), 
+  rgb(var(--accent))
+  );
+  height: calc(100% + 50px);
+  z-index: -1;
 }
 
 .timeline-item {
@@ -80,6 +89,7 @@
   position: relative;
   left: -3.75rem;
   top: 2rem;
+  top: 2.8rem;
   width: clamp(10px, 1.5vw, 12px);
   height: clamp(10px, 1.5vw, 12px);
   border-radius: 50%;
@@ -134,7 +144,7 @@
 }
 
 .achievements-list {
-  margin: 1.5rem 0 0 0;
+  margin: 1rem 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -142,20 +152,20 @@
 .achievement-item {
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   color: rgb(var(--text));
-  line-height: 1.6;
-  font-size: 0.95rem;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 .achievement-item::before {
   content: '•';
   position: absolute;
   left: 0;
-  top: 0.1rem; 
+  top: -0.2rem; 
   color: rgb(var(--primary));
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.125rem;
 }
 
 .achievement-item:last-child {
@@ -215,6 +225,10 @@
   border-left-color: rgb(var(--primary));
 }
 
+.witcher .resume-container .timeline::before {
+  background: linear-gradient(180deg, rgb(var(--primary)), rgb(var(--highlight)));
+}
+
 .witcher .resume-container .timeline-marker {
   background-color: rgb(var(--secondary));
   border: 3px solid rgb(var(--background));
@@ -229,24 +243,20 @@
 @media (max-width: 1300px) {
   .resume-container .timeline-marker {
     left: -3.5rem;
+    top: 2.7rem;
   }
 }
 
 @media (max-width: 768px) {
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
   .item-period,
   .item-location {
     display: block;
     margin: 0.25rem 0;
   }
-
+  
   .resume-container .timeline-marker {
     left: -3.4rem;
+    top: 2.2rem;
   }
 }
 

@@ -116,7 +116,7 @@ const ProjectDetail = () => {
           <div className="main-content">
             {/* Overview */}
             <section className="section">
-              <h2 className="section-title">
+              <h2 className="project-section-title">
                 {content.sections.overview}
               </h2>
               <div className="section-content">
@@ -135,7 +135,7 @@ const ProjectDetail = () => {
 
             {/* Key Features */}
             <section className="section">
-              <h2 className="section-title">
+              <h2 className="project-section-title">
                 {content.sections.features}
               </h2>
               <div className="features-grid">
