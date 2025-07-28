@@ -12,9 +12,9 @@
 
 ## My Journey
 
-### Early Life
+<!-- ### Early Life
 
-Since my **9th birthday** when I got my first gaming console—the **Xbox 360**—I knew at a young age I wanted to be in a field of **creation**. I would always *marvel* at game mechanics and *wonder* how technology works. But I didn’t know what programming was, nor had the resources to explore it.
+Since my **9th birthday** when I got my first gaming console—the **Xbox 360**—I knew at a young age I wanted to be in a field of **creation**. I would always *marvel* at game mechanics and *wonder* how technology works. But I didn’t know what programming was, nor had the resources to explore it. -->
 
 ### High School
 
