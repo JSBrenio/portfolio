@@ -18,12 +18,12 @@ export interface Project {
 // Import markdown descriptions as raw text
 import pathfindingMd from './project-descriptions/path-finding-visualizer.md?raw';
 import lotusQueryMd from './project-descriptions/lotus-query.md?raw';
-import courseFrontendMd from './project-descriptions/course-management-frontend.md?raw';
-import courseBackendMd from './project-descriptions/course-management-backend.md?raw';
+import courseFrontendMd from './project-descriptions/mock-library-frontend.md?raw';
+import courseBackendMd from './project-descriptions/mock-library-backend.md?raw';
 import jbashMd from './project-descriptions/jbash.md?raw';
 import talelessMd from './project-descriptions/taleless.md?raw';
 import areYouSureMd from './project-descriptions/are-you-sure.md?raw';
-import chatgptHomeMd from './project-descriptions/chatgpt-at-home.md?raw';
+import projectHub from './project-descriptions/projuct-hub.md?raw';
 
 const image = 'plz.jpg'
 export const realProjects: Project[] = [
@@ -97,8 +97,8 @@ export const realProjects: Project[] = [
     name: 'Mock Library - Frontend',
     description: '**Mock Library Web Service** using another team\'s `RESTful API` for querying *books* and designed with prebuilt **MUI React components** for a *modern design*.',
     detailedDescription: courseFrontendMd,
-    techStack: ['react', 'typescript', 'css3'],
-    image: image,
+    techStack: ['react', 'nextjs', 'typescript', 'mui', 'css3'],
+    image: '/mock-library-frontend/image.gif',
     githubUrl: 'https://github.com/NeonAfro/TCSS460_FrontEnd',
     featured: true,
     date: '2024-11',
@@ -111,7 +111,7 @@ export const realProjects: Project[] = [
     description: 'A **fully documented** `RESTful API` for *getting*, *modifying*, *adding*, and *deleting* mock book data in a **Postgres database**.',
     detailedDescription: courseBackendMd,
     techStack: ['python', 'typescript', 'nodejs', 'postgresql', 'postman'],
-    image: image,
+    image: '/mock-library-backend/image.gif',
     githubUrl: 'https://github.com/NeonAfro/TCSS460_BackEnd',
     featured: true,
     date: '2024-10',
@@ -162,9 +162,9 @@ export const realProjects: Project[] = [
     id: 'project-hub',
     name: 'Project Hub',
     description: 'A **project manager** made in `Java Swing` through *Agile Methodologies*.',
-    detailedDescription: chatgptHomeMd,
+    detailedDescription: projectHub,
     techStack: ['java', 'github', 'git'],
-    image: image,
+    image: '/project-hub/image.gif',
     githubUrl: 'https://github.com/ChatGPTatHome/Project',
     featured: false,
     date: '2024-04',

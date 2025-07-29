@@ -19,9 +19,10 @@ import {
   SiGodotengine,
   SiGithub,
   SiFigma,
+  SiMui,
 } from 'react-icons/si';
 import { FaGitAlt, FaJava } from 'react-icons/fa';
-import { TbMarkdown } from 'react-icons/tb';
+import { TbMarkdown, TbBrandNextjs } from 'react-icons/tb';
 import '../styles/TechIcons.css';
 
 // Tech icon mapping using react-icons
@@ -52,6 +53,8 @@ export const TECH_ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSV
   git: FaGitAlt,
   github: SiGithub,
   figma: SiFigma,
+  nextjs: TbBrandNextjs,
+  mui: SiMui,
 };
 
 // Display name mapping
@@ -82,6 +85,8 @@ const TECH_DISPLAY_NAMES: Record<string, string> = {
   git: 'Git',
   github: 'GitHub',
   figma: 'Figma',
+  nextjs: 'Next.js',
+  mui: 'MUI',
 };
 
 export const getTechDisplayName = (tech: string): string => {
