@@ -104,14 +104,14 @@ const Contact = () => {
               >
                 <Linkedin size={20} />
               </a>
-              <a
+              {/* <a
                 href="https://steamcommunity.com/id/capncandy/"
                 className="contact-social-link highlight"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaSteam size={20}/>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
