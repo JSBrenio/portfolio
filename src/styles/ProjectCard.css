@@ -1,0 +1,258 @@
+/* ProjectCard.css - Three-section layout: Title Header, Main Content, Tech Footer */
+.project-card p,
+.project-card a,
+.project-card h1,
+.project-card h2,
+.project-card h3,
+.project-card h4,
+.project-card h5,
+.project-card h6,
+.project-card span,
+.project-card label,
+.project-card li,
+.project-card strong,
+.project-card em,
+.project-card .project-card-main-content
+{
+  transition: none;
+}
+
+/* Main card container */
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: rgba(var(--background), 0.95);
+  border: 1px solid rgba(var(--primary), 0.15);
+  /* transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(var(--primary), 0.1);
+  /* Performance optimizations */
+  will-change: transform, box-shadow;
+  contain: layout style paint;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: 0 12px 40px rgba(var(--primary), 0.2);
+  border-color: rgba(var(--primary), 0.3);
+}
+
+/* Fixed size for grid layout */
+.project-card {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+}
+
+/* Title Header - Full width at top */
+.project-card-title-header {
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem) clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.25rem);
+  background: linear-gradient(135deg, rgba(var(--primary), 0.05), rgba(var(--secondary), 0.05));
+  border-bottom: 1px solid rgba(var(--primary), 0.1);
+  flex-shrink: 0;
+}
+
+.project-card-title-header {
+  padding: 1rem 1.25rem 0.75rem 1.25rem;
+}
+
+/* Title row layout */
+.project-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Title styling */
+.project-card-title {
+  font-weight: 700;
+  color: rgb(var(--primary));
+  margin: 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  flex: 1;
+}
+
+/* Date styling */
+.project-card-date {
+  font-size: 0.875rem;
+  color: rgb(var(--accent));
+  opacity: 0.8;
+  white-space: nowrap;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+}
+
+.project-card-title {
+  font-size: 1.125rem;
+}
+
+/* Main content area - Image and description stacked vertically */
+.project-card-main-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Image container - Top section with 16:9 aspect ratio */
+.project-card-image-container {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(var(--primary), 0.1), rgba(var(--secondary), 0.1));
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 16 / 8;
+}
+
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+}
+
+/* Content section - Bottom section within main content */
+.project-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  /* padding: 1rem; */
+  padding: 1rem 0.5rem 1rem 0.5rem;
+}
+
+/* Description styling */
+.project-card-description {
+  color: rgb(var(--text));
+  text-shadow: none;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  line-clamp: 4; /* Standard property for compatibility */
+}
+
+.project-card-description p{
+  font-size: 1rem;
+  height: 5.6rem; /* ~4 lines * 1.4 line-height * 1rem */
+  margin: 0 0 0 0;
+}
+
+/* Featured badge */
+.project-card-featured-badge {
+  position: absolute;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgb(var(--background));
+  backdrop-filter: blur(4px);
+}
+
+.project-card-featured-badge {
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Theme-specific featured badge styles */
+.project-card-featured-badge.cyberpunk {
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--highlight)));
+  box-shadow: var(--glow-accent);
+}
+
+.project-card-featured-badge.witcher {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--accent)));
+}
+
+.project-card-featured-badge.dark {
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--highlight)));
+}
+
+.project-card-featured-badge.light {
+  background: linear-gradient(135deg, rgb(var(--highlight)), rgb(var(--primary)));
+}
+
+/* Image styling */
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  aspect-ratio: 16 / 8;
+}
+
+.project-card-image-container:hover .project-card-image {
+  transform: scale(1.1);
+}
+
+.project-card-image-container:hover .project-card-overlay {
+  opacity: 0.8;
+}
+
+/* Image overlay */
+.project-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(var(--primary), 0.2) 0%, 
+    rgba(var(--secondary), 0.3) 50%,
+    rgba(var(--accent), 0.2) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-overlay::after {
+  content: '→';
+  font-size: 2rem;
+  color: rgba(var(--background), 0.9);
+  font-weight: bold;
+}
+
+/* Responsive design - Mobile ensures full width */
+@media (max-width: 768px) {
+  .project-card.large,
+  .project-card.medium,
+  .project-card.small {
+    max-width: 100%;
+  }
+}
+
+/* Tech Stack Footer - Clean carousel container */
+.project-card-tech-footer {
+  padding: 0.75rem 0rem 0.75rem 0rem;
+  background: linear-gradient(135deg, rgba(var(--primary), 0.03), rgba(var(--secondary), 0.03));
+  border-top: 1px solid rgba(var(--primary), 0.1);
+  flex-shrink: 0;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
+}
+
+.project-card-tech-stack {
+  width: 100%;
+  height: 100%;
+}

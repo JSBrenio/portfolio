@@ -1,0 +1,104 @@
+/* Projects page styles */
+
+.projects-container p,
+.projects-container a,
+.projects-container h1,
+.projects-container h2,
+.projects-container h3,
+.projects-container h4,
+.projects-container h5,
+.projects-container h6,
+.projects-container span,
+.projects-container label,
+.projects-container li,
+.projects-container strong,
+.projects-container em,
+.projects-container .page-header .projects-subtitle,
+.projects-container .page-header .page-title,
+.projects-container .projects-section,
+.projects-container .projects-section .projects-card.featured,
+.projects-container .projects-section .projects-card.other
+{
+  transition: none;
+}
+
+.projects-container {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Projects page uses standardized .page-header and .page-title from globals.css */
+
+.projects-subtitle {
+  font-size: 1.25rem;
+  color: rgb(var(--text));
+  max-width: 600px;
+  margin: 1.25rem auto 2rem auto;
+}
+
+.projects-section {
+  margin-bottom: 3rem;
+}
+
+.projects-card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 12px;
+  overflow: visible;
+  /* Performance optimization for theme transitions */
+  transition: all 0.3s ease;
+  contain: layout style;
+}
+
+.projects-card.featured {
+  border: 1px solid rgba(var(--secondary), 0.2);
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--highlight), 0.05));
+  box-shadow: var(--glow-secondary);
+
+}
+
+.projects-card.other {
+  border: 1px solid rgba(var(--highlight), 0.2);
+  background: linear-gradient(135deg, rgba(var(--highlight), 0.1), rgba(var(--secondary), 0.05));
+  box-shadow: var(--glow-highlight);
+
+}
+
+.projects-section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-top: -1rem;
+  text-align: left;
+}
+
+.projects-section-title.featured {
+  color: rgb(var(--secondary));
+}
+
+.projects-section-title.other {
+  color: rgb(var(--highlight));
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 40vw, 450px), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  /* Performance optimization */
+  contain: layout;
+}
+
+/* Enhanced responsive grid adjustments */
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1600px;
+  }
+}

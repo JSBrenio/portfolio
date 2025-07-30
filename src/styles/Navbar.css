@@ -1,0 +1,242 @@
+/* Navbar Styles */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(var(--navbar-bg), 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--neutral), 0.2);
+  transition: all 0.3s ease;
+  /* Performance optimization - removed 'paint' to allow mobile menu overflow */
+  will-change: backdrop-filter;
+  contain: layout style;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 2vw, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+/* Ensure brand link doesn't inherit nav-link styles */
+.navbar-brand-text,
+.navbar-brand a,
+.navbar-brand a:hover,
+.navbar-brand a:active,
+.navbar-brand a:focus {
+  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--secondary)), rgb(var(--accent)), rgb(var(--primary)));
+  background-size: 300% 100%;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+  font-weight: bold;
+  animation: colorCycle 100s ease-in-out infinite;
+}
+
+@keyframes colorCycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: rgb(var(--text));
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: rgb(var(--accent));
+  background-color: rgba(var(--accent), 0.1);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  color: rgb(var(--primary));
+  background-color: rgba(var(--primary), 0.15);
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  width: 100%;
+  background-color: rgb(var(--primary));
+}
+
+.light .nav-link:hover {  background-color: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
+}
+
+.dark .nav-link:hover {  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
+}
+
+.cyberpunk .nav-link:hover {
+  background-color: rgba(var(--secondary), 0.1);
+  color: rgb(var(--secondary));
+  box-shadow: var(--glow-secondary);
+}
+
+.witcher .nav-link:hover {  background-color: rgba(var(--secondary), 0.1);
+  color: rgb(var(--secondary));
+}
+
+/* Active state */
+.nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(var(--accent));
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(var(--text));
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(var(--background), 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(var(--neutral), 0.2);
+  padding: 1rem;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  z-index: 999;
+  /* Mobile menu is controlled by React conditional rendering */
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-nav-link {
+  color: rgb(var(--text));
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
+}
+
+.mobile-nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+  font-weight: 600;
+  border-left: 3px solid rgb(var(--primary));
+}
+
+/* Mobile active state theme variations */
+.light .mobile-nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+  border-left-color: rgb(var(--primary));
+}
+
+.dark .mobile-nav-link.active {
+  background-color: rgba(var(--accent), 0.15);
+  color: rgb(var(--accent));
+  border-left-color: rgb(var(--accent));
+}
+
+.cyberpunk .mobile-nav-link.active {
+  background-color: rgba(var(--secondary), 0.15);
+  color: rgb(var(--secondary));
+  border-left-color: rgb(var(--secondary));
+  box-shadow: var(--glow-secondary);
+}
+
+.witcher .mobile-nav-link.active {
+  background-color: rgba(var(--primary), 0.15);
+  color: rgb(var(--primary));
+  border-left-color: rgb(var(--primary));
+}
+
+/* Cyberpunk-specific glow effects for navbar */
+.cyberpunk .nav-link:hover {
+  text-shadow: var(--glow-accent);
+}
+
+.cyberpunk .navbar-brand h2 {
+  text-shadow: var(--glow-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 728px) {
+  .navbar-links {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1172px) {
+
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 0.75rem;
+  }
+}

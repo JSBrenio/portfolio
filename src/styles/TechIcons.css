@@ -1,0 +1,38 @@
+/* TechIcons.css - Theme-aware icon styling */
+
+.tech-icon {
+  /* Default: use theme primary color */
+  color: rgb(var(--primary));
+  transition: color 0.2s ease;
+}
+
+/* Theme color variants - same as InteractiveSkills */
+.tech-icon.primary {
+  color: rgb(var(--primary));
+}
+
+.tech-icon.secondary {
+  color: rgb(var(--secondary));
+}
+
+.tech-icon.accent {
+  color: rgb(var(--accent));
+}
+
+.tech-icon.highlight {
+  color: rgb(var(--highlight));
+}
+
+/* Fallback icon styling */
+.tech-icon-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--neutral), 0.2);
+  color: rgb(var(--text));
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid rgba(var(--primary), 0.3);
+}

@@ -1,0 +1,111 @@
+/* TechStack - Marquee Animation */
+
+/* Main marquee container */
+.tech-stack-marquee {
+  --gap: 1.5rem;
+  --animation-duration: 15s;
+  
+  width: 100%;
+  position: relative;
+  height: fit-content;
+  min-height: 3rem;
+  overflow: hidden;
+  padding-block: 0.5rem;
+  
+  /* Mask for fade effect on edges */
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+  
+  /* Flex container for duplicate lists */
+  display: flex;
+  gap: var(--gap);
+}
+
+/* Marquee scroll animation */
+@keyframes scroll {
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+/* Tech list styling */
+.tech-stack-marquee ul {
+  list-style: none;
+  flex-shrink: 0;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--gap);
+  animation: scroll var(--animation-duration) linear infinite;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pause animation on hover */
+/* .tech-stack-marquee:hover ul {
+  animation-play-state: paused;
+} */
+
+/* Tech items */
+.tech-stack-marquee .tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  width: max-content;
+  padding: 0rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: rgba(var(--neutral), 0.1);
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.tech-stack-marquee .tech-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(var(--neutral), 0.15);
+}
+
+/* Tech icon container */
+.tech-stack-marquee .tech-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tech item labels */
+.tech-stack-marquee .tech-item-label {
+  font-size: 0.75rem;
+  color: rgb(var(--text-light));
+  text-shadow: none;
+  margin-top: 0.25rem;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tech-stack-marquee .tech-item:hover .tech-item-label {
+  color: rgb(var(--text));
+}
+
+/* Hover animations */
+.hover-scale {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.1);
+}

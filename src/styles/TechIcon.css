@@ -1,0 +1,30 @@
+/* TechIcon.css */
+
+.tech-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+/* Ensure SVG icons don't have borders */
+.tech-icon-container svg,
+.tech-icon-container img {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Theme-specific hover effects */
+.tech-icon-container:hover {
+  background-color: rgba(var(--secondary), 0.1);
+  box-shadow: 0 2px 8px rgba(var(--secondary), 0.3);
+}
+
+/* Fallback icon styling for unknown technologies */
+.tech-icon-container.fallback-icon:hover {
+  background-color: rgba(var(--neutral), 0.15);
+  box-shadow: 0 2px 8px rgba(var(--neutral), 0.3);
+}

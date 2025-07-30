@@ -1,0 +1,298 @@
+@font-face {
+  font-family: 'GoogleSansCode';
+  src: url('../assets/fonts/googlesanscode/GoogleSansCode-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Markdown content styling */
+.markdown-content {
+  line-height: 1.6;
+}
+
+.markdown-content p {
+  color: rgb(var(--text));
+  margin-bottom: 1rem;
+}
+
+.markdown-content strong {
+  color: rgb(var(--highlight));
+  font-weight: 700;
+}
+
+.markdown-content em {
+  color: rgb(var(--accent));
+  font-style: italic;
+}
+
+.markdown-content em strong {
+  color: rgb(var(--primary));
+  font-weight: 700;
+  font-style: italic;
+}
+
+.markdown-content code {
+  background-color: rgba(var(--secondary), 0.2);
+  color: rgb(var(--secondary));
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-family: 'Roboto', monospace;
+  font-family: 'GoogleSansCode';
+  font-weight: 400;
+}
+
+.markdown-content h1 {
+  color: rgb(var(--primary));
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.markdown-content h2 {
+  color: rgb(var(--secondary));
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content h3 {
+  color: rgb(var(--highlight));
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content a {
+  color: rgba(var(--primary));
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.markdown-content a:hover {
+  color: rgb(var(--highlight));
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  color: rgb(var(--text));
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-content li {
+  color: rgb(var(--text));
+  margin-bottom: 0.25rem;
+}
+
+/* Project detail specific markdown styling */
+.project-detail-markdown {
+  font-size: 0.95rem;
+}
+
+.project-detail-markdown h1 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+  border-bottom: 2px solid rgba(var(--primary), 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.project-detail-markdown h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.project-detail-markdown h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 3px;
+  height: 1rem;
+  background: linear-gradient(to bottom, rgb(var(--secondary)), rgb(var(--highlight)));
+  border-radius: 2px;
+}
+
+.project-detail-markdown h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  position: relative;
+  padding-left: 0.75rem;
+}
+
+.project-detail-markdown h3::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: rgb(var(--accent));
+  font-size: 0.8rem;
+}
+
+.project-detail-markdown p:first-child {
+  margin-top: 0;
+}
+
+.project-detail-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.project-detail-markdown ul li {
+  position: relative;
+}
+
+.project-detail-markdown ul li::before {
+  content: "▸";
+  color: rgb(var(--highlight));
+  position: absolute;
+  left: -1rem;
+}
+
+.project-detail-markdown blockquote {
+  border-left: 4px solid rgb(var(--highlight));
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  background-color: rgba(var(--neutral), 0.1);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.project-detail-markdown pre {
+  background-color: rgba(var(--neutral), 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid rgba(var(--neutral), 0.3);
+}
+
+.project-detail-markdown code {
+  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+}
+
+.project-detail-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.project-detail-markdown th,
+.project-detail-markdown td {
+  border: 1px solid rgba(var(--neutral), 0.3);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.project-detail-markdown th {
+  background-color: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
+  font-weight: 600;
+}
+
+/* Image styling for markdown content */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.markdown-content img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive image containers */
+.markdown-content p img {
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Image with caption styling */
+.markdown-content figure {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.markdown-content figure img {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content figcaption {
+  font-size: 0.875rem;
+  color: rgb(var(--text-light));
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.markdown-content details div {
+  background:rgba(0, 0, 0, 0.15);
+  width: fit-content;
+}
+
+.markdown-content summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: rgba(var(--background), 0.95);
+  border: 1px solid rgba(var(--secondary), 0.6);
+  border-radius: 8px;
+  color: rgb(var(--secondary));
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(var(--neutral), 0.15);
+  transition: all 0.2s ease;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.markdown-content summary:hover {
+  background: rgba(var(--secondary), 0.1);
+  border-color: rgb(var(--secondary));
+  color: rgb(var(--secondary));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(var(--secondary), 0.25);
+}
+
+.markdown-content summary:active {
+  transform: translateY(-1px);
+}
+
+.markdown-content hr {
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgb(var(--secondary)) 20%,
+      rgb(var(--primary)) 50%,
+      rgb(var(--secondary)) 80%,
+      transparent 100%
+  );
+  box-shadow: 0 0 10px rgba(var(--secondary), 0.3);
+  border: none;
+}
+
+/* Theme-aware image borders */
+.project-detail-markdown img {
+  border: 2px solid rgba(var(--neutral), 0.2);
+}
+
+/* Cyberpunk theme image effects */
+.markdown-content.cyberpunk img {
+  box-shadow: 0 0 20px rgba(var(--primary), 0.3);
+  border: 1px solid rgba(var(--primary), 0.5);
+}
+
+/* Witcher theme image effects */
+.markdown-content.witcher img {  box-shadow: 0 4px 12px rgba(var(--accent), 0.2);
+  border: 1px solid rgba(var(--accent), 0.3);
+}

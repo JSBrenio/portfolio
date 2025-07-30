@@ -1,0 +1,56 @@
+/* About page styles */
+.about-container {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* About page uses standardized .page-header and .page-title from globals.css */
+
+.about-subtitle {
+  font-size: 1.25rem;
+  color: rgb(var(--text-light));
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 3rem;
+}
+
+.about-card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 12px;
+}
+
+.about-card.primary {
+  border: 1px solid rgba(var(--accent), 0.2);
+  background: linear-gradient(135deg, rgba(var(--accent), 0.1), rgba(var(--secondary), 0.05));
+  box-shadow: var(--glow-accent);
+}
+
+.about-card.secondary {
+  border: 1px solid rgba(var(--secondary), 0.2);
+  background: linear-gradient(135deg, rgba(var(--secondary), 0.1), rgba(var(--accent), 0.05));
+  box-shadow: var(--glow-secondary);
+  padding-right: 20px;
+}
+
+.about-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-card-title.primary {
+  color: rgb(var(--primary));
+}
+
+.about-card-title.secondary {
+  color: rgb(var(--secondary));
+}
+
+.about-card-text {
+  color: rgb(var(--text));
+  line-height: 1.6;
+}

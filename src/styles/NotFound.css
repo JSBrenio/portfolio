@@ -1,0 +1,285 @@
+/* 404 Not Found Page Styles */
+.not-found-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.not-found-content {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.error-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.error-icon {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  color: rgb(var(--highlight));
+  animation: pulse 2s infinite;
+}
+
+.error-icon.cyberpunk {
+  color: rgb(var(--primary));
+  filter: drop-shadow(0 0 10px rgba(var(--primary), 0.5));
+  animation: cyberpunk-glitch 3s infinite;
+}
+
+.error-icon.witcher {
+  color: rgb(var(--accent));
+  filter: drop-shadow(0 0 8px rgba(var(--accent), 0.3));
+}
+
+.error-code {
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 900;
+  color: rgba(var(--primary), 0.3);
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+.error-code.project-error {
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 800;
+}
+
+.cyberpunk .error-code {
+  color: rgba(var(--primary), 0.4);
+  text-shadow: 
+    0 0 10px rgba(var(--primary), 0.5),
+    0 0 20px rgba(var(--primary), 0.3),
+    0 0 30px rgba(var(--primary), 0.1);
+  animation: cyberpunk-flicker 4s infinite;
+}
+
+.cyberpunk .error-code.project-error {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  letter-spacing: 3px;
+}
+
+.witcher .error-code {
+  color: rgba(var(--accent), 0.4);
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(var(--accent), 0.3);
+}
+
+.witcher .error-code.project-error {
+  font-size: clamp(3.5rem, 7vw, 5rem);
+}
+
+.error-text {
+  margin-bottom: 3rem;
+}
+
+.error-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: rgb(var(--primary));
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.cyberpunk .error-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(var(--primary), 0.5);
+}
+
+.witcher .error-title {
+  color: rgb(var(--accent));
+}
+
+.error-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: rgb(var(--secondary));
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.cyberpunk .error-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(var(--highlight));
+}
+
+.witcher .error-subtitle {
+  font-style: italic;
+  color: rgb(var(--text-light));
+}
+
+.error-description {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: rgb(var(--text));
+  line-height: 1.6;
+  margin-bottom: 0;
+  opacity: 0.9;
+}
+
+.error-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.action-button.primary {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
+  color: rgb(var(--background));
+}
+
+.action-button.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(var(--primary), 0.3);
+}
+
+.action-button.secondary {
+  background: rgba(var(--secondary), 0.1);
+  color: rgb(var(--secondary));
+  border: 2px solid rgba(var(--secondary), 0.3);
+}
+
+.action-button.secondary:hover {
+  background: rgba(var(--secondary), 0.2);
+  border-color: rgba(var(--secondary), 0.5);
+  transform: translateY(-2px);
+}
+
+.action-button.tertiary {
+  background: transparent;
+  color: rgb(var(--text));
+  border: 2px solid rgba(var(--neutral), 0.3);
+}
+
+.action-button.tertiary:hover {
+  background: rgba(var(--neutral), 0.1);
+  border-color: rgba(var(--neutral), 0.5);
+}
+
+.cyberpunk .action-button.primary {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--highlight)));
+  box-shadow: 0 0 20px rgba(var(--primary), 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyberpunk .action-button.primary:hover {
+  box-shadow: 
+    0 0 30px rgba(var(--primary), 0.5),
+    0 8px 20px rgba(var(--primary), 0.3);
+  text-shadow: 0 0 10px rgba(var(--background), 0.8);
+}
+
+.cyberpunk .action-button.secondary {
+  border-color: rgb(var(--highlight));
+  color: rgb(var(--highlight));
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cyberpunk .action-button.secondary:hover {
+  background: rgba(var(--highlight), 0.1);
+  box-shadow: 0 0 15px rgba(var(--highlight), 0.3);
+}
+
+.witcher .action-button.primary {
+  background: linear-gradient(135deg, rgb(var(--accent)), rgb(var(--secondary)));
+}
+
+.witcher .action-button.secondary {
+  border-color: rgb(var(--accent));
+  color: rgb(var(--accent));
+}
+
+.error-footer {
+  opacity: 0.7;
+  font-size: 0.875rem;
+}
+
+.error-footer a {
+  color: rgb(var(--accent));
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.error-footer a:hover {
+  color: rgb(var(--highlight));
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes cyberpunk-glitch {
+  0%, 90%, 100% { 
+    transform: translateX(0);
+    filter: drop-shadow(0 0 10px rgba(var(--primary), 0.5));
+  }
+  5% { 
+    transform: translateX(-2px);
+    filter: drop-shadow(0 0 15px rgba(var(--primary), 0.8));
+  }
+  10% { 
+    transform: translateX(2px);
+    filter: drop-shadow(0 0 15px rgba(var(--primary), 0.8));
+  }
+  15% { 
+    transform: translateX(-1px);
+    filter: drop-shadow(0 0 10px rgba(var(--primary), 0.5));
+  }
+}
+
+@keyframes cyberpunk-flicker {
+  0%, 95%, 100% { opacity: 0.4; }
+  2%, 8% { opacity: 0.6; }
+  4% { opacity: 0.2; }
+  6% { opacity: 0.8; }
+}
+
+/* Responsive design - Mobile adjustments only */
+@media (max-width: 768px) {
+  .error-actions {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .action-button {
+    min-width: 180px;
+  }
+}
+
+.not-found-container {
+  padding: clamp(1rem, 3vw, 2rem);
+}
