@@ -41,8 +41,8 @@ export const getResumeContent = (_theme: Theme, _useThemedContent = true): Resum
         period: "September 2024 — June 2025 • 9 months",
         location: "Tacoma, Washington",
         achievements: [
-          "Assist students with core courses or programming problems, fostering critical thinking and problem-solving skills.",
-          "Manage multiple students simultaneously or provide one-on-one sessions, ensuring each receives the support they need."
+          "Assisted students with core courses or programming problems, fostering critical thinking and problem-solving skills.",
+          "Managed multiple students simultaneously, provided one-on-one sessions, ensuring each received the support they needed."
         ]
       },
       {
@@ -51,8 +51,8 @@ export const getResumeContent = (_theme: Theme, _useThemedContent = true): Resum
         period: "September 2024 — December 2024 • 3 months",
         location: "Tacoma, Washington",
         achievements: [
-          "Monitor student progress during lab activities, addressing questions and resolving challenges in real-time.",
-          "Coordinate with the instructor and student feedback to improve the overall lab experience for students."
+          "Monitored student progress during lab activities, addressing questions and resolving challenges in real-time.",
+          "Coordinated with the instructor and student feedback to improve the overall lab experience for students."
         ]
       },
       {
