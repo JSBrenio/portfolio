@@ -7,6 +7,7 @@ import TechIcon from '../components/TechIcon';
 import MarkdownContent from '../components/MarkdownContent';
 import ProjectNotFound from './ProjectNotFound';
 import '../styles/ProjectDetail.css';
+import { getTechDisplayName } from '../components/TechIcons';
 
 const ProjectDetail = () => {
   const { projectId } = useParams<{ projectId: string }>();
@@ -170,7 +171,7 @@ const ProjectDetail = () => {
                         tech={tech.toLowerCase()}
                         size={32}
                       />
-                      <span className="project-detail-tech-name">{tech}</span>
+                      <span className="project-detail-tech-name">{getTechDisplayName(tech)}</span>
                     </div>
                   ))}
                 </div>

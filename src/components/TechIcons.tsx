@@ -20,9 +20,21 @@ import {
   SiGithub,
   SiFigma,
   SiMui,
+  SiYarn,
+  SiPrettier,
+  SiEslint,
+  SiC,
+  SiDocker,
+  SiAxios,
 } from 'react-icons/si';
-import { FaGitAlt, FaJava } from 'react-icons/fa';
+import { 
+  FaGitAlt,
+  FaJava,
+  FaFileCsv,
+  FaItchIo,
+} from 'react-icons/fa';
 import { TbMarkdown, TbBrandNextjs } from 'react-icons/tb';
+import { VscJson } from 'react-icons/vsc';
 import '../styles/TechIcons.css';
 
 // Tech icon mapping using react-icons
@@ -44,7 +56,7 @@ export const TECH_ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSV
   postgresql: SiPostgresql,
   postman: SiPostman,
   java: FaJava,
-  'c++': SiCplusplus,
+  'c': SiC,
   cpp: SiCplusplus,
   linux: SiLinux,
   ubuntu: SiUbuntu,
@@ -55,6 +67,14 @@ export const TECH_ICONS: Record<string, React.ComponentType<React.SVGProps<SVGSV
   figma: SiFigma,
   nextjs: TbBrandNextjs,
   mui: SiMui,
+  yarn: SiYarn,
+  prettier: SiPrettier,
+  eslint: SiEslint,
+  csv: FaFileCsv,
+  itchio: FaItchIo,
+  json: VscJson,
+  docker: SiDocker,
+  axios: SiAxios,
 };
 
 // Display name mapping
@@ -76,7 +96,7 @@ const TECH_DISPLAY_NAMES: Record<string, string> = {
   postgresql: 'PostgreSQL',
   postman: 'Postman',
   java: 'Java',
-  'c++': 'C/C++',
+  'c': 'C',
   cpp: 'C++',
   linux: 'Linux',
   ubuntu: 'Ubuntu',
@@ -87,6 +107,14 @@ const TECH_DISPLAY_NAMES: Record<string, string> = {
   figma: 'Figma',
   nextjs: 'Next.js',
   mui: 'MUI',
+  yarn: 'Yarn',
+  prettier: 'Prettier',
+  eslint: 'ESLint',
+  csv: "CSV",
+  itchio: 'itch.io',
+  json: 'JSON',
+  docker: 'Docker',
+  axios: 'Axios',
 };
 
 export const getTechDisplayName = (tech: string): string => {
