@@ -1,6 +1,8 @@
-# Are You Sure? - Safety Critical Systems
+# Synchro Reimagined
 
 ## Overview
+
+## Still writing it! 😅. Visit the repo/code if you're really interested!
 
 ---
 

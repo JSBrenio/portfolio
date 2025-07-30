@@ -1,6 +1,8 @@
-# ChatGPT at Home
+# Project Hub
 
 ## Overview
+
+## Still writing it! 😅. Visit the repo/code if you're really interested!
 
 ---
 

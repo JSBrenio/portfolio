@@ -24,6 +24,7 @@ import jbashMd from './project-descriptions/jbash.md?raw';
 import talelessMd from './project-descriptions/taleless.md?raw';
 import areYouSureMd from './project-descriptions/are-you-sure.md?raw';
 import projectHub from './project-descriptions/projuct-hub.md?raw';
+import portfolio from './project-descriptions/portfolio.md?raw';
 
 const image = 'plz.jpg'
 export const realProjects: Project[] = [
@@ -32,7 +33,7 @@ export const realProjects: Project[] = [
     id: 'portfolio',
     name: 'Portfolio',
     description: 'The **portfolio** you\'re looking at right now! A `static website` featuring all things *me*!',
-    detailedDescription: pathfindingMd,
+    detailedDescription: portfolio,
     keyFeatures: [
       'Multi-theme support (4 themes)',
       'Mobile Support',
@@ -42,7 +43,7 @@ export const realProjects: Project[] = [
       'Deployed on Cloudflare Pages'
     ],
     techStack: ['react', 'vitejs', 'cloudflare', 'typescript', 'html5', 'css3', 'markdown', 'git'],
-    image: '/portfolio/image.png',
+    image: '/portfolio/image.gif',
     liveUrl: 'https://jsbrenio.com',
     featured: true,
     date: '2025-05',
