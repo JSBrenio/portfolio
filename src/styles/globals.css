@@ -109,38 +109,6 @@ body.cyberpunk {
   background-attachment: fixed;
 }
 
-/* Utility classes for theme colors */
-.text-primary { color: rgb(var(--primary)); }
-.text-secondary { color: rgb(var(--secondary)); }
-.text-accent { color: rgb(var(--accent)); }
-.text-highlight { color: rgb(var(--highlight)); }
-.text-neutral { color: rgb(var(--neutral)); }
-.text-light { color: rgb(var(--text-light)); }
-
-.bg-primary { background-color: rgb(var(--primary)); }
-.bg-secondary { background-color: rgb(var(--secondary)); }
-.bg-accent { background-color: rgb(var(--accent)); }
-.bg-highlight { background-color: rgb(var(--highlight)); }
-.bg-neutral { background-color: rgb(var(--neutral)); }
-.bg-background { background-color: rgb(var(--background)); }
-.bg-navbar { background-color: rgb(var(--navbar-bg)); }
-
-.border-primary { border-color: rgb(var(--primary)); }
-.border-secondary { border-color: rgb(var(--secondary)); }
-.border-accent { border-color: rgb(var(--accent)); }
-.border-highlight { border-color: rgb(var(--highlight)); }
-
-/* Hover effects */
-.hover-primary:hover { color: rgb(var(--primary)); }
-.hover-secondary:hover { color: rgb(var(--secondary)); }
-.hover-accent:hover { color: rgb(var(--accent)); }
-.hover-highlight:hover { color: rgb(var(--highlight)); }
-
-.hover-bg-primary:hover { background-color: rgb(var(--primary)); }
-.hover-bg-secondary:hover { background-color: rgb(var(--secondary)); }
-.hover-bg-accent:hover { background-color: rgb(var(--accent)); }
-.hover-bg-highlight:hover { background-color: rgb(var(--highlight)); }
-
 /* Universal glow effects - work with all themes */
 .glow-primary {
   box-shadow: var(--glow-primary);
