@@ -195,11 +195,11 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           // Full-Stack Development
           HTML: {
-            definition: `The markup language for structuring web pages.`,
+            definition: `The standard markup language for creating and structuring content on web pages.`,
             experience: ``
           },
           CSS: {
-            definition: `Styles web pages for layout, colors, and responsiveness.`,
+            definition: `A style sheet language that controls the visual presentation and layout of HTML documents.`,
             experience: ``
           },
           'Express.js': {
@@ -235,7 +235,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             experience: ``
           },
           MSSQL: {
-            definition: `Microsoft’s relational database for enterprise applications.`,
+            definition: `Microsoft's relational database for enterprise applications.`,
             experience: ``
           },
           // Soft Skills
@@ -248,15 +248,15 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             experience: ``
           },
           'Agile Methodology': {
-            definition: `Iterative teamwork for flexible, adaptive development.`,
+            definition: `An iterative development approach that emphasizes flexibility, collaboration, and continuous improvement through short development cycles.`,
             experience: ``
           },
           Mentorship: {
-            definition: `Guiding and supporting others in their learning.`,
+            definition: `Providing guidance, knowledge sharing, and support to help others develop their technical and professional skills.`,
             experience: ``
           },
           'Detail Oriented': {
-            definition: `Careful attention to accuracy and completeness.`,
+            definition: `Meticulous attention to accuracy, quality, and thoroughness in code, documentation, and project deliverables.`,
             experience: ``
           },
           'Team Collaboration': {
@@ -264,11 +264,11 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             experience: ``
           },
           Leadership: {
-            definition: `Inspiring and organizing people to reach objectives.`,
+            definition: `Inspiring and organizing teams to achieve objectives while fostering growth, innovation, and accountability.`,
             experience: ``
           },
           'Technical Writing': {
-            definition: `Documenting processes and code for clarity and reuse.`,
+            definition: `Creating clear, concise documentation for code, processes, and technical concepts to enable knowledge sharing and maintainability.`,
             experience: ``
           },
           // Hard Skills
@@ -281,23 +281,23 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             experience: ``
           },
           'Data Structures': {
-            definition: `Organizing and storing data for efficient access and modification.`,
+            definition: `Methods of organizing, storing, and accessing data efficiently, including arrays, linked lists, trees, graphs, and hash tables.`,
             experience: ``
           },
           'Computer Architecture': {
-            definition: `The design and organization of computer systems.`,
+            definition: `The design principles and organization of computer hardware components, including CPU and main memory.`,
             experience: ``
           },
           'Operating Systems': {
-            definition: `Software that manages hardware and provides services for programs.`,
+            definition: `System software that manages computer hardware resources and provides essential services for application programs.`,
             experience: ``
           },
           'Application Programming Interface (API)': {
-            definition: `A set of rules for connecting and interacting with software components.`,
+            definition: `A set of protocols, routines, and tools that allow different software applications to communicate and interact with each other.`,
             experience: ``
           },
           Testing: {
-            definition: `Checking code to ensure it works as intended.`,
+            definition: `The systematic process of evaluating software functionality to ensure it meets requirements and performs as expected.`,
             experience: ``
           },
           Automation: {
