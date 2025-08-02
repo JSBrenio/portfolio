@@ -1,0 +1,168 @@
+/* Scroll to Top Button Styles */
+.scroll-to-top-button {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 2rem !important;
+  left: auto !important;
+  right: 2rem !important;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid rgba(var(--primary), 0.6);
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(var(--primary), 0.9), rgba(var(--secondary), 0.8));
+  color: rgb(var(--text));
+  cursor: pointer;
+  z-index: 9999 !important; /* Ensure it's above everything */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-primary), 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  
+  /* Performance optimizations */
+  will-change: transform, opacity, background-color;
+  
+  /* Hide on desktop by default - only show on mobile/tablet */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+  pointer-events: none;
+}
+
+/* Make the icon larger */
+.scroll-to-top-button svg {
+  position: absolute;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.scroll-to-top-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--glow-primary), 0 6px 25px rgba(0, 0, 0, 0.4);
+  border-color: rgba(var(--primary), 0.8);
+  background: linear-gradient(135deg, rgba(var(--primary), 1), rgba(var(--secondary), 0.9));
+}
+
+.scroll-to-top-button:active {
+  transform: translateY(0) scale(0.98);
+  transition: all 0.1s ease;
+}
+
+/* Theme-specific styling */
+.light .scroll-to-top-button {
+  background: linear-gradient(135deg, rgba(var(--primary), 0.95), rgba(var(--secondary), 0.85));
+  color: white;
+  border-color: rgba(var(--primary), 0.7);
+}
+
+.dark .scroll-to-top-button {
+  background: linear-gradient(135deg, rgba(var(--primary), 0.9), rgba(var(--secondary), 0.8));
+  color: white;
+  border-color: rgba(var(--primary), 0.6);
+}
+
+.cyberpunk .scroll-to-top-button {
+  background: linear-gradient(135deg, rgba(var(--primary), 0.95), rgba(var(--secondary), 0.85));
+  color: rgb(var(--background));
+  border-color: rgba(var(--accent), 0.8);
+  box-shadow: 
+    0 0 15px rgba(var(--primary), 0.6),
+    0 0 30px rgba(var(--accent), 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.cyberpunk .scroll-to-top-button:hover {
+  box-shadow: 
+    0 0 20px rgba(var(--primary), 0.8),
+    0 0 40px rgba(var(--accent), 0.6),
+    0 6px 25px rgba(0, 0, 0, 0.7);
+  border-color: rgba(var(--accent), 1);
+}
+
+.witcher .scroll-to-top-button {
+  background: linear-gradient(135deg, rgba(var(--primary), 0.9), rgba(var(--accent), 0.8));
+  color: white;
+  border-color: rgba(var(--primary), 0.7);
+  box-shadow: var(--glow-primary), 0 4px 15px rgba(var(--neutral), 0.3);
+}
+
+.witcher .scroll-to-top-button:hover {
+  border-color: rgba(var(--primary), 0.9);
+  background: linear-gradient(135deg, rgba(var(--primary), 1), rgba(var(--accent), 0.9));
+}
+
+/* Mobile and tablet visibility */
+@media (max-width: 1172px) {
+  .scroll-to-top-button {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .scroll-to-top-button.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+  .scroll-to-top-button {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+  .scroll-to-top-button {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* Animation for smooth appearance */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1172px) {
+  .scroll-to-top-button {
+    animation: slideUpFadeIn 0.3s ease-out;
+  }
+}
+
+/* High contrast accessibility support */
+@media (prefers-contrast: high) {
+  .scroll-to-top-button {
+    border-width: 3px;
+    font-weight: bold;
+  }
+}
+
+/* Reduced motion accessibility support */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top-button {
+    transition: none;
+    animation: none;
+  }
+  
+  .scroll-to-top-button:hover {
+    transform: none;
+  }
+}
