@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { 
   FaSteam,
+  FaDiscord,
 } from "react-icons/fa";
 import "../styles/Contact.css";
 
@@ -104,14 +105,22 @@ const Contact = () => {
               >
                 <Linkedin size={20} />
               </a>
-              {/* <a
-                href="https://steamcommunity.com/id/capncandy/"
+              <a
+                href="mailto:jsbrenio@gmail.com"
                 className="contact-social-link highlight"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaSteam size={20}/>
-              </a> */}
+                <Mail size={20}/>
+              </a>
+              <a
+                href="https://discordapp.com/users/494030689948270614"
+                className="contact-social-link primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaDiscord size={20} />
+              </a>
             </div>
           </div>
         </div>

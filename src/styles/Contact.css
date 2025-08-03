@@ -104,9 +104,9 @@
   cursor: pointer;
 }
 
-.contact-social-link.accent {
-  background-color: rgba(var(--accent), 0.1);
-  color: rgb(var(--accent));
+.contact-social-link.primary {
+  background-color: rgba(var(--primary), 0.1);
+  color: rgb(var(--primary));
 }
 
 .contact-social-link.secondary {
@@ -117,6 +117,11 @@
 .contact-social-link.highlight {
   background-color: rgba(var(--highlight), 0.1);
   color: rgb(var(--highlight));
+}
+
+.contact-social-link.accent {
+  background-color: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
 }
 
 .contact-social-link:hover {
