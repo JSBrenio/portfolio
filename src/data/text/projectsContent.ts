@@ -12,7 +12,7 @@ export interface ProjectsContent {
 export const getProjectsContent = (theme: Theme, useThemedContent = true): ProjectsContent => {
   const baseContent: ProjectsContent = {
     title: "My Projects",
-    subtitle: "A showcase of my development work and technical projects. Each project demonstrates different skills and technologies.",
+    subtitle: "A ***showcase*** of my development work and **technical projects**. Each project demonstrates different skills and technologies in *detail*.",
     sections: {
       featured: "Featured Projects",
       other: "Other Projects"
@@ -27,19 +27,19 @@ export const getProjectsContent = (theme: Theme, useThemedContent = true): Proje
   // Theme-specific overrides
   if (theme === 'cyberpunk') {
     return {
-      title: "Neural Projects Archive",
-      subtitle: "Explore my digital constructs and neural interface designs from the depths of Night City's cyberspace.",
+      title: "Project Shards",
+      subtitle: "Immersive ***braindance*** logs of my **netruns**. Each spec routed with Daemons, Quickhacks, and *detailed Cyberdecks*.",
       sections: {
-        featured: "Priority Systems",
-        other: "Additional Neural Networks"
+        featured: "Main Jobs",
+        other: "Side Jobs"
       }
     };
   }
 
   if (theme === 'witcher') {
     return {
-      title: "Quest Chronicles",
-      subtitle: "Discover the mystical projects and digital enchantments crafted in the Northern Kingdoms.",
+      title: "Project Journal",
+      subtitle: "A ***journey*** through the **Path of Creation**. Each project a contract completed, a skill mastered, a *tale worth telling*.",
       sections: {
         featured: "Legendary Quests",
         other: "Side Quests"

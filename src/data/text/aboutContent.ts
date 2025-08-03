@@ -24,7 +24,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
   // Base content for the About page
   const baseContent: AboutContent = {
     title: "About Me",
-    subtitle: "Learn more about me as a **developer** and as a *person*!",
+    subtitle: "***Learn*** more about me as a **developer** and as a *person*!",
     sections: {
       background: {
         title: "Background",
@@ -322,7 +322,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
   if (theme === 'cyberpunk') {
     return {
       title: "Neural Profile",
-      subtitle: "Access my **neural interface profile** and system specifications from *Night City's database*.",
+      subtitle: "***Access*** my **neural interface specs** from *Night City's database*.",
       sections: {
         background: {
           title: "Neural History",
@@ -340,7 +340,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
   if (theme === 'witcher') {
     return {
       title: "Character Sheet",
-      subtitle: "Learn about this **traveling developer** from the *Northern Kingdoms* and their mystical coding arts.",
+      subtitle: "***Learn*** about this **traveling developer** from the *Northern Kingdoms*.",
       sections: {
         background: {
           title: "Origins",

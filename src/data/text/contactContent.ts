@@ -35,7 +35,7 @@ export interface ContactContent {
 export const getContactContent = (theme: Theme, useThemedContent = true): ContactContent => {
   const baseContent: ContactContent = {
     title: "Get In Touch",
-    subtitle: "Have a project in mind? Let's **discuss** how we can bring your *ideas* to life.",
+    subtitle: "Let's ***connect!*** Contact me through *any* of these **platforms**.",
     form: {
       name: "Name",
       email: "Email",
@@ -74,17 +74,11 @@ export const getContactContent = (theme: Theme, useThemedContent = true): Contac
   if (theme === 'cyberpunk') {
     return {
       title: "Establish Neural Link",
-      subtitle: "Ready to **jack in**? Send me your *data packet* and let's sync up for your next project.",
-      form: {
-        name: "Handle",
-        email: "Contact Frequency",
-        message: "Data Packet",
-        submit: "Transmit",
-        title: "Initiate Contact Protocol"
-      },
+      subtitle: "Ready to ***jack in?*** Send me your *data packet*.",
+      form: baseContent.form,
       info: {
         email: {
-          title: "Neural Mail",
+          title: "Handle",
           value: baseContent.info.email.value
         },
         phone: {
@@ -96,7 +90,7 @@ export const getContactContent = (theme: Theme, useThemedContent = true): Contac
           value: baseContent.info.location.value
         },
         social: {
-          title: "Network Links"
+          title: "Access Points"
         }
       },
       alerts: {
@@ -108,17 +102,11 @@ export const getContactContent = (theme: Theme, useThemedContent = true): Contac
   if (theme === 'witcher') {
     return {
       title: "Send a Raven",
-      subtitle: "Need a **witcher** for your *digital monsters*? Send word through the mystical channels.",
-      form: {
-        name: "Your Name",
-        email: "Correspondence Address",
-        message: "Your Quest",
-        submit: "Send Raven",
-        title: "Send Message"
-      },
+      subtitle: "***Toss a coin*** to your **coder**?",
+      form: baseContent.form,
       info: {
         email: {
-          title: "Raven Post",
+          title: "Xenovox",
           value: baseContent.info.email.value
         },
         phone: {
@@ -126,7 +114,7 @@ export const getContactContent = (theme: Theme, useThemedContent = true): Contac
           value: baseContent.info.phone.value
         },
         location: {
-          title: "Location",
+          title: "Keep",
           value: baseContent.info.location.value
         },
         social: {

@@ -4,6 +4,7 @@ import ProjectCard from '../components/ProjectCard';
 import { realProjects } from '../data/projects';
 import { getProjectsContent } from '../data/text';
 import '../styles/Projects.css';
+import MarkdownContent from '../components/MarkdownContent';
 
 const Projects = React.memo(() => {
   const { theme, useThemedContent } = useTheme();
@@ -27,9 +28,8 @@ const Projects = React.memo(() => {
         <h1 className="page-title glow-primary">
           {projectsContent.title}
         </h1>
-        <p className="projects-subtitle">
-          {projectsContent.subtitle}
-        </p>
+        <MarkdownContent className="projects-subtitle" content={projectsContent.subtitle}/>
+
       </header>
 
       {/* Featured Projects */}
