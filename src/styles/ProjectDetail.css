@@ -49,7 +49,7 @@
   gap: 2rem;
 }
 
-@media (min-width: 1128px) {
+@media (min-width: 1230px) {
   .header-content {
     flex-direction: row;
   }
@@ -86,26 +86,55 @@
 }
 
 .project-title-section {
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .project-title {
   font-size: 1.875rem;
   font-weight: 700;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   color: rgb(var(--primary));
   background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--secondary)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  overflow: visible;
   padding-bottom: 0.1em;
+  /* Ensure single line */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
   .project-title {
-    font-size: 2.25rem;
+    font-size: 2rem; /* Slightly smaller than before to fit better */
   }
+}
+
+/* Further reduce font size on very small containers */
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
+
+.project-type {
+  margin-bottom: 0.75rem;
+}
+
+.project-type-text {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  background-color: rgba(var(--secondary), 0.1);
+  border: 1px solid rgba(var(--secondary), 0.3);
+  color: rgb(var(--secondary));
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .project-date {
@@ -197,17 +226,11 @@
   color: rgb(var(--primary));
 }
 
-/* Main layout grid */
+/* Main layout - single column for full-width markdown */
 .main-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-}
-
-@media (min-width: 1024px) {
-  .main-grid {
-    grid-template-columns: 2fr 1fr;
-  }
 }
 
 /* Main content sections */
@@ -215,17 +238,46 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
+/* Horizontal sections grid - Key Features, Technologies */
+.horizontal-sections {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .horizontal-sections {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; /* Equal height for features and tech sections */
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 720px) {
+  .horizontal-sections {
+    gap: 0rem;
+  }
 }
 
 /* Section styling */
 .section {
   margin-bottom: 2rem;
+}
+
+/* Only apply flex layout to sections within horizontal-sections */
+.horizontal-sections .section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .horizontal-sections .section {
+    margin-bottom: 0;
+    height: 100%;
+  }
 }
 
 .project-section-title {
@@ -251,16 +303,29 @@
   border: 1px solid rgba(var(--neutral), 0.2);
 }
 
-/* Features grid */
+/* Only apply flex-grow to section-content within horizontal-sections */
+.horizontal-sections .section-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Features grid - optimize for horizontal layout */
 .features-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
+/* Allow features grid to grow within horizontal sections */
+.horizontal-sections .features-grid {
+  flex-grow: 1;
+}
+
+/* On larger screens, keep single column in horizontal sections */
 @media (min-width: 768px) {
   .features-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -270,8 +335,12 @@
   gap: 0.75rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: rgba(var(--background), 0.8);
+  background-color: rgba(var(--neutral), 0.1);
   border: 1px solid rgba(var(--neutral), 0.2);
+}
+
+.feature-item:hover{
+  background-color: rgba(var(--neutral), 0.15);
 }
 
 .feature-bullet {
@@ -286,22 +355,37 @@
   color: rgb(var(--text));
 }
 
-/* Technologies grid */
+/* Technologies grid - optimize for horizontal layout */
 .tech-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.75rem;
+}
+
+/* Allow tech grid to grow within horizontal sections */
+.horizontal-sections .tech-grid {
+  flex-grow: 1;
+}
+
+/* On smaller screens in horizontal sections, keep 2 columns but with smaller gaps */
+@media (min-width: 1024px) {
+  .horizontal-sections .tech-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
 }
 
 .project-detail-tech-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   /* gap: 0.5rem; */
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
   background-color: rgba(var(--neutral), 0.1);
+  border: 1px solid rgba(var(--neutral), 0.2);
 }
 
 .project-detail-tech-item:hover {
@@ -313,35 +397,6 @@
   text-align: center;
   font-weight: 500;
   color: rgb(var(--text));
-}
-
-/* Project info stats */
-.project-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-  color: rgb(var(--text-light));
-}
-
-.stat-value {
-  font-size: 0.875rem;
-  color: rgb(var(--text));
-}
-
-.stat-value.highlight {
-  font-weight: 600;
-  color: rgb(var(--highlight));
 }
 
 /* Fallback content */

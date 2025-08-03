@@ -65,6 +65,9 @@ const ProjectDetail = () => {
                 <h1 className={`project-title ${theme}`}>
                   {project.name}
                 </h1>
+                <div className="project-type">
+                  <span className="project-type-text">{project.projectType ?? "Project"}</span>
+                </div>
                 <div className="project-date">
                   <Calendar className="icon-sm" />
                   <span>{formatDate(project.date)}</span>
@@ -113,10 +116,55 @@ const ProjectDetail = () => {
           </div>
         </div>        
         <div className="main-grid">
-          {/* Main Content */}
+          {/* Main Content - Full Width */}
           <div className="main-content">
-            {/* Overview */}
-            <section className="section">
+            {/* Horizontal Sections Grid */}
+            <div className="horizontal-sections">
+              {/* Key Features */}
+              <section className="section">
+                <h3 className="section-title-small">
+                  {content.sections.features}
+                </h3>
+                <div className="section-content">
+                  <div className="features-grid">
+                    {project.keyFeatures ? (
+                      project.keyFeatures.map((feature: string, index: number) => (
+                        <div key={index} className="feature-item">
+                          <div className="feature-bullet" />
+                          <span className="feature-text">{feature}</span>
+                        </div>
+                      ))
+                    ) : (
+                      <p className="fallback-content">
+                        No key features specified for this project.
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </section>
+
+              {/* Technologies */}
+              <section className="section">
+                <h3 className="section-title-small">
+                  {content.sections.technologies}
+                </h3>
+                <div className="section-content">
+                  <div className="tech-grid">
+                    {project.techStack.map((tech) => (
+                      <div key={tech} className="project-detail-tech-item">
+                        <TechIcon
+                          tech={tech.toLowerCase()}
+                          size={32}
+                        />
+                        <span className="project-detail-tech-name">{getTechDisplayName(tech)}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            </div>
+            {/* Overview - Full Width */}
+            <section className="section project">
               <h2 className="project-section-title">
                 {content.sections.overview}
               </h2>
@@ -131,79 +179,6 @@ const ProjectDetail = () => {
                     Sorry! Either the project&apos;s content was malformed or I haven&apos;t created one!
                   </p>
                 )}
-              </div>
-            </section>
-
-            {/* Key Features */}
-            <section className="section">
-              <h2 className="project-section-title">
-                {content.sections.features}
-              </h2>
-              <div className="features-grid">
-                {project.keyFeatures ? (
-                  project.keyFeatures.map((feature: string, index: number) => (
-                    <div key={index} className="feature-item">
-                      <div className="feature-bullet" />
-                      <span className="feature-text">{feature}</span>
-                    </div>
-                  ))
-                ) : (
-                  <p className="fallback-content">
-                    No key features specified for this project.
-                  </p>
-                )}
-              </div>
-            </section>
-          </div>
-
-          {/* Sidebar */}
-          <div className="sidebar">
-            {/* Technologies */}
-            <section className="section">
-              <h3 className="section-title-small">
-                {content.sections.technologies}
-              </h3>
-              <div className="section-content">
-                <div className="tech-grid">
-                  {project.techStack.map((tech) => (
-                    <div key={tech} className="project-detail-tech-item">
-                      <TechIcon
-                        tech={tech.toLowerCase()}
-                        size={32}
-                      />
-                      <span className="project-detail-tech-name">{getTechDisplayName(tech)}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </section>
-
-            {/* Project Stats */}
-            <section className="section">
-              <h3 className="section-title-small">
-                Project Info
-              </h3>
-              <div className="section-content">
-                <div className="project-stats">
-                  <div className="stat-item">
-                    <span className="stat-label">Status</span>
-                    <span className="stat-value highlight">
-                      {project.status ?? "TBD"}
-                    </span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-label">Type</span>
-                    <span className="stat-value">
-                      {project.projectType ?? "TBD"}
-                    </span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-label">Technologies</span>
-                    <span className="stat-value">
-                      {project.techStack.length} Technologies
-                    </span>
-                  </div>
-                </div>
               </div>
             </section>
           </div>
