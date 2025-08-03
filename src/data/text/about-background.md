@@ -10,6 +10,8 @@
   </div>
 </details> -->
 
+Recent computer science **graduate** dedicated to *continuous learning*, adapting to new challenges, and contributing positively to team dynamics as a **collaborative team player** who supports the growth of others, with *solid technical skills* as a **software development engineer**.
+
 ## My Journey
 
 <!-- ### Early Life
