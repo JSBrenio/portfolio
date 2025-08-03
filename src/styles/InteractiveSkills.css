@@ -2,7 +2,7 @@
 .interactive-skills-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(1.5rem, 3vw, 2rem);
+  gap: clamp(1.5rem, 0rem, 2rem);
   width: 100%;
   min-height: 400px;
 }
@@ -111,7 +111,6 @@
 /* Selected states */
 .interactive-skill-tag.selected {
   transform: scale(1.05);
-  font-weight: 600;
 }
 
 .interactive-skill-tag.accent.selected {
