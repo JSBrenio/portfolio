@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 import { getHomeContent } from '../data/text';
 import MarkdownContent from '../components/MarkdownContent';
 import '../styles/Home.css';
+import LazyImage from '../components/LazyImage';
 
 function Home() {
   const { theme, useThemedContent } = useTheme();
@@ -23,9 +24,9 @@ function Home() {
         {/* Profile Picture */}
         <div className="home-profile">
           <div className="profile-image-container">
-            <img 
-              src="/me.jpg" 
-              alt="Profile Image" 
+            <LazyImage
+              src={"/me.jpg"}
+              alt={"Profile Image"}
               className="profile-image"
             />
             <p className="profile-niche">{homeContent.niche}</p>

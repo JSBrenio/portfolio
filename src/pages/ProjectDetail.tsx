@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 import { realProjects } from '../data/projects';
 import { getProjectDetailContent } from '../data/text';
 import TechIcon from '../components/TechIcon';
+import LazyImage from '../components/LazyImage';
 import MarkdownContent from '../components/MarkdownContent';
 import ProjectNotFound from './ProjectNotFound';
 import '../styles/ProjectDetail.css';
@@ -47,7 +48,7 @@ const ProjectDetail = () => {
             {/* Project Image */}
             <div className="flex-shrink-none">
               <div className={`project-image-container ${theme}`}>
-                <img
+                <LazyImage
                   src={project.image}
                   alt={project.name}
                   className="project-image"
