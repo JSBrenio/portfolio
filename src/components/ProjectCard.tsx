@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Project } from '../data/projects';
 import TechStack from './TechStack';
+import LazyImage from './LazyImage';
 import '../styles/ProjectCard.css';
 import MarkdownContent from './MarkdownContent';
 
@@ -45,14 +46,10 @@ const ProjectCard = React.memo(({
         {/* Clickable Image - Left side */}
         <Link to={`/projects/${project.id}`}>
           <div className="project-card-image-container">
-            <img
+            <LazyImage
               src={project.image}
               alt={project.name}
               className="project-card-image"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = '/plz.jpg';
-              }}
             />
             <div className="project-card-overlay" />
           </div>
