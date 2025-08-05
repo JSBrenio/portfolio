@@ -242,6 +242,50 @@
   box-shadow: 0 4px 12px rgba(var(--neutral), 0.15);
 }
 
+/* Multiple media layout - horizontal below text */
+.markdown-content .walkthrough-section.multiple {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.markdown-content .walkthrough-media-multiple {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.markdown-content .walkthrough-media-multiple .lazy-image-container {
+  flex: 1;
+  transition: flex 0.3s ease;
+}
+
+.markdown-content .walkthrough-media-multiple img,
+.markdown-content .walkthrough-media-multiple video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--neutral), 0.2);
+  box-shadow: 0 4px 12px rgba(var(--neutral), 0.15);
+  object-fit: cover;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Desktop hover effects for multiple media */
+@media (min-width: 769px) {
+  .markdown-content .walkthrough-media-multiple:hover .lazy-image-container {
+    flex: 0.6;
+  }
+
+  .markdown-content .walkthrough-media-multiple .lazy-image-container:hover {
+    flex: 1.8;
+  }
+
+  .markdown-content .walkthrough-media-multiple .lazy-image-container:hover img,
+  .markdown-content .walkthrough-media-multiple .lazy-image-container:hover video {
+    box-shadow: 0 8px 24px rgba(var(--neutral), 0.25);
+  }
+}
+
 /* Mobile responsive - stack vertically */
 @media (max-width: 768px) {
   .markdown-content .walkthrough-section {
@@ -253,17 +297,32 @@
     flex: none;
     max-width: 100%;
   }
+
+  .markdown-content .walkthrough-media-multiple {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .markdown-content .walkthrough-media-multiple .lazy-image-container,
+  .markdown-content .walkthrough-media-multiple img,
+  .markdown-content .walkthrough-media-multiple video {
+    flex: none;
+  }
 }
 
 /* Theme-aware effects for walkthrough media */
 .markdown-content.cyberpunk .walkthrough-media img,
-.markdown-content.cyberpunk .walkthrough-media video {
+.markdown-content.cyberpunk .walkthrough-media video,
+.markdown-content.cyberpunk .walkthrough-media-multiple img,
+.markdown-content.cyberpunk .walkthrough-media-multiple video {
   box-shadow: 0 0 20px rgba(var(--primary), 0.3);
   border: 1px solid rgba(var(--primary), 0.5);
 }
 
 .markdown-content.witcher .walkthrough-media img,
-.markdown-content.witcher .walkthrough-media video {
+.markdown-content.witcher .walkthrough-media video,
+.markdown-content.witcher .walkthrough-media-multiple img,
+.markdown-content.witcher .walkthrough-media-multiple video {
   box-shadow: 0 4px 12px rgba(var(--accent), 0.2);
   border: 1px solid rgba(var(--accent), 0.3);
 }
