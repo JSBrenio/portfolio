@@ -4,6 +4,8 @@
 
 ## Still writing it! 😅. Visit the repo/code if you're really interested!
 
+<!-- This project has been a reflection of my time in college and a preparation of my future through this platform. -->
+
 ---
 
 [Content to be added]
