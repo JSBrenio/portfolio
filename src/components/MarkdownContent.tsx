@@ -106,11 +106,28 @@ export const MarkdownContent: React.FC<MarkdownContentProps> = React.memo(({ con
             // Check if it's an internal anchor link (starts with #)
             const isInternalAnchor = href?.startsWith('#');
             
+            // Handle smooth scrolling for internal anchors
+            const handleAnchorClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+              if (isInternalAnchor && href) {
+                event.preventDefault();
+                const targetId = href.substring(1); // Remove the # from href
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                  targetElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start' // This works with scroll-margin-top CSS
+                  });
+                }
+              }
+            };
+            
             return (
               <a
                 href={href}
                 target={isInternalAnchor ? undefined : "_blank"}
                 rel={isInternalAnchor ? undefined : "noopener noreferrer"}
+                onClick={handleAnchorClick}
                 {...props}
               >
                 {children}

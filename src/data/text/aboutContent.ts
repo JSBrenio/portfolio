@@ -12,7 +12,8 @@ export interface AboutContent {
     skills: {
       title: string;
       categories: Record<string, string[]>;
-      skillDetails: Record<string, {
+      skillDetails: Record<string, 
+      {
           definition: string;
           experience: string;
       }>;
@@ -58,8 +59,6 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             "Node.js",
             "Next.js",
             "React",
-            "Vite",
-            "Axios",
             "MySQL",
             "PostgreSQL",
             "MSSQL"
@@ -69,7 +68,6 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             "Communication",
             "Problem Solving",
             "Agile Methodology",
-            "Mentorship",
             "Detail Oriented",
             "Team Collaboration",
             "Leadership",
@@ -92,69 +90,69 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           // Languages & Frameworks
           Python: {
             definition: `A versatile, beginner-friendly programming language known for simple scripts to advanced applications.`,
-            experience: `My **first** programming language I learned in community college. 
-                        I *loved* the simplicity of the syntax in order to learn the basics of 
-                        \`loop constructs\`, \`conditional statements\`, \`string manipulation\`, 
+            experience: `My **first** programming language I learned in community college.
+                        I *loved* the simplicity of the syntax in order to learn the basics of
+                        \`loop constructs\`, \`conditional statements\`, \`string manipulation\`,
                         and \`functions\`.
-                        
-                        \n\nNowadays, I still use Python to practice **Leetcode**, 
+                       
+                        \n\nNowadays, I still use Python to practice **Leetcode**,
                         create **scripts** for data manipulation, and code fast **prototypes**.`
           },
           Java: {
             definition: `A robust, object-oriented language for enterprise and Android apps.`,
-            experience: `My **second** programming language I learned after Python, 
-                        contributing to many projects throughout my education. 
-                        The jump from Python's simple syntax to Java was very jarring and 
-                        confusing at first, but learning \`Object-Oriented Programming\` 
+            experience: `My **second** programming language I learned after Python,
+                        contributing to many projects throughout my education.
+                        The jump from Python's simple syntax to Java was very jarring and
+                        confusing at first, but learning \`Object-Oriented Programming\`
                         helped me understand why Java's syntax is the way it is.
-                        
-                        \n\nI now consider **Java** a *comfy* language to code in, 
+                       
+                        \n\nI now consider **Java** a *comfy* language to code in,
                         creating *reusable code* through \`inheritance\`, \`abstraction\`, and \`polymorphism\`.`
           },
           C: {
             definition: `A foundational language for systems, embedded, and performance-critical code.`,
-            experience: `One of my *favorite* languages I have learned in my **Programming Languages Concepts** 
-                        and **Operating Systems** classes. \`Memory Management\`, \`parameter passing\`, 
-                        \`pointers\`, and \`multi-threading\` have only *enhanced* my 
+            experience: `One of my *favorite* languages I have learned in my **Programming Languages Concepts**
+                        and **Operating Systems** classes. \`Memory Management\`, \`parameter passing\`,
+                        \`pointers\`, and \`multi-threading\` have only *enhanced* my
                         existing programming knowledge.
-                        
-                        \n\nMy **low-level** knowledge has given me a *unique* perspective in **high-level** 
+                       
+                        \n\nMy **low-level** knowledge has given me a *unique* perspective in **high-level**
                         programming through *awareness* of \`memory\`, \`speed\`, and \`scalability\`.`
           },
           JavaScript: {
             definition: `The core language of the web, powering interactive sites and apps.`,
-            experience: `A language that I have a **love/hate** relationship with. The *freedom* to do 
-                        anything you want with \`objects\` without \`explicitely typing\` appealed to me, 
+            experience: `A language that I have a **love/hate** relationship with. The *freedom* to do
+                        anything you want with \`objects\` without \`explicitely typing\` appealed to me,
                         until you spend hours of \`debugging\` over one character in the codebase.
-                        
-                        \n\nStill, Being able to use **Higher-Order Functions** like 
-                        \`map\`, \`filter\`, and \`reduce\` so *naturally*—and having JavaScript 
+                       
+                        \n\nStill, Being able to use **Higher-Order Functions** like
+                        \`map\`, \`filter\`, and \`reduce\` so *naturally*—and having JavaScript
                         as my introduction to **web development**—holds a special place in my heart.`
           },
           TypeScript: {
             definition: `JavaScript with static typing for safer, scalable web development.`,
-            experience: `While I *dislike* the constraints TypeScript imposes on JavaScript's chaos, 
+            experience: `While I *dislike* the constraints TypeScript imposes on JavaScript's chaos,
                         I've gradually come to *appreciate* its **practicality** in production.
-                        
-                        \n\nI love \`interfaces\`, I hate *refactoring* them. I love \`any\`, 
-                        I hate how it *makes* **TypeScript JavaScript** again. I love \`typing variables\`, 
+                       
+                        \n\nI love \`interfaces\`, I hate *refactoring* them. I love \`any\`,
+                        I hate how it *makes* **TypeScript JavaScript** again. I love \`typing variables\`,
                         I hate **Typing Hell**.`
           },
           SQL: {
             definition: `A query language for managing and retrieving data in databases.`,
             experience: `I have taken both **Database Systems Design** & **Internals** through *MySQL* Workbench to learn the
                         \`declaritive language\` and *MSSQL* (Microsoft SQL Server) to learn the \`Query Optimizer\`, respectively
-                        
+                       
                         \n\n Relational Databases are an important aspect in development, and knowing how to *use* one and how they *work* has
                         helped me in making **schemas** and **efficient queries**.`
           },
           // Tools & Technologies
           Git: {
             definition: `A version control system for tracking code changes and collaboration.`,
-            experience: `Git has been an *integral* part of my career, 
-                        using version control for all my **projects**—big and small, 
+            experience: `Git has been an *integral* part of my career,
+                        using version control for all my **projects**—big and small,
                         collaborative and solo.
-                        
+                       
                         \n\n Shout out to [Learn Git Branching](https://learngitbranching.js.org/)
                         for helping me learn \`git merge\` and the basics of the \`CLI\` git commands.`
           },
@@ -164,21 +162,21 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           'VS Code': {
             definition: `A popular, extensible code editor for many languages.`,
-            experience: `Coming from Python's **IDLE** then to Java's **Eclipse**, 
+            experience: `Coming from Python's **IDLE** then to Java's **Eclipse**,
                         VSCode quickly became my *favorite* IDE. It's become my *main*
                         environment for all langauges to code and learn.
 
                         \n\n When given creative liberty for *styling* my editor
                         and changing from defaults,
                         I struggle with *choice fatigue*, so I keep it **simple**.
-                        
+                       
                         \n\nMy favorite theme is \`Dark+\`.`
           },
           'Ubuntu Linux': {
             definition: `An open-source operating system for development and servers.`,
             experience: `My first introduction to the Linux ecosystem and using
                         \`Bash\`. I used to be afraid of the complexities of using a
-                        terminal, but after some *demystification*, I learned that the 
+                        terminal, but after some *demystification*, I learned that the
                         **Open-Source Operating System** is critical for servers and most systems.
 
                         \n\nThese days, I use \`WSL\` (Windows Subsystem for Linux) for tasks
@@ -218,14 +216,6 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             definition: `A library for building interactive user interfaces with components.`,
             experience: ``
           },
-          Vite: {
-            definition: `A fast build tool for modern web projects.`,
-            experience: ``
-          },
-          Axios: {
-            definition: `A promise-based HTTP client for making API requests.`,
-            experience: ``
-          },
           MySQL: {
             definition: `A popular open-source relational database.`,
             experience: ``
@@ -251,10 +241,6 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             definition: `An iterative development approach that emphasizes flexibility, collaboration, and continuous improvement through short development cycles.`,
             experience: ``
           },
-          Mentorship: {
-            definition: `Providing guidance, knowledge sharing, and support to help others develop their technical and professional skills.`,
-            experience: ``
-          },
           'Detail Oriented': {
             definition: `Meticulous attention to accuracy, quality, and thoroughness in code, documentation, and project deliverables.`,
             experience: ``
@@ -265,7 +251,9 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           Leadership: {
             definition: `Inspiring and organizing teams to achieve objectives while fostering growth, innovation, and accountability.`,
-            experience: ``
+            experience: `Despite preferring being the teamplayer, occasionally I find myself having to
+                        be in a leadership role. When I am in this role, I take every teammate into consideration
+                        and amplify as much extrovertness as I can.`
           },
           'Technical Writing': {
             definition: `Creating clear, concise documentation for code, processes, and technical concepts to enable knowledge sharing and maintainability.`,
@@ -274,7 +262,9 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           // Hard Skills
           Debugging: {
             definition: `Identifying and fixing errors in code.`,
-            experience: ``
+            experience: `Instead of my early days using print statements everywhere, I learned the value of
+                        tracking variables and utilize breakpoints
+                        to find the culprit of unintentional output.`
           },
           Algorithms: {
             definition: `Step-by-step procedures for solving problems efficiently.`,
@@ -282,7 +272,9 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           'Data Structures': {
             definition: `Methods of organizing, storing, and accessing data efficiently, including arrays, linked lists, trees, graphs, and hash tables.`,
-            experience: ``
+            experience: `The fundamentals. My courses has given me the *know-how*
+                        of choosing which data structure to use, how to use them,
+                        and **space-time tradeoffs**.`
           },
           'Computer Architecture': {
             definition: `The design principles and organization of computer hardware components, including CPU and main memory.`,
