@@ -26,7 +26,6 @@
 
 - [Overview](#overview)
 - [Walkthrough](#walkthrough)
-- [Design Iterations](#design-iterations)
 - [Technical and Soft Skills Gained](#technical-and-soft-skills-gained)
 - [Future Plans and Next Steps](#future-plans-and-next-steps)
 
@@ -34,13 +33,21 @@
 
 ---
 
-During my Summer Quarter after my Junior year, I wanted to learn more about graphs and web development, both new to me. So as part of my algorithms course's extra credit, I combined both goals and tried to make an web application using vanilla JavaScript, HTML Canvas, and CSS.
+During my Summer Quarter after my Junior year, I wanted to learn more about graphs and web development, both exciting but new to me. So as part of my algorithms course's extra credit, I combined both goals and tried to make a static web application using vanilla JavaScript, HTML Canvas, and CSS.
+
+I got to experience the chaotic language that is JavaScript, which quickly became one of my favorite languages coming from a Java-based background. The loosely typed (if any) experience was refreshing, I fondly remember adding a "weight" property to my matrix of coordinates on-the-fly and going "I can do that???" before summarily suffering the consequences when everything else broke.
+
+The worse thing I had to experience was a broken webpage without any warnings from the console logs... spending almost half the day finding the bug, only for it be ONE WHITESPACE character in the HTML. I was able to contain my frustration spilling over to my git commit message: "Bug Fix"
+
+But I got to finally learn graphing and pathfinding algorithms, something that was a blindspot in my knowledge. Working with queues and sets to traverse a coordinate grid translated naturally to graphs with vertices and tree structures. With this deeper understanding, I no longer need to memorize exact implementations—by following the process step by step, I can confidently work through the logic in any coding langauge I want.
 
 ## Walkthrough
 
 ---
 
-The application opens with a clean grid interface and a comprehensive sidebar containing algorithm controls. Users begin by selecting their preferred pathfinding algorithm from the available options: A* (with Manhattan, Euclidean, Chebyshev, or Octile heuristics), Dijkstra's algorithm, or Breadth-First Search.
+The application opens with a comprehensive sidebar containing algorithm controls and a center grid to show the pathfinding visually.
+
+Users begin by selecting their preferred pathfinding algorithm from the available options: A* (with Manhattan, Euclidean, Chebyshev, or Octile heuristics), Dijkstra's algorithm, or Breadth-First Search.
 
 <div class="walkthrough-section">
     <div class="walkthrough-content">
@@ -49,7 +56,9 @@ The application opens with a clean grid interface and a comprehensive sidebar co
 
 - Click to draw walls on the grid
 - Use the random maze generator with adjustable wall density (0-100%)
+- Add random weight to grid cells to showcase weighted pathfinding
 - Clear or reset the grid as needed
+- Save grid as image appended with algorithm statistics
 
 </div>
 <div class="walkthrough-media">
@@ -64,6 +73,10 @@ The application opens with a clean grid interface and a comprehensive sidebar co
 
 - Choose between different pathfinding algorithms
 - For A*, select from four heuristic functions optimized for different scenarios
+  - Manhattan (city-block distance)
+  - Euclidean (straight-line distance)
+  - Chebyshev (chessboard distance)
+  - Octile (optimized for 8-directional movement)
 - Enable diagonal movement for more flexible pathfinding
 - Toggle weights to simulate varied terrain costs
 - Turn off sleep mode for faster execution during data collection
@@ -80,7 +93,7 @@ The application opens with a clean grid interface and a comprehensive sidebar co
 **Data Collection:**
 
 - Automated data collection across multiple runs with varied trial parameters for performance analysis
-- Export results as `JSON` for further analysis using included Python script with `Pandas`
+- Export results as JSON for further analysis using included Python script with Pandas
 
 </div>
 <div class="walkthrough-media-multiple">
@@ -92,36 +105,17 @@ The application opens with a clean grid interface and a comprehensive sidebar co
 </div>
 </div>
 
-
-## Design Iterations
-
----
-
-<!-- **Initial Implementation:**
-Started with a basic grid system and simple A* algorithm implementation using Manhattan distance heuristic. The early version focused on core pathfinding functionality without visual feedback.
-
-**Algorithm Expansion:**
-Added support for multiple algorithms (Dijkstra's, BFS) and implemented four different heuristic functions for A*: Manhattan (city-block distance), Euclidean (straight-line distance), Chebyshev (chessboard distance), and Octile (optimized for 8-directional movement).
-
-**User Interface Development:**
-Evolved from a minimal interface to a comprehensive sidebar with algorithm selection, performance metrics, and configuration options. Added visual feedback through color-coded nodes and smooth animations.
-
-**Performance Analysis Integration:**
-Incorporated data collection capabilities and statistical analysis tools. Developed Python scripts for generating comparative performance graphs across different wall densities and algorithm configurations.
-
-**Optimization Features:**
-Added debug mode, sleep toggle for faster data collection, weight system for terrain simulation, and image export functionality for documentation purposes. -->
-
 ## Technical and Soft Skills Gained
 
 ---
 
-<!-- **Frontend Development:**
+**Static Webpage Development:**
 
 - Vanilla JavaScript programming without frameworks
-- HTML5 Canvas manipulation and rendering
-- CSS styling and responsive design principles
-- Event handling and user interaction management
+- HTML elements and a greater understanding of the DOM (Document Object Model)
+- HTML Canvas manipulation and rendering
+- CSS styling
+- Async, Event handling, and user interaction management
 
 **Algorithm Implementation:**
 
@@ -135,37 +129,36 @@ Added debug mode, sleep toggle for faster data collection, weight system for ter
 - Python programming for statistical analysis
 - Matplotlib and Pandas for data visualization
 - JSON data handling and file operations
-- Comparative performance analysis methodologies
+- Comparative performance analysis
 
 **Project Management:**
 
 - Git version control and GitHub Pages deployment
-- Documentation writing and README creation
 - Code organization and modular design
-- Testing and debugging methodologies
 
 **Problem-Solving:**
 
-- Algorithm comparison and evaluation techniques
-- Performance bottleneck identification and resolution
-- User experience design for educational tools -->
+- Translating theoritical graph algorithms to JavaSript code
+- Navigate the challenges of a loosely-typed langauge
+- Testing and debugging methodologies
 
 ## Future Plans and Next Steps
 
 ---
-<!-- 
+
+I've learned a lot more about web dev and have created more single and multi page applications since this project.
+
+If I had to go back to improve the project that started my journey I would...
+
 **Algorithm Enhancements:**
 
-- Implement additional pathfinding algorithms (Jump Point Search, Theta*)
 - Add bidirectional search capabilities
-- Introduce dynamic pathfinding for moving obstacles
+- Add new algorithms (DFS, Greedy, D* or D*-Lite for dynamic end goals or )
 
 **Advanced Features:**
 
 - Weighted terrain types with visual representation
-- Maze solving competitions with leaderboards
 - Algorithm racing mode with side-by-side comparison
-- 3D pathfinding visualization
 
 **Educational Improvements:**
 
@@ -174,16 +167,9 @@ Added debug mode, sleep toggle for faster data collection, weight system for ter
 - Complexity analysis display
 - Algorithm comparison charts integrated into the interface
 
-**Technical Optimizations:**
+**Quality of Life:**
 
-- WebGL implementation for larger grids
-- Web Workers for background algorithm processing
-- Enhanced mobile responsiveness
-- Improved performance for real-time analysis
-
-**Data Analysis Expansion:**
-
-- Machine learning integration for heuristic optimization
-- Automated maze generation with specific characteristics
-- Statistical significance testing for algorithm comparisons
-- Export functionality for academic research -->
+- Enhance mobile experience
+- Improve sidebar UI or revamp UI/UX
+- Dynamically change size of grid
+- Move start/end points manually
