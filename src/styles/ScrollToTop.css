@@ -24,10 +24,10 @@
   will-change: transform, opacity, background-color;
   
   /* Hide on desktop by default - only show on mobile/tablet */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(100px);
-  pointer-events: none;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  /* transform: translateY(100px); */
+  /* pointer-events: none; */
 }
 
 /* Make the icon larger */
