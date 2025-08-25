@@ -49,6 +49,25 @@ export const realProjects: Project[] = [
     projectType: 'Static Website'
   },
   {
+    id: 'lotus-query',
+    name: 'Lotus Query',
+    description: 'A **Magic the Gathering database** and *card searching application* with advanced filtering capabilities.',
+    detailedDescription: lotusQueryMd,
+    keyFeatures: [
+      'Advanced card search and filtering',
+      'Single Page Application with React Router',
+      'Axios and CORS for communication with Scryfall API',
+      'Comprehensive normalized MTG database',
+    ],
+    techStack: ['js', 'python', 'css3', 'axios', 'react', 'expressjs', 'nodejs', 'mysql'],
+    image: '/lotus-query/image-1.gif',
+    githubUrl: 'https://github.com/cnlwebber/Lotus-Query',
+    featured: true,
+    date: '2024-07',
+    status: 'Local host only',
+    projectType: 'Static Website'
+  },  
+  {
     id: 'path-finding-visualizer',
     name: 'Path Finding Visualizer',
     description: 'Interactive **visualization** of *pathfinding algorithms* including `A*`, `Dijkstra\'s`, and `BFS` with **real-time animation** and *performance metrics*.',
@@ -66,25 +85,6 @@ export const realProjects: Project[] = [
     featured: true,
     date: '2024-07',
     status: 'Live via GitHub pages',
-    projectType: 'Static Website'
-  },
-  {
-    id: 'lotus-query',
-    name: 'Lotus Query',
-    description: 'A **Magic the Gathering database** and *card searching application* with advanced filtering capabilities.',
-    detailedDescription: lotusQueryMd,
-    keyFeatures: [
-      'Advanced card search and filtering',
-      'Comprehensive MTG database',
-      'Card image galleries',
-      'Set and rarity filters'
-    ],
-    techStack: ['js', 'python', 'css3', 'axios', 'react', 'expressjs', 'nodejs', 'mysql'],
-    image: '/lotus-query/image-1.gif',
-    githubUrl: 'https://github.com/cnlwebber/Lotus-Query',
-    featured: true,
-    date: '2024-07',
-    status: 'Local host only',
     projectType: 'Static Website'
   },
   {
