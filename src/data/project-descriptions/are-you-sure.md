@@ -1,8 +1,17 @@
 # Synchro Reimagined
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Walkthrough](#walkthrough)
+- [Technical and Soft Skills Gained](#technical-and-soft-skills-gained)
+- [Improvements That Can Be Made](#improvements-that-can-be-made)
+
 ## Overview
 
 ## Still writing it! 😅. Visit the repo/code if you're really interested!
+
+A design UI/UX project of five
 
 ---
 
@@ -14,19 +23,13 @@
 
 [Content to be added]
 
-## Design Iterations
-
----
-
-[Content to be added]
-
 ## Technical and Soft Skills Gained
 
 ---
 
 [Content to be added]
 
-## Future Plans / Next Steps
+## Improvements That Can Be Made
 
 ---
 

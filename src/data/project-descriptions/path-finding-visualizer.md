@@ -27,7 +27,7 @@
 - [Overview](#overview)
 - [Walkthrough](#walkthrough)
 - [Technical and Soft Skills Gained](#technical-and-soft-skills-gained)
-- [Future Plans and Next Steps](#future-plans-and-next-steps)
+- [Improvements That Can Be Made](#improvements-that-can-be-made)
 
 ## Overview
 
