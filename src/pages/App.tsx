@@ -7,7 +7,7 @@ import Projects from './Projects';
 import Contact from './Contact';
 import ProjectDetail from './ProjectDetail';
 import NotFound from './NotFound';
-import TestPage from './TestPage'; // TODO: Remove before production build
+// import TestPage from './TestPage'; // TODO: Remove before production build
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
@@ -27,7 +27,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:projectId" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/test" element={<TestPage />} /> {/* TODO: Remove before production build */}
+          {/* <Route path="/test" element={<TestPage />} /> TODO: Remove before production build */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
