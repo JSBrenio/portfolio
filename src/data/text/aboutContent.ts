@@ -81,7 +81,7 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
             "Computer Architecture",
             "Operating Systems",
             "Application Programming Interface (API)",
-            "Testing",
+            // "Testing",
             "Automation",
             "Human-Computer Interaction"
           ]
@@ -96,10 +96,10 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
                         and \`functions\`.
                        
                         \n\nNowadays, I still use Python to practice **Leetcode**,
-                        create **scripts** for data manipulation, and code fast **prototypes**.`
+                        create **scripts** for small tasks or data manipulation, and code **projects**.`
           },
           Java: {
-            definition: `A robust, object-oriented language for enterprise and Android apps.`,
+            definition: `A robust, object-oriented language for enterprise and apps.`,
             experience: `My **second** programming language I learned after Python,
                         contributing to many projects throughout my education.
                         The jump from Python's simple syntax to Java was very jarring and
@@ -158,7 +158,11 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           GitHub: {
             definition: `A platform for hosting, sharing, and collaborating on code projects.`,
-            experience: ``
+            experience: `The google drive for code developers. I've used **github pages**, **github docs**,
+                        and some **github actions** for \`CI/CD\`.
+                        
+                        \n\nI wish I knew Github before starting out,
+                        but I'm making the effort to track all my projects for years to come.`
           },
           'VS Code': {
             definition: `A popular, extensible code editor for many languages.`,
@@ -170,7 +174,8 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
                         and changing from defaults,
                         I struggle with *choice fatigue*, so I keep it **simple**.
                        
-                        \n\nMy favorite theme is \`Dark+\`.`
+                        \n\nMy favorite theme is \`Dark+\`.
+                        \n\nI use the \`VSCodeVim\` extension 😎`
           },
           'Ubuntu Linux': {
             definition: `An open-source operating system for development and servers.`,
@@ -185,11 +190,15 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           Docker: {
             definition: `A tool for packaging apps into containers for portability and deployment.`,
-            experience: ``
+            experience: `Ever since learning **containerization**, 
+                        I have always used Docker in small or technical projects to avoid
+                        troublesome software version conflicts and to create databases.`
           },
           Postman: {
             definition: `A tool for testing, debugging, and documenting APIs.`,
-            experience: ``
+            experience: `The perfect tool for me to test \`HTTP\` requests.
+                        I have experience making **pre-scripts** and **post-scripts,** as well as **collections**
+                        to run multiple tests and automate.`
           },
           // Full-Stack Development
           HTML: {
@@ -239,7 +248,8 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           'Agile Methodology': {
             definition: `An iterative development approach that emphasizes flexibility, collaboration, and continuous improvement through short development cycles.`,
-            experience: ``
+            experience: `I learned how to use **Scrum** with \`daily standups\` and \`sprints\` during my junior year in Computer Science. I still continue to use 
+                        agile methodologies in my own work such as \`kanbans\` and \`Extreme Programming (XP)\`.` 
           },
           'Detail Oriented': {
             definition: `Meticulous attention to accuracy, quality, and thoroughness in code, documentation, and project deliverables.`,
@@ -286,12 +296,12 @@ export const getAboutContent = (theme: Theme, useThemedContent = true): AboutCon
           },
           'Application Programming Interface (API)': {
             definition: `A set of protocols, routines, and tools that allow different software applications to communicate and interact with each other.`,
-            experience: ``
+            experience: `I love creating APIs small or large. My main expertise being HTTP \`RESTful\` API architecture but I hope to create libraries of my own someday.`
           },
-          Testing: {
-            definition: `The systematic process of evaluating software functionality to ensure it meets requirements and performs as expected.`,
-            experience: ``
-          },
+          // Testing: {
+          //   definition: `The systematic process of evaluating software functionality to ensure it meets requirements and performs as expected.`,
+          //   experience: `I've used tools `
+          // },
           Automation: {
             definition: `Using technology to perform tasks with minimal human intervention.`,
             experience: ``
