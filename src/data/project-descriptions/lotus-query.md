@@ -117,8 +117,7 @@ A full-stack Magic: The Gathering card database application featuring advanced s
 - Git version control
 - Package management with npm
 
-## Future Plans and Next Steps
-
+## Improvements That Can Be Made
 ---
 
 **Feature Expansions:**

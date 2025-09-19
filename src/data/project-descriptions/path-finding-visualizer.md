@@ -142,8 +142,7 @@ Users begin by selecting their preferred pathfinding algorithm from the availabl
 - Navigate the challenges of a loosely-typed langauge
 - Testing and debugging methodologies
 
-## Future Plans and Next Steps
-
+## Improvements That Can Be Made
 ---
 
 I've learned a lot more about web dev and have created more single and multi page applications since this project.
