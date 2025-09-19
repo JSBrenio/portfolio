@@ -11,12 +11,11 @@
 
 ---
 
-A full-stack Magic: The Gathering card database application featuring advanced search capabilities, random card discovery, and comprehensive card information display. Built with React.js frontend and Node.js/Express backend, integrated with MySQL database for optimized card data queries.
+A full-stack Magic: The Gathering card database application featuring advanced search capabilities, random card discovery, and comprehensive card information display. Built with React.js frontend and Node.js/Express backend, integrated with MySQL database for card data queries.
 
 ## Walkthrough
 
 ---
-
 
 <div class="walkthrough-section">
 <div class="walkthrough-content">
@@ -55,7 +54,7 @@ A full-stack Magic: The Gathering card database application featuring advanced s
 
 </div>
 <div class="walkthrough-media">
-<img src="/lotus-query/image-1.gif" alt="Advanced search interface showing various filter options and query syntax" />
+<img src="/lotus-query/image-4.gif" alt="Advanced search interface showing various filter options and query syntax" />
 </div>
 </div>
 
@@ -109,51 +108,27 @@ A full-stack Magic: The Gathering card database application featuring advanced s
 - Operator-based filtering logic
 - String parsing and validation
 
-**Web Development Patterns:**
-- MVC (Model-View-Controller) architecture
-- Component-based UI development
-- Route organization and middleware usage
-- Error handling and status code management
-
 **Security & Best Practices:**
 - Environment-based configuration with dotenv
 - SQL injection prevention with parameterized queries
 - CORS configuration for secure cross-origin requests
-- Proper error handling and response codes
 
 **Development Tools:**
 - Git version control
 - Package management with npm
-- Development server setup and configuration
-- API testing and debugging
 
 ## Future Plans and Next Steps
 
 ---
 
-**Performance Enhancements:**
-- Implement database indexing optimization
-- Add query result caching with Redis
-- Implement pagination for large result sets
-- Add database connection optimization
-
 **Feature Expansions:**
-- Card image integration with Scryfall API
+- Host on a live server instead of local environment
 - Advanced filtering UI with visual selectors
 - Saved search functionality
 - Card collection management system
 - Price tracking integration
 
 **User Experience Improvements:**
-- Add search autocomplete functionality
 - Implement advanced search builder interface
 - Add card comparison tools
 - Mobile-responsive design enhancements
-- Loading states and error handling improvements
-
-**Technical Infrastructure:**
-- Add comprehensive error logging
-- Implement API rate limiting
-- Add automated testing suite
-- Database migration system
-- Production deployment configuration
