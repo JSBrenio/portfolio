@@ -1,9 +1,15 @@
 @import './globals.css';
 @import './satoshi.css';
 
-/* Base HTML/Body Styles */
+/* Disable scrollbar for most browsers */
 html {
   height: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 body {
