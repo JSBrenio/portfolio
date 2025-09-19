@@ -43,6 +43,7 @@ export const realProjects: Project[] = [
     techStack: ['typescript', 'css3', 'html5', 'markdown', 'react', 'vitejs', 'cloudflare', 'git'],
     image: '/portfolio/image.gif',
     liveUrl: 'https://jsbrenio.com',
+    githubUrl: 'https://github.com/JSBrenio/portfolio',
     featured: true,
     date: '2025-05',
     status: 'Live via Cloudflare',
