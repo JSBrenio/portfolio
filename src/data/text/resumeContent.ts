@@ -21,6 +21,14 @@ export interface ResumeContent {
 }
 
 export const getResumeContent = (_theme: Theme, _useThemedContent = true): ResumeContent => {
+  const startDate = new Date(2025, 8, 22); // September 22, 2025 (month is 0-indexed)
+  const now = new Date();
+  const monthsSince = Math.max(
+    0,
+    (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth())
+  );
+  const monthsLabel = monthsSince === 1 ? '1 month' : `${monthsSince} months`;
+
   const baseContent: ResumeContent = {
     education: [
       {
@@ -35,6 +43,15 @@ export const getResumeContent = (_theme: Theme, _useThemedContent = true): Resum
       }
     ],
     experience: [
+      {
+        title: "Software Developer",
+        company: "maxRTE",
+        period: `September 2025 — present • ${monthsLabel}`,
+        location: "Remote",
+        achievements: [
+          "Working on it :)"
+        ]
+      },
       {
         title: "SET Student Mentor",
         company: "University of Washington Tacoma",
